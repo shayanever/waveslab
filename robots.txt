@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://shayansharifi.net/lab-preview/sitemap.xml
+Sitemap: https://shayansharifi.net/waveslab/sitemap.xml
