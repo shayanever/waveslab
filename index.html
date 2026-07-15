@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: default
 title: About
 permalink: /
@@ -65,6 +65,268 @@ permalink: /
   </p>
 </div>
 
+<script>
+  const canvas = document.getElementById("waveCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    const container = document.getElementById("banner");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = container.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const mouse = {
+      x: window.innerWidth / 2,
+      y: container.clientHeight / 2,
+      targetX: window.innerWidth / 2,
+      targetY: container.clientHeight / 2,
+    };
+
+    container.addEventListener("mousemove", (e) => {
+      const rect = container.getBoundingClientRect();
+      mouse.targetX = e.clientX - rect.left;
+      mouse.targetY = e.clientY - rect.top;
+    });
+
+    let increment = 0;
+    const waveColors = [
+      "rgba(15, 52, 96, 0.15)",
+      "rgba(106, 27, 154, 0.1)",
+      "rgba(230, 18, 70, 0.08)",
+    ];
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+      waveColors.forEach((color, index) => {
+        ctx.beginPath();
+        const baseAmplitude = 60 + index * 20;
+        const mouseInfluenceY = (1 - mouse.y / canvas.height) * 80;
+        const amplitude = baseAmplitude + mouseInfluenceY;
+        const frequency = 0.003 + index * 0.001 + mouse.x * 0.000005;
+
+        ctx.moveTo(0, canvas.height / 2);
+
+        for (let i = 0; i < canvas.width; i++) {
+          const y =
+            canvas.height / 2 +
+            Math.sin(i * frequency + increment + index * 2) * amplitude;
+          ctx.lineTo(i, y);
+        }
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3 - index * 0.5;
+        ctx.stroke();
+      });
+
+      increment += 0.015;
+    }
+
+    animate();
+  }
+</script> -->
+---
+layout: default
+title: About
+permalink: /
+---
+
+<style>
+  .banner-container {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    margin-left: calc(-50vw + 50%);
+    margin-top: -2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  canvas#waveCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .logo-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 45%;
+    min-width: 280px;
+    user-select: none;
+    pointer-events: auto;
+    transition: transform 0.3s ease;
+  }
+  .logo-overlay:hover {
+    transform: scale(1.03);
+  }
+  .logo-overlay img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .content-section {
+    max-width: 930px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-more {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #00779b;
+    text-decoration: none;
+    border: 1px solid #00779b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
+  .btn-more:hover {
+    background-color: #00779b;
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+  .news-item {
+    padding: 1rem 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .research-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+  .research-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+</style>
+
+<!-- 1. Full-Screen Interactive Banner -->
+<div class="banner-container" id="banner">
+  <canvas id="waveCanvas"></canvas>
+  <div class="logo-overlay">
+    <img src="{{ '/assets/img/waveslab_logo.png' | relative_url }}" alt="WAVESLAB Logo">
+  </div>
+</div>
+
+<div class="content-section">
+  
+  <!-- 2. Lab Mission & Introduction -->
+  <div class="text-center my-5 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Welcome to WAVESLAB</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+      We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
+    </p>
+    <p class="text-base text-gray-600 leading-relaxed">
+      A central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
+    </p>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- 3. Latest News (Full Width Single Column) -->
+  <div class="my-5">
+    <div class="section-title">
+      <span>Latest News</span>
+      <a href="{{ '/news/' | relative_url }}" class="btn-more">View All News &rarr;</a>
+    </div>
+    <div class="news-container">
+      {% assign news_limit = 3 %}
+      {% if site.news and site.news.size > 0 %}
+        {% assign sorted_news = site.news | sort: "date" | reverse %}
+        {% for item in sorted_news limit: news_limit %}
+          <div class="news-item">
+            <span class="text-sm text-gray-500 font-mono block mb-1">{{ item.date | date: "%B %d, %Y" }}</span>
+            <h4 class="text-lg font-semibold mb-1">
+              <a href="{{ item.url | relative_url }}" class="text-gray-900 hover:text-blue-600">{{ item.title }}</a>
+            </h4>
+            <p class="text-gray-600 text-sm">{{ item.description | default: item.excerpt | strip_html | truncatewords: 30 }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Fallback placeholder if no posts exist yet -->
+        <div class="news-item">
+          <span class="text-sm text-gray-500 font-mono block mb-1">July 15, 2026</span>
+          <h4 class="text-lg font-semibold mb-1">Waveslab Website Launch!</h4>
+          <p class="text-gray-600 text-sm">Welcome to our brand new digital home. Stay tuned for exciting updates, preprint releases, and upcoming project announcements from our lab.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- 4. Current Research & Projects -->
+  <div class="my-5">
+    <div class="section-title">
+      <span>Current Research & Projects</span>
+      <a href="{{ '/projects/' | relative_url }}" class="btn-more">Explore Projects &rarr;</a>
+    </div>
+    <div class="research-grid">
+      <!-- Project 1 -->
+      <div class="research-card">
+        <h4 class="text-xl font-bold mb-2 text-gray-900">Brain–Computer Interfaces</h4>
+        <p class="text-gray-600 text-sm mb-4">Investigating innovative EEG decoding techniques for intuitive movement control and next-generation neural interfaces.</p>
+      </div>
+      <!-- Project 2 -->
+      <div class="research-card">
+        <h4 class="text-xl font-bold mb-2 text-gray-900">Clinical Decision Support</h4>
+        <p class="text-gray-600 text-sm mb-4">Developing intelligent, robust signal analysis systems designed to enhance clinical monitoring, diagnostics, and patient care.</p>
+      </div>
+      <!-- Project 3 -->
+      <div class="research-card">
+        <h4 class="text-xl font-bold mb-2 text-gray-900">Neuromotor Rehabilitation</h4>
+        <p class="text-gray-600 text-sm mb-4">Merging computational neuroscience with rehabilitation engineering to restore motor function and assist recovery processes.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- 5. Selected Publications -->
+  <div class="my-5">
+    <div class="section-title">
+      <span>Selected Publications</span>
+      <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
+    </div>
+    <div class="publications">
+      <!-- This dynamically fetches papers tagged with 'selected: true' in your papers.bib -->
+      {% bibliography --query @*[selected=true]* %}
+    </div>
+  </div>
+
+</div>
+
+<!-- Wave Animation Engine Script -->
 <script>
   const canvas = document.getElementById("waveCanvas");
   if (canvas) {
