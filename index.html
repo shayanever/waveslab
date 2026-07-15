@@ -232,7 +232,6 @@ liquid: true
   }
 </style>
 
-<!-- 1. Full-Screen Interactive Banner -->
 <div class="banner-container" id="banner">
   <canvas id="waveCanvas"></canvas>
   <div class="logo-overlay">
@@ -242,7 +241,6 @@ liquid: true
 
 <div class="content-section">
   
-  <!-- 2. Lab Mission & Introduction -->
   <div class="text-center my-5 max-w-3xl mx-auto">
     <h2 class="text-3xl font-bold mb-4">Welcome to WAVESLAB</h2>
     <p class="text-lg text-gray-700 leading-relaxed mb-4">
@@ -255,7 +253,6 @@ liquid: true
 
   <hr class="my-5">
 
-  <!-- 3. Latest News (Dynamically pulls from the _posts directory) -->
   <div class="my-5">
     <div class="section-title">
       <span>Latest News</span>
@@ -273,7 +270,6 @@ liquid: true
           </div>
         {% endfor %}
       {% else %}
-        <!-- Placeholder shown ONLY if the _posts folder is empty -->
         <div class="news-item">
           <span class="text-sm text-gray-500 font-mono block mb-1">July 15, 2026</span>
           <h4 class="text-lg font-semibold mb-1">Setting up the WAVESLAB feed</h4>
@@ -285,7 +281,6 @@ liquid: true
 
   <hr class="my-5">
 
-  <!-- 4. Current Research & Projects (Dynamically loops through _projects directory) -->
   <div class="my-5">
     <div class="section-title">
       <span>Current Research & Projects</span>
@@ -303,7 +298,6 @@ liquid: true
           </div>
         {% endfor %}
       {% else %}
-        <!-- Placeholder shown ONLY if the _projects folder is empty -->
         <div class="research-card">
           <h4 class="text-xl font-bold mb-2 text-gray-900">Project Space Empty</h4>
           <p class="text-gray-600 text-sm">Create markdown files inside your "_projects/" folder to showcase research tracks here.</p>
@@ -314,21 +308,18 @@ liquid: true
 
   <hr class="my-5">
 
-  <!-- 5. Selected Publications (Dynamically parsed from BibTeX) -->
   <div class="my-5">
     <div class="section-title">
       <span>Selected Publications</span>
       <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
     </div>
     <div class="publications">
-      <!-- Only shows entries in _bibliography/papers.bib with "selected={true}" -->
       {% bibliography --query @*[selected=true]* %}
     </div>
   </div>
 
 </div>
 
-<!-- Wave Animation Engine Script -->
 <script>
   const canvas = document.getElementById("waveCanvas");
   if (canvas) {
