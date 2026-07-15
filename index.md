@@ -1,0 +1,270 @@
+---
+layout: default
+title: About
+permalink: /
+liquid: true
+---
+
+{::nomarkdown}
+<style>
+  .banner-container {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    margin-left: calc(-50vw + 50%);
+    margin-top: -2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  canvas#waveCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .logo-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 45%;
+    min-width: 280px;
+    user-select: none;
+    pointer-events: auto;
+    transition: transform 0.3s ease;
+  }
+  .logo-overlay:hover {
+    transform: scale(1.03);
+  }
+  .logo-overlay img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .content-section {
+    max-width: 930px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-more {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #00779b;
+    text-decoration: none;
+    border: 1px solid #00779b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
+  .btn-more:hover {
+    background-color: #00779b;
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+  .news-item {
+    padding: 1rem 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .research-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+  .research-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+</style>
+
+<div class="banner-container" id="banner">
+  <canvas id="waveCanvas"></canvas>
+  <div class="logo-overlay">
+    <img src="{{ '/assets/img/waveslab_logo.png' | relative_url }}" alt="WAVESLAB Logo">
+  </div>
+</div>
+
+<div class="content-section">
+  
+  <div class="text-center my-5 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Welcome to WAVESLAB</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+      We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
+    </p>
+    <p class="text-base text-gray-600 leading-relaxed">
+      A central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
+    </p>
+  </div>
+
+  <hr class="my-5">
+
+  <div class="my-5">
+    <div class="section-title">
+      <span>Latest News</span>
+      <a href="{{ '/blog/' | relative_url }}" class="btn-more">View All News &rarr;</a>
+    </div>
+    <div class="news-container">
+{:/nomarkdown}
+      {% if site.posts and site.posts.size > 0 %}
+        {% for post in site.posts limit: 3 %}
+          {::nomarkdown}
+          <div class="news-item">
+            <span class="text-sm text-gray-500 font-mono block mb-1">{{ post.date | date: "%B %d, %Y" }}</span>
+            <h4 class="text-lg font-semibold mb-1">
+              <a href="{{ post.url | relative_url }}" class="text-gray-900 hover:text-blue-600">{{ post.title }}</a>
+            </h4>
+            <p class="text-gray-600 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+          </div>
+          {:/nomarkdown}
+        {% endfor %}
+      {% else %}
+        {::nomarkdown}
+        <div class="news-item">
+          <span class="text-sm text-gray-500 font-mono block mb-1">July 15, 2026</span>
+          <h4 class="text-lg font-semibold mb-1">Setting up the WAVESLAB feed</h4>
+          <p class="text-gray-600 text-sm">Welcome to our research space. Create markdown files inside your "_posts" directory to dynamically populate this space.</p>
+        </div>
+        {:/nomarkdown}
+      {% endif %}
+{::nomarkdown}
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <div class="my-5">
+    <div class="section-title">
+      <span>Current Research & Projects</span>
+      <a href="{{ '/projects/' | relative_url }}" class="btn-more">Explore Projects &rarr;</a>
+    </div>
+    <div class="research-grid">
+{:/nomarkdown}
+      {% if site.projects and site.projects.size > 0 %}
+        {% for project in site.projects limit: 3 %}
+          {::nomarkdown}
+          <div class="research-card">
+            <h4 class="text-xl font-bold mb-2 text-gray-900">
+              <a href="{{ project.url | relative_url }}" class="hover:text-blue-600">{{ project.title }}</a>
+            </h4>
+            <p class="text-gray-600 text-sm mb-4">{{ project.description | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ project.url | relative_url }}" class="text-sm font-semibold text-blue-600 hover:underline">Learn more &rarr;</a>
+          </div>
+          {:/nomarkdown}
+        {% endfor %}
+      {% else %}
+        {::nomarkdown}
+        <div class="research-card">
+          <h4 class="text-xl font-bold mb-2 text-gray-900">Project Space Empty</h4>
+          <p class="text-gray-600 text-sm">Create markdown files inside your "_projects/" folder to showcase research tracks here.</p>
+        </div>
+        {:/nomarkdown}
+      {% endif %}
+{::nomarkdown}
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <div class="my-5">
+    <div class="section-title">
+      <span>Selected Publications</span>
+      <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
+    </div>
+    <div class="publications">
+{:/nomarkdown}
+      {% bibliography --query @*[selected=true]* %}
+{::nomarkdown}
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const canvas = document.getElementById("waveCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    const container = document.getElementById("banner");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = container.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const mouse = {
+      x: window.innerWidth / 2,
+      y: container.clientHeight / 2,
+      targetX: window.innerWidth / 2,
+      targetY: container.clientHeight / 2,
+    };
+
+    container.addEventListener("mousemove", (e) => {
+      const rect = container.getBoundingClientRect();
+      mouse.targetX = e.clientX - rect.left;
+      mouse.targetY = e.clientY - rect.top;
+    });
+
+    let increment = 0;
+    const waveColors = [
+      "rgba(15, 52, 96, 0.15)",
+      "rgba(106, 27, 154, 0.1)",
+      "rgba(230, 18, 70, 0.08)",
+    ];
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+      waveColors.forEach((color, index) => {
+        ctx.beginPath();
+        const baseAmplitude = 60 + index * 20;
+        const mouseInfluenceY = (1 - mouse.y / canvas.height) * 80;
+        const amplitude = baseAmplitude + mouseInfluenceY;
+        const frequency = 0.003 + index * 0.001 + mouse.x * 0.000005;
+
+        ctx.moveTo(0, canvas.height / 2);
+
+        for (let i = 0; i < canvas.width; i++) {
+          const y =
+            canvas.height / 2 +
+            Math.sin(i * frequency + increment + index * 2) * amplitude;
+          ctx.lineTo(i, y);
+        }
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3 - index * 0.5;
+        ctx.stroke();
+      });
+
+      increment += 0.015;
+    }
+
+    animate();
+  }
+</script>
+{:/nomarkdown}
