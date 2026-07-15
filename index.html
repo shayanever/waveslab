@@ -2,10 +2,8 @@
 layout: default
 title: About
 permalink: /
-liquid: true
 ---
 
-{::nomarkdown}
 <style>
   .banner-container {
     position: relative;
@@ -108,7 +106,7 @@ liquid: true
 <div class="content-section">
   
   <div class="text-center my-5 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Welcome to WAVESLAB</h2>
+    <h2 class="text-3xl font-bold mb-4" style="color: var(--global-text-color);">Welcome to WAVESLAB</h2>
     <p class="text-lg text-gray-700 leading-relaxed mb-4">
       We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
     </p>
@@ -125,10 +123,8 @@ liquid: true
       <a href="{{ '/blog/' | relative_url }}" class="btn-more">View All News &rarr;</a>
     </div>
     <div class="news-container">
-{:/nomarkdown}
       {% if site.posts and site.posts.size > 0 %}
         {% for post in site.posts limit: 3 %}
-          {::nomarkdown}
           <div class="news-item">
             <span class="text-sm text-gray-500 font-mono block mb-1">{{ post.date | date: "%B %d, %Y" }}</span>
             <h4 class="text-lg font-semibold mb-1">
@@ -136,18 +132,14 @@ liquid: true
             </h4>
             <p class="text-gray-600 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
           </div>
-          {:/nomarkdown}
         {% endfor %}
       {% else %}
-        {::nomarkdown}
         <div class="news-item">
           <span class="text-sm text-gray-500 font-mono block mb-1">July 15, 2026</span>
           <h4 class="text-lg font-semibold mb-1">Setting up the WAVESLAB feed</h4>
           <p class="text-gray-600 text-sm">Welcome to our research space. Create markdown files inside your "_posts" directory to dynamically populate this space.</p>
         </div>
-        {:/nomarkdown}
       {% endif %}
-{::nomarkdown}
     </div>
   </div>
 
@@ -159,10 +151,8 @@ liquid: true
       <a href="{{ '/projects/' | relative_url }}" class="btn-more">Explore Projects &rarr;</a>
     </div>
     <div class="research-grid">
-{:/nomarkdown}
       {% if site.projects and site.projects.size > 0 %}
         {% for project in site.projects limit: 3 %}
-          {::nomarkdown}
           <div class="research-card">
             <h4 class="text-xl font-bold mb-2 text-gray-900">
               <a href="{{ project.url | relative_url }}" class="hover:text-blue-600">{{ project.title }}</a>
@@ -170,17 +160,13 @@ liquid: true
             <p class="text-gray-600 text-sm mb-4">{{ project.description | strip_html | truncatewords: 25 }}</p>
             <a href="{{ project.url | relative_url }}" class="text-sm font-semibold text-blue-600 hover:underline">Learn more &rarr;</a>
           </div>
-          {:/nomarkdown}
         {% endfor %}
       {% else %}
-        {::nomarkdown}
         <div class="research-card">
           <h4 class="text-xl font-bold mb-2 text-gray-900">Project Space Empty</h4>
           <p class="text-gray-600 text-sm">Create markdown files inside your "_projects/" folder to showcase research tracks here.</p>
         </div>
-        {:/nomarkdown}
       {% endif %}
-{::nomarkdown}
     </div>
   </div>
 
@@ -192,9 +178,7 @@ liquid: true
       <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
     </div>
     <div class="publications">
-{:/nomarkdown}
       {% bibliography --query @*[selected=true]* %}
-{::nomarkdown}
     </div>
   </div>
 
@@ -267,4 +251,3 @@ liquid: true
     animate();
   }
 </script>
-{:/nomarkdown}
