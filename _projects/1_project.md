@@ -1,27 +1,25 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Explainable AI for ECG-based Screening of LGE+ Cardiomyopathies 
+description: This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with LGE-positive cardiomyopathies, currently detectable only through contrast-enhanced cardiac magnetic resonance imaging.
+img: assets/img/asugi.png
+redirect: https://asugi.sanita.fvg.it/it/schede/UniTS/index.html
 importance: 1
 category: work
-related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with LGE-positive cardiomyopathies, currently detectable only through contrast-enhanced cardiac magnetic resonance imaging. If successful, the project would provide a low-cost, non-invasive proxy based on routine ECG recordings to support early risk stratification and guide referral to specialised, more expensive and invasive diagnostic pathways only for patients with suspicious ECG profiles. The study is carried out in collaboration with ASUGI–Cattinara.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<!-- To give your project a background in the portfolio page, just add the img tag to the front matter like so: -->
 
     ---
     layout: page
     title: project
     description: a project with a background image
-    img: /assets/img/12.jpg
+    img: /assets/img/asugi.jpg
     ---
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
@@ -44,8 +42,8 @@ To give your project a background in the portfolio page, just add the img tag to
     This image can also have a caption. It's like magic.
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
+You can also put regular text between your rows of images.
+Say you wanted to write a little bit about your project before you posted the rest of the images.
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
 <div class="row justify-content-sm-center">
@@ -78,4 +76,4 @@ Here's the code for the last row of images above:
 </div>
 ```
 
-{% endraw %}
+{% endraw %} -->

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WavesLab at Trieste Next 2026!
-date: 2026-07-15 09:00:00
+date: 2026-07-12 09:00:00
 description: The WavesLab will be present at Trieste Next 2026 in September, 25-27. Don't miss it out!
 ---
 
