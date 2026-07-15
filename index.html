@@ -132,6 +132,7 @@ permalink: /
     animate();
   }
 </script> -->
+
 ---
 layout: default
 title: About
@@ -253,31 +254,29 @@ permalink: /
 
   <hr class="my-5">
 
-  <!-- 3. Latest News (Full Width Single Column) -->
+  <!-- 3. Latest News (Dynamically pulls from the _posts directory) -->
   <div class="my-5">
     <div class="section-title">
       <span>Latest News</span>
-      <a href="{{ '/news/' | relative_url }}" class="btn-more">View All News &rarr;</a>
+      <a href="{{ '/blog/' | relative_url }}" class="btn-more">View All News &rarr;</a>
     </div>
     <div class="news-container">
-      {% assign news_limit = 3 %}
-      {% if site.news and site.news.size > 0 %}
-        {% assign sorted_news = site.news | sort: "date" | reverse %}
-        {% for item in sorted_news limit: news_limit %}
+      {% if site.posts and site.posts.size > 0 %}
+        {% for post in site.posts limit: 3 %}
           <div class="news-item">
-            <span class="text-sm text-gray-500 font-mono block mb-1">{{ item.date | date: "%B %d, %Y" }}</span>
+            <span class="text-sm text-gray-500 font-mono block mb-1">{{ post.date | date: "%B %d, %Y" }}</span>
             <h4 class="text-lg font-semibold mb-1">
-              <a href="{{ item.url | relative_url }}" class="text-gray-900 hover:text-blue-600">{{ item.title }}</a>
+              <a href="{{ post.url | relative_url }}" class="text-gray-900 hover:text-blue-600">{{ post.title }}</a>
             </h4>
-            <p class="text-gray-600 text-sm">{{ item.description | default: item.excerpt | strip_html | truncatewords: 30 }}</p>
+            <p class="text-gray-600 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
           </div>
         {% endfor %}
       {% else %}
-        <!-- Fallback placeholder if no posts exist yet -->
+        <!-- Placeholder shown ONLY if the _posts folder is empty -->
         <div class="news-item">
           <span class="text-sm text-gray-500 font-mono block mb-1">July 15, 2026</span>
-          <h4 class="text-lg font-semibold mb-1">Waveslab Website Launch!</h4>
-          <p class="text-gray-600 text-sm">Welcome to our brand new digital home. Stay tuned for exciting updates, preprint releases, and upcoming project announcements from our lab.</p>
+          <h4 class="text-lg font-semibold mb-1">Setting up the WAVESLAB feed</h4>
+          <p class="text-gray-600 text-sm">Welcome to our research space. Create markdown files inside your "_posts" directory to dynamically populate this space.</p>
         </div>
       {% endif %}
     </div>
@@ -285,41 +284,43 @@ permalink: /
 
   <hr class="my-5">
 
-  <!-- 4. Current Research & Projects -->
+  <!-- 4. Current Research & Projects (Dynamically loops through _projects directory) -->
   <div class="my-5">
     <div class="section-title">
       <span>Current Research & Projects</span>
       <a href="{{ '/projects/' | relative_url }}" class="btn-more">Explore Projects &rarr;</a>
     </div>
     <div class="research-grid">
-      <!-- Project 1 -->
-      <div class="research-card">
-        <h4 class="text-xl font-bold mb-2 text-gray-900">Brain–Computer Interfaces</h4>
-        <p class="text-gray-600 text-sm mb-4">Investigating innovative EEG decoding techniques for intuitive movement control and next-generation neural interfaces.</p>
-      </div>
-      <!-- Project 2 -->
-      <div class="research-card">
-        <h4 class="text-xl font-bold mb-2 text-gray-900">Clinical Decision Support</h4>
-        <p class="text-gray-600 text-sm mb-4">Developing intelligent, robust signal analysis systems designed to enhance clinical monitoring, diagnostics, and patient care.</p>
-      </div>
-      <!-- Project 3 -->
-      <div class="research-card">
-        <h4 class="text-xl font-bold mb-2 text-gray-900">Neuromotor Rehabilitation</h4>
-        <p class="text-gray-600 text-sm mb-4">Merging computational neuroscience with rehabilitation engineering to restore motor function and assist recovery processes.</p>
-      </div>
+      {% if site.projects and site.projects.size > 0 %}
+        {% for project in site.projects limit: 3 %}
+          <div class="research-card">
+            <h4 class="text-xl font-bold mb-2 text-gray-900">
+              <a href="{{ project.url | relative_url }}" class="hover:text-blue-600">{{ project.title }}</a>
+            </h4>
+            <p class="text-gray-600 text-sm mb-4">{{ project.description | strip_html | truncatewords: 25 }}</p>
+            <a href="{{ project.url | relative_url }}" class="text-sm font-semibold text-blue-600 hover:underline">Learn more &rarr;</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Placeholder shown ONLY if the _projects folder is empty -->
+        <div class="research-card">
+          <h4 class="text-xl font-bold mb-2 text-gray-900">Project Space Empty</h4>
+          <p class="text-gray-600 text-sm">Create markdown files inside your "_projects/" folder to showcase research tracks here.</p>
+        </div>
+      {% endif %}
     </div>
   </div>
 
   <hr class="my-5">
 
-  <!-- 5. Selected Publications -->
+  <!-- 5. Selected Publications (Dynamically parsed from BibTeX) -->
   <div class="my-5">
     <div class="section-title">
       <span>Selected Publications</span>
       <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
     </div>
     <div class="publications">
-      <!-- This dynamically fetches papers tagged with 'selected: true' in your papers.bib -->
+      <!-- Only shows entries in _bibliography/papers.bib with "selected={true}" -->
       {% bibliography --query @*[selected=true]* %}
     </div>
   </div>
