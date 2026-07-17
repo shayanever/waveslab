@@ -5,37 +5,55 @@ permalink: /
 ---
 
 <style>
-/* --- Global Navigation & Footer Color Synchronization (Tailwind v4 Compliant) --- */
-  
-  /* Target the theme's core header wrapper element explicitly */
+/* ☀️ LIGHT MODE DEFAULT STATES */
   header, nav, .navbar, [role="navigation"] {
-    background-color: #ffffff !important; /* Locks header to matching white */
+    background-color: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
-  
-  /* Select navigation link text strings directly */
   nav a, .navbar-nav a, nav .nav-link {
-    color: #475569 !important; /* Deep slate gray links */
+    color: #475569 !important;
     font-weight: 600 !important;
   }
-  
-  /* Target active and hovered navigation elements */
   nav a:hover, .navbar-nav a:hover, nav .active a {
-    color: #00779b !important; /* Primary brand blue highlight */
+    color: #00779b !important;
   }
-  
-  /* Target the footer element and its container structural layers */
-  footer, footer.fixed-bottom, [role="contentinfo"] {
-    background-color: #ffffff !important; /* Locks footer to matching white */
+  footer, footer.fixed-bottom, [role="contentinfo"], footer a, footer span, footer div {
+    background-color: #ffffff !important;
     border-top: 1px solid #e2e8f0 !important;
-    color: #64748b !important; /* Clean gray text */
-  }
-  
-  /* Ensure the copyright notice nested layers follow suit */
-  footer a, footer span, footer div {
     color: #64748b !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
+  /* 🌙 DARK MODE SYNC (Triggers cleanly when the theme switch changes the mode) */
+  [data-theme="dark"] header, 
+  [data-theme="dark"] nav, 
+  [data-theme="dark"] .navbar, 
+  [data-theme="dark"] [role="navigation"] {
+    background-color: #111827 !important; /* Unified deep slate header background */
+    border-bottom: 1px solid #1f2937 !important;
+  }
+  [data-theme="dark"] nav a, 
+  [data-theme="dark"] .navbar-nav a, 
+  [data-theme="dark"] nav .nav-link {
+    color: #f8fafc !important; /* Crisp white links for dark visibility */
+  }
+  [data-theme="dark"] nav a:hover, 
+  [data-theme="dark"] .navbar-nav a:hover, 
+  [data-theme="dark"] nav .active a {
+    color: #00b4d8 !important; /* Cyber blue navigation accent on hover */
+  }
+  [data-theme="dark"] footer, 
+  [data-theme="dark"] footer.fixed-bottom, 
+  [data-theme="dark"] [role="contentinfo"] {
+    background-color: #111827 !important; /* Unified deep slate footer background matches header exactly */
+    border-top: 1px solid #1f2937 !important;
+  }
+  [data-theme="dark"] footer a, 
+  [data-theme="dark"] footer span, 
+  [data-theme="dark"] footer div {
+    color: #94a3b8 !important; /* Clean gray text readable on dark layouts */
+  }
   /* --- Banner Styles --- */
   .banner-container {
     position: relative;
