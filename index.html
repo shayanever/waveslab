@@ -5,54 +5,67 @@
 </style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/"> <script src="/waveslab/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/waveslab/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/news/index.html">news </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/events/">events </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/people/">people </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-nav-dropdown-toggle="true" aria-haspopup="true" aria-expanded="false">submenus </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/waveslab/books/">bookshelf</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/waveslab/blog/">blog</a> </div> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
-/* ☀️ LIGHT MODE DEFAULT STATES */
-  header, nav, .navbar, [role="navigation"] {
+/* ☀️ FORCE BOTH TO BE WHITE IN LIGHT MODE */
+  html, html[data-theme="light"] {
+    --global-header-bg-color: #ffffff !important;
+    --global-footer-bg-color: #ffffff !important;
+  }
+  html body header, 
+  html body nav, 
+  html body .navbar,
+  html[data-theme="light"] body header,
+  html[data-theme="light"] body nav,
+  html[data-theme="light"] body .navbar {
     background-color: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
-  nav a, .navbar-nav a, nav .nav-link {
-    color: #475569 !important;
-    font-weight: 600 !important;
+  html body footer,
+  html[data-theme="light"] body footer {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
   }
+  html body nav a, 
+  html body footer, 
+  html body footer span, 
+  html body footer a,
+  html[data-theme="light"] body nav a,
+  html[data-theme="light"] body footer span {
+    color: #475569 !important; /* Elegant gray text for clarity */
+  }
+
+
+  /* 🌙 FORCE BOTH TO BE DARK SLATE IN DARK MODE */
+  html[data-theme="dark"] {
+    --global-header-bg-color: #111827 !important;
+    --global-footer-bg-color: #111827 !important;
+  }
+  html[data-theme="dark"] body header,
+  html[data-theme="dark"] body nav,
+  html[data-theme="dark"] body .navbar {
+    background-color: #111827 !important; /* Matching dark slate header */
+    border-bottom: 1px solid #1f2937 !important;
+  }
+  html[data-theme="dark"] body footer {
+    background-color: #111827 !important; /* Matching dark slate footer */
+    border-top: 1px solid #1f2937 !important;
+  }
+  html[data-theme="dark"] body nav a {
+    color: #f8fafc !important; /* White links for dark mode */
+  }
+  html[data-theme="dark"] body footer,
+  html[data-theme="dark"] body footer span,
+  html[data-theme="dark"] body footer a {
+    color: #94a3b8 !important; /* Balanced gray text for dark footer */
+  }
+
+  /* 🔵 HOVER UTILITIES */
   nav a:hover, .navbar-nav a:hover, nav .active a {
     color: #00779b !important;
   }
-  footer, footer.fixed-bottom, [role="contentinfo"], footer a, footer span, footer div {
-    background-color: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
-    color: #64748b !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-  /* 🌙 DARK MODE SYNC (Triggers cleanly when the theme switch changes the mode) */
-  [data-theme="dark"] header, 
-  [data-theme="dark"] nav, 
-  [data-theme="dark"] .navbar, 
-  [data-theme="dark"] [role="navigation"] {
-    background-color: #111827 !important; /* Unified deep slate header background */
-    border-bottom: 1px solid #1f2937 !important;
-  }
-  [data-theme="dark"] nav a, 
-  [data-theme="dark"] .navbar-nav a, 
-  [data-theme="dark"] nav .nav-link {
-    color: #f8fafc !important; /* Crisp white links for dark visibility */
-  }
-  [data-theme="dark"] nav a:hover, 
-  [data-theme="dark"] .navbar-nav a:hover, 
-  [data-theme="dark"] nav .active a {
-    color: #00b4d8 !important; /* Cyber blue navigation accent on hover */
-  }
-  [data-theme="dark"] footer, 
-  [data-theme="dark"] footer.fixed-bottom, 
-  [data-theme="dark"] [role="contentinfo"] {
-    background-color: #111827 !important; /* Unified deep slate footer background matches header exactly */
-    border-top: 1px solid #1f2937 !important;
-  }
-  [data-theme="dark"] footer a, 
-  [data-theme="dark"] footer span, 
-  [data-theme="dark"] footer div {
-    color: #94a3b8 !important; /* Clean gray text readable on dark layouts */
+  html[data-theme="dark"] nav a:hover, 
+  html[data-theme="dark"] .navbar-nav a:hover, 
+  html[data-theme="dark"] nav .active a {
+    color: #00b4d8 !important;
   }
   /* --- Banner Styles --- */
   .banner-container {
