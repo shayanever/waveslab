@@ -5,7 +5,25 @@ permalink: /
 ---
 
 <style>
-  /* --- 1. Restored White Waves Banner --- */
+  /* --- Global Navigation & Footer Color Synchronization --- */
+  header.navbar {
+    background-color: #ffffff !important; /* Forces the header background to stay bright white */
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+  .navbar-nav .nav-link {
+    color: #475569 !important; /* Deep gray text for navigation links */
+    font-weight: 600 !important;
+  }
+  .navbar-nav .nav-link:hover, .navbar-nav .active .nav-link {
+    color: #00779b !important; /* Highlights active/hover menu items with your lab's primary blue */
+  }
+  footer.fixed-bottom {
+    background-color: #ffffff !important; /* Synchronizes footer background to match header and banner */
+    border-top: 1px solid #e2e8f0 !important;
+    color: #64748b !important; /* Muted gray footer text */
+  }
+
+  /* --- Banner Styles --- */
   .banner-container {
     position: relative;
     width: 100vw;
@@ -15,7 +33,7 @@ permalink: /
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* Pure white background preserved */
+    background-color: #ffffff;
     overflow: hidden;
     border-bottom: 1px solid #e2e8f0;
   }
@@ -46,9 +64,9 @@ permalink: /
     display: block;
   }
 
-  /* --- 2. Clean, Soft Layout Spacing & Depth --- */
+  /* --- Clean, Soft Layout Spacing & Depth --- */
   body {
-    background-color: #f8fafc !important; /* Soft light-slate grey for subtle contrast */
+    background-color: #f8fafc !important; /* Soft light-slate grey for modern depth */
   }
   .content-section {
     max-width: 960px;
@@ -56,7 +74,7 @@ permalink: /
     padding: 4rem 1.5rem;
   }
 
-  /* --- 3. Unified Section Headers --- */
+  /* --- Unified Section Headers --- */
   .section-block {
     margin-bottom: 5rem;
   }
@@ -78,7 +96,7 @@ permalink: /
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #00779b, #6a1b9a); /* Gradient to match your logo logo */
+    background: linear-gradient(90deg, #00779b, #6a1b9a); /* Gradient matching your brand */
     border-radius: 2px;
   }
   .btn-more {
@@ -101,14 +119,14 @@ permalink: /
     transform: translateY(-1px);
   }
 
-  /* --- 4. Elegant Cards for Visual Breathing Room --- */
+  /* --- Elegant Cards for Visual Breathing Room --- */
   .intro-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 3rem 2.5rem;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    margin-top: -4rem; /* Subtle banner overlay */
+    margin-top: -4rem; /* Subtle banner overlay layout flow */
     position: relative;
     z-index: 10;
   }
@@ -191,6 +209,7 @@ permalink: /
   }
 </style>
 
+<!-- 1. Full-Screen Interactive Waves Banner (White Background) -->
 <div class="banner-container" id="banner">
   <canvas id="waveCanvas"></canvas>
   <div class="logo-overlay">
@@ -200,6 +219,7 @@ permalink: /
 
 <div class="content-section">
   
+  <!-- 2. Intro Block -->
   <div class="section-block">
     <div class="intro-card text-center">
       <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB</h2>
@@ -207,11 +227,12 @@ permalink: /
         We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
       </p>
       <p class="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
-        Aa central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
+        A central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
       </p>
     </div>
   </div>
 
+  <!-- 3. Cards-Based Latest News -->
   <div class="section-block">
     <div class="section-title">
       <span>Latest News</span>
@@ -257,6 +278,7 @@ permalink: /
     </div>
   </div>
 
+  <!-- 4. Research & Projects Track Blocks -->
   <div class="section-block">
     <div class="section-title">
       <span>Active Research Tracks</span>
@@ -284,7 +306,7 @@ permalink: /
         </div>
         <div class="research-card">
           <div>
-            <h4 class="text-xl font-extrabold text-slate-800 mb-2">Clinical Decisions Support</h4>
+            <h4 class="text-xl font-extrabold text-slate-800 mb-2">Clinical Decision Support</h4>
             <p class="text-slate-500 text-sm mb-4">Developing intelligent signal analysis systems to enhance diagnostic monitoring and patient care pipelines.</p>
           </div>
         </div>
@@ -292,6 +314,7 @@ permalink: /
     </div>
   </div>
 
+  <!-- 5. Featured Publications block -->
   <div class="section-block">
     <div class="section-title">
       <span>Featured Publications</span>
@@ -304,6 +327,7 @@ permalink: /
 
 </div>
 
+<!-- Wave Animation Engine Script -->
 <script>
   const canvas = document.getElementById("waveCanvas");
   if (canvas) {
