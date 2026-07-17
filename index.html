@@ -5,54 +5,67 @@ permalink: /
 ---
 
 <style>
-/* ☀️ LIGHT MODE DEFAULT STATES */
-  header, nav, .navbar, [role="navigation"] {
+/* ☀️ FORCE BOTH TO BE WHITE IN LIGHT MODE */
+  html, html[data-theme="light"] {
+    --global-header-bg-color: #ffffff !important;
+    --global-footer-bg-color: #ffffff !important;
+  }
+  html body header, 
+  html body nav, 
+  html body .navbar,
+  html[data-theme="light"] body header,
+  html[data-theme="light"] body nav,
+  html[data-theme="light"] body .navbar {
     background-color: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
-  nav a, .navbar-nav a, nav .nav-link {
-    color: #475569 !important;
-    font-weight: 600 !important;
+  html body footer,
+  html[data-theme="light"] body footer {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
   }
+  html body nav a, 
+  html body footer, 
+  html body footer span, 
+  html body footer a,
+  html[data-theme="light"] body nav a,
+  html[data-theme="light"] body footer span {
+    color: #475569 !important; /* Elegant gray text for clarity */
+  }
+
+
+  /* 🌙 FORCE BOTH TO BE DARK SLATE IN DARK MODE */
+  html[data-theme="dark"] {
+    --global-header-bg-color: #111827 !important;
+    --global-footer-bg-color: #111827 !important;
+  }
+  html[data-theme="dark"] body header,
+  html[data-theme="dark"] body nav,
+  html[data-theme="dark"] body .navbar {
+    background-color: #111827 !important; /* Matching dark slate header */
+    border-bottom: 1px solid #1f2937 !important;
+  }
+  html[data-theme="dark"] body footer {
+    background-color: #111827 !important; /* Matching dark slate footer */
+    border-top: 1px solid #1f2937 !important;
+  }
+  html[data-theme="dark"] body nav a {
+    color: #f8fafc !important; /* White links for dark mode */
+  }
+  html[data-theme="dark"] body footer,
+  html[data-theme="dark"] body footer span,
+  html[data-theme="dark"] body footer a {
+    color: #94a3b8 !important; /* Balanced gray text for dark footer */
+  }
+
+  /* 🔵 HOVER UTILITIES */
   nav a:hover, .navbar-nav a:hover, nav .active a {
     color: #00779b !important;
   }
-  footer, footer.fixed-bottom, [role="contentinfo"], footer a, footer span, footer div {
-    background-color: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
-    color: #64748b !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-  /* 🌙 DARK MODE SYNC (Triggers cleanly when the theme switch changes the mode) */
-  [data-theme="dark"] header, 
-  [data-theme="dark"] nav, 
-  [data-theme="dark"] .navbar, 
-  [data-theme="dark"] [role="navigation"] {
-    background-color: #111827 !important; /* Unified deep slate header background */
-    border-bottom: 1px solid #1f2937 !important;
-  }
-  [data-theme="dark"] nav a, 
-  [data-theme="dark"] .navbar-nav a, 
-  [data-theme="dark"] nav .nav-link {
-    color: #f8fafc !important; /* Crisp white links for dark visibility */
-  }
-  [data-theme="dark"] nav a:hover, 
-  [data-theme="dark"] .navbar-nav a:hover, 
-  [data-theme="dark"] nav .active a {
-    color: #00b4d8 !important; /* Cyber blue navigation accent on hover */
-  }
-  [data-theme="dark"] footer, 
-  [data-theme="dark"] footer.fixed-bottom, 
-  [data-theme="dark"] [role="contentinfo"] {
-    background-color: #111827 !important; /* Unified deep slate footer background matches header exactly */
-    border-top: 1px solid #1f2937 !important;
-  }
-  [data-theme="dark"] footer a, 
-  [data-theme="dark"] footer span, 
-  [data-theme="dark"] footer div {
-    color: #94a3b8 !important; /* Clean gray text readable on dark layouts */
+  html[data-theme="dark"] nav a:hover, 
+  html[data-theme="dark"] .navbar-nav a:hover, 
+  html[data-theme="dark"] nav .active a {
+    color: #00b4d8 !important;
   }
   /* --- Banner Styles --- */
   .banner-container {
