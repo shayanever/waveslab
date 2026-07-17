@@ -6,21 +6,30 @@ permalink: /
 
 <style>
   /* --- Global Navigation & Footer Color Synchronization --- */
-  header.navbar {
-    background-color: #ffffff !important; /* Forces the header background to stay bright white */
-    border-bottom: 1px solid #e2e8f0 !important;
+/* --- Global Navigation & Footer Color Synchronization --- */
+  :root {
+    --global-header-bg-color: #111827 !important; /* Matches a sleek, dark slate */
+    --global-footer-bg-color: #111827 !important; /* Matches the footer exactly */
+    --global-nav-text-color: #f8fafc !important;   /* Crisp white links for the dark header */
+  }
+
+  /* Ensure the Bootstrap navbar elements respect our new dark theme variables */
+  .navbar, nav.navbar {
+    background-color: var(--global-header-bg-color) !important;
   }
   .navbar-nav .nav-link {
-    color: #475569 !important; /* Deep gray text for navigation links */
+    color: var(--global-nav-text-color) !important;
     font-weight: 600 !important;
   }
   .navbar-nav .nav-link:hover, .navbar-nav .active .nav-link {
-    color: #00779b !important; /* Highlights active/hover menu items with your lab's primary blue */
+    color: #00b4d8 !important; /* Vibrant cyber blue accent on hover */
   }
-  footer.fixed-bottom {
-    background-color: #ffffff !important; /* Synchronizes footer background to match header and banner */
-    border-top: 1px solid #e2e8f0 !important;
-    color: #64748b !important; /* Muted gray footer text */
+  .navbar-toggler .navbar-toggler-icon {
+    filter: invert(1); /* Ensures the mobile menu button remains visible on dark backgrounds */
+  }
+  footer {
+    background-color: var(--global-footer-bg-color) !important;
+    color: #94a3b8 !important;
   }
 
   /* --- Banner Styles --- */
