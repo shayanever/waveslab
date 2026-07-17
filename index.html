@@ -3,72 +3,26 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/waveslab/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/news/index.html">news </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/events/">events </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/people/">people </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-nav-dropdown-toggle="true" aria-haspopup="true" aria-expanded="false">submenus </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/waveslab/books/">bookshelf</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/waveslab/blog/">blog</a> </div> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
-/* =========================================================================
-     FIX: Bulletproof Header & Footer Synchronization for Tailwind v4
-     ========================================================================= */
-
-  /* ☀️ LIGHT MODE (Applied on Root and Forced Overrides) */
-  html,
-  html:not([data-theme="dark"]),
-  html[data-theme="light"] {
-    --bg-navbar: #ffffff !important;
-    --bg-footer: #ffffff !important;
-  }
-  
-  /* Apply to the physical layout containers across light toggle states */
-  header, 
-  nav, 
-  .navbar,
-  footer,
-  footer.fixed-bottom {
+<style>
+  /* --- Global Navigation & Footer Layout Settings --- */
+  header, nav, .navbar {
     background-color: #ffffff !important;
-    background: #ffffff !important;
-    border-color: #e2e8f0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
   }
-
-  nav a, 
-  .navbar-nav .nav-link,
-  footer, 
-  footer span, 
-  footer a {
+  nav a, .navbar-nav .nav-link {
     color: #475569 !important;
+    font-weight: 600 !important;
   }
-
-  /* 🌙 DARK MODE (Ensures perfect visual symmetry when switcher is flipped) */
-  html[data-theme="dark"] body header,
-  html[data-theme="dark"] body nav,
-  html[data-theme="dark"] body .navbar,
-  html[data-theme="dark"] body footer,
-  html[data-theme="dark"] body footer.fixed-bottom {
-    background-color: #111827 !important;
-    background: #111827 !important;
-    border-color: #1f2937 !important;
-  }
-
-  html[data-theme="dark"] body nav a,
-  html[data-theme="dark"] body .navbar-nav .nav-link {
-    color: #f8fafc !important;
-  }
-
-  html[data-theme="dark"] body footer,
-  html[data-theme="dark"] body footer span,
-  html[data-theme="dark"] body footer a {
-    color: #94a3b8 !important;
-  }
-
-  /* 🔵 INTERACTIVE HOVERS */
-  nav a:hover, .navbar-nav a:hover, nav .active a, nav .active .nav-link {
+  nav a:hover, .navbar-nav .nav-link:hover {
     color: #00779b !important;
   }
-  html[data-theme="dark"] body nav a:hover, 
-  html[data-theme="dark"] body .navbar-nav a:hover, 
-  html[data-theme="dark"] body nav .active a {
-    color: #00b4d8 !important;
+  footer, footer.fixed-bottom {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
   }
 
-  /* =========================================================================
-     BANNER SPACE (Maintained pure white separate from layouts)
-     ========================================================================= */
+  /* --- Banner Space --- */
   .banner-container {
     position: relative;
     width: 100vw;
@@ -78,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff !important; /* Forces background to stay crisp white constant */
+    background-color: #ffffff !important;
     overflow: hidden;
     border-bottom: 1px solid #e2e8f0;
   }
