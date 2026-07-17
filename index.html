@@ -5,72 +5,26 @@ permalink: /
 ---
 
 <style>
-/* =========================================================================
-     FIX: Bulletproof Header & Footer Synchronization for Tailwind v4
-     ========================================================================= */
-
-  /* ☀️ LIGHT MODE (Applied on Root and Forced Overrides) */
-  html,
-  html:not([data-theme="dark"]),
-  html[data-theme="light"] {
-    --bg-navbar: #ffffff !important;
-    --bg-footer: #ffffff !important;
-  }
-  
-  /* Apply to the physical layout containers across light toggle states */
-  header, 
-  nav, 
-  .navbar,
-  footer,
-  footer.fixed-bottom {
+<style>
+  /* --- Global Navigation & Footer Layout Settings --- */
+  header, nav, .navbar {
     background-color: #ffffff !important;
-    background: #ffffff !important;
-    border-color: #e2e8f0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
   }
-
-  nav a, 
-  .navbar-nav .nav-link,
-  footer, 
-  footer span, 
-  footer a {
+  nav a, .navbar-nav .nav-link {
     color: #475569 !important;
+    font-weight: 600 !important;
   }
-
-  /* 🌙 DARK MODE (Ensures perfect visual symmetry when switcher is flipped) */
-  html[data-theme="dark"] body header,
-  html[data-theme="dark"] body nav,
-  html[data-theme="dark"] body .navbar,
-  html[data-theme="dark"] body footer,
-  html[data-theme="dark"] body footer.fixed-bottom {
-    background-color: #111827 !important;
-    background: #111827 !important;
-    border-color: #1f2937 !important;
-  }
-
-  html[data-theme="dark"] body nav a,
-  html[data-theme="dark"] body .navbar-nav .nav-link {
-    color: #f8fafc !important;
-  }
-
-  html[data-theme="dark"] body footer,
-  html[data-theme="dark"] body footer span,
-  html[data-theme="dark"] body footer a {
-    color: #94a3b8 !important;
-  }
-
-  /* 🔵 INTERACTIVE HOVERS */
-  nav a:hover, .navbar-nav a:hover, nav .active a, nav .active .nav-link {
+  nav a:hover, .navbar-nav .nav-link:hover {
     color: #00779b !important;
   }
-  html[data-theme="dark"] body nav a:hover, 
-  html[data-theme="dark"] body .navbar-nav a:hover, 
-  html[data-theme="dark"] body nav .active a {
-    color: #00b4d8 !important;
+  footer, footer.fixed-bottom {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
   }
 
-  /* =========================================================================
-     BANNER SPACE (Maintained pure white separate from layouts)
-     ========================================================================= */
+  /* --- Banner Space --- */
   .banner-container {
     position: relative;
     width: 100vw;
@@ -80,7 +34,7 @@ permalink: /
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff !important; /* Forces background to stay crisp white constant */
+    background-color: #ffffff !important;
     overflow: hidden;
     border-bottom: 1px solid #e2e8f0;
   }
