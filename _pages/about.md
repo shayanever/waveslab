@@ -34,7 +34,7 @@ Put your address / P.O. box / other info right below your picture. You can also 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
 
----
+<!-- ---
 layout: about
 title: About
 permalink: /
@@ -160,4 +160,4 @@ permalink: /
 
 ### Welcome to WAVESLAB
 
-This is where your introductory text can be added using plain Markdown.
+This is where your introductory text can be added using plain Markdown. -->
