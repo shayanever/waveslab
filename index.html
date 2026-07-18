@@ -5,31 +5,17 @@ permalink: /
 ---
 
 <style>
-  /* --- 1. Total Header & Footer Synchronization --- */
-  header, nav, .navbar, [role="navigation"] {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+  /* --- Global Modern Layout & Grid Adjustments --- */
+  body {
+    background-color: #f8fafc !important; /* Soft light-slate grey for subtle contrast */
   }
-  nav a, .navbar-nav .nav-link {
-    color: #475569 !important;
-    font-weight: 600 !important;
-  }
-  nav a:hover, .navbar-nav .nav-link:hover {
-    color: #00779b !important;
-  }
-  footer, footer.fixed-bottom, [role="contentinfo"] {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
-    color: #64748b !important;
-  }
-  footer a, footer span, footer div {
-    color: #64748b !important;
-    background-color: transparent !important;
+  .content-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
   }
 
-  /* --- 2. Interactive Waves Banner --- */
+  /* --- Interactive Waves Banner Space --- */
   .banner-container {
     position: relative;
     width: 100vw;
@@ -39,7 +25,7 @@ permalink: /
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff !important;
+    background-color: #ffffff !important; /* Pure white backdrop */
     overflow: hidden;
     border-bottom: 1px solid #e2e8f0;
   }
@@ -70,22 +56,14 @@ permalink: /
     display: block;
   }
 
-  /* --- 3. Body Layout Spacing & Cards --- */
-  body {
-    background-color: #f8fafc !important; 
-  }
-  .content-section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
-  }
+  /* --- Premium Section Styling --- */
   .section-block {
     margin-bottom: 5rem;
   }
   .section-title {
     font-size: 1.85rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0f172a; /* Slate 900 */
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
@@ -100,7 +78,7 @@ permalink: /
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #00779b, #6a1b9a);
+    background: linear-gradient(90deg, #00779b, #6a1b9a); /* Gradient matching laboratory design */
     border-radius: 2px;
   }
   .btn-more {
@@ -122,16 +100,20 @@ permalink: /
     box-shadow: 0 4px 12px rgba(0, 119, 155, 0.15);
     transform: translateY(-1px);
   }
+
+  /* --- Intro Section Card --- */
   .intro-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 3rem 2.5rem;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    margin-top: -4rem;
+    margin-top: -4rem; /* Subtle overlap with banner */
     position: relative;
     z-index: 10;
   }
+
+  /* --- Card-Based News Styling --- */
   .news-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -181,6 +163,8 @@ permalink: /
   .news-content {
     flex-grow: 1;
   }
+
+  /* --- Projects Grid Upgrade --- */
   .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -202,6 +186,8 @@ permalink: /
     box-shadow: 0 16px 24px -4px rgba(15, 23, 42, 0.08);
     border-color: #cbd5e1;
   }
+
+  /* --- Publication Box Design --- */
   .publication-wrapper {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -211,6 +197,7 @@ permalink: /
   }
 </style>
 
+<!-- 1. Full-Screen Interactive Waves Banner -->
 <div class="banner-container" id="banner">
   <canvas id="waveCanvas"></canvas>
   <div class="logo-overlay">
@@ -220,6 +207,7 @@ permalink: /
 
 <div class="content-section">
   
+  <!-- 2. Introduction Card -->
   <div class="section-block">
     <div class="intro-card text-center">
       <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB</h2>
@@ -232,6 +220,7 @@ permalink: /
     </div>
   </div>
 
+  <!-- 3. Dynamic Latest News Stream -->
   <div class="section-block">
     <div class="section-title">
       <span>Latest News</span>
@@ -277,6 +266,7 @@ permalink: /
     </div>
   </div>
 
+  <!-- 4. Research Tracks Component -->
   <div class="section-block">
     <div class="section-title">
       <span>Active Research Tracks</span>
@@ -312,6 +302,7 @@ permalink: /
     </div>
   </div>
 
+  <!-- 5. Bibliography Pipeline -->
   <div class="section-block">
     <div class="section-title">
       <span>Featured Publications</span>
@@ -324,7 +315,9 @@ permalink: /
 
 </div>
 
+<!-- Implementation Script Blocks -->
 <script>
+  // --- Wave Rendering Canvas Pipeline ---
   const canvas = document.getElementById("waveCanvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -352,9 +345,9 @@ permalink: /
 
     let increment = 0;
     const waveColors = [
-      "rgba(15, 52, 96, 0.15)",
-      "rgba(106, 27, 154, 0.1)",
-      "rgba(230, 18, 70, 0.08)"
+      "rgba(15, 52, 96, 0.15)",   /* Premium Deep Blue */
+      "rgba(106, 27, 154, 0.1)",  /* Clinical Violet */
+      "rgba(230, 18, 70, 0.08)"   /* Signal Red Accent */
     ];
 
     function animate() {
@@ -387,7 +380,37 @@ permalink: /
 
       increment += 0.015;
     }
-
     animate();
   }
+
+  // --- Layout Structural Override Controller (Tailwind Force-Sync) ---
+  function syncHeaderAndFooter() {
+    const targetHeader = document.querySelector('header');
+    const targetFooter = document.querySelector('footer');
+    
+    if (targetHeader && targetFooter) {
+      // 1. Force structural backgrounds to match pristine layout whites
+      targetHeader.style.setProperty('background-color', '#ffffff', 'important');
+      targetFooter.style.setProperty('background-color', '#ffffff', 'important');
+      targetHeader.style.setProperty('background', '#ffffff', 'important');
+      targetFooter.style.setProperty('background', '#ffffff', 'important');
+      
+      // 2. Uniform layout bounding borders
+      targetHeader.style.setProperty('border-bottom', '1px solid #e2e8f0', 'important');
+      targetFooter.style.setProperty('border-top', '1px solid #e2e8f0', 'important');
+
+      // 3. Normalize link text elements cleanly to modern greys
+      const allTextElements = [...targetHeader.querySelectorAll('a'), ...targetFooter.querySelectorAll('span, a, div')];
+      allTextElements.forEach(el => {
+        el.style.setProperty('color', '#475569', 'important');
+      });
+    }
+  }
+
+  // Initial runtime invocation
+  syncHeaderAndFooter();
+
+  // Active mutation layout observer to shield styles from framework mutations
+  const layoutObserver = new MutationObserver(syncHeaderAndFooter);
+  layoutObserver.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
 </script>
