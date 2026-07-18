@@ -5,10 +5,10 @@ permalink: /
 ---
 
 <style>
-<style>
-  /* --- Global Navigation & Footer Layout Settings --- */
-  header, nav, .navbar {
+  /* --- 1. Total Header & Footer Synchronization --- */
+  header, nav, .navbar, [role="navigation"] {
     background-color: #ffffff !important;
+    background: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
   }
   nav a, .navbar-nav .nav-link {
@@ -18,13 +18,18 @@ permalink: /
   nav a:hover, .navbar-nav .nav-link:hover {
     color: #00779b !important;
   }
-  footer, footer.fixed-bottom {
+  footer, footer.fixed-bottom, [role="contentinfo"] {
     background-color: #ffffff !important;
+    background: #ffffff !important;
     border-top: 1px solid #e2e8f0 !important;
     color: #64748b !important;
   }
+  footer a, footer span, footer div {
+    color: #64748b !important;
+    background-color: transparent !important;
+  }
 
-  /* --- Banner Space --- */
+  /* --- 2. Interactive Waves Banner --- */
   .banner-container {
     position: relative;
     width: 100vw;
@@ -65,24 +70,22 @@ permalink: /
     display: block;
   }
 
-  /* --- Clean, Soft Layout Spacing & Depth --- */
+  /* --- 3. Body Layout Spacing & Cards --- */
   body {
-    background-color: #f8fafc !important; /* Soft light-slate grey for modern depth */
+    background-color: #f8fafc !important; 
   }
   .content-section {
     max-width: 960px;
     margin: 0 auto;
     padding: 4rem 1.5rem;
   }
-
-  /* --- Unified Section Headers --- */
   .section-block {
     margin-bottom: 5rem;
   }
   .section-title {
     font-size: 1.85rem;
     font-weight: 800;
-    color: #0f172a; /* Deep Slate */
+    color: #0f172a;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
@@ -97,7 +100,7 @@ permalink: /
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #00779b, #6a1b9a); /* Gradient matching your brand */
+    background: linear-gradient(90deg, #00779b, #6a1b9a);
     border-radius: 2px;
   }
   .btn-more {
@@ -119,15 +122,13 @@ permalink: /
     box-shadow: 0 4px 12px rgba(0, 119, 155, 0.15);
     transform: translateY(-1px);
   }
-
-  /* --- Elegant Cards for Visual Breathing Room --- */
   .intro-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 3rem 2.5rem;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    margin-top: -4rem; /* Subtle banner overlay layout flow */
+    margin-top: -4rem;
     position: relative;
     z-index: 10;
   }
@@ -210,7 +211,6 @@ permalink: /
   }
 </style>
 
-<!-- 1. Full-Screen Interactive Waves Banner (White Background) -->
 <div class="banner-container" id="banner">
   <canvas id="waveCanvas"></canvas>
   <div class="logo-overlay">
@@ -220,7 +220,6 @@ permalink: /
 
 <div class="content-section">
   
-  <!-- 2. Intro Block -->
   <div class="section-block">
     <div class="intro-card text-center">
       <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB</h2>
@@ -233,7 +232,6 @@ permalink: /
     </div>
   </div>
 
-  <!-- 3. Cards-Based Latest News -->
   <div class="section-block">
     <div class="section-title">
       <span>Latest News</span>
@@ -279,7 +277,6 @@ permalink: /
     </div>
   </div>
 
-  <!-- 4. Research & Projects Track Blocks -->
   <div class="section-block">
     <div class="section-title">
       <span>Active Research Tracks</span>
@@ -315,7 +312,6 @@ permalink: /
     </div>
   </div>
 
-  <!-- 5. Featured Publications block -->
   <div class="section-block">
     <div class="section-title">
       <span>Featured Publications</span>
@@ -328,7 +324,6 @@ permalink: /
 
 </div>
 
-<!-- Wave Animation Engine Script -->
 <script>
   const canvas = document.getElementById("waveCanvas");
   if (canvas) {
@@ -357,9 +352,9 @@ permalink: /
 
     let increment = 0;
     const waveColors = [
-      "rgba(15, 52, 96, 0.15)",   /* Dark Blue */
-      "rgba(106, 27, 154, 0.1)",  /* Purple/Magenta */
-      "rgba(230, 18, 70, 0.08)"   /* Pink/Red */
+      "rgba(15, 52, 96, 0.15)",
+      "rgba(106, 27, 154, 0.1)",
+      "rgba(230, 18, 70, 0.08)"
     ];
 
     function animate() {
