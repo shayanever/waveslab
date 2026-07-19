@@ -1,33 +1,46 @@
----
-# Front matter blocks allow Jekyll to compile this file
----
+/* ==========================================================================
+   WAVESLAB GLOBAL CUSTOM THEME OVERRIDES
+   ========================================================================== */
 
-/* Force Navbar Header text/links to a clean modern gray */
 .navbar {
-  background-color: #000c33 !important;
-  border-bottom: 1px solid #e2e8f0 !important;
+  background-color: #0f3460 !important; /* Premium Waves Lab Dark Blue */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1) !important;
 
   .nav-link {
-    color: #d5d9dd !important;
-    
-    &:hover, &.active {
-      color: #00779b !important; /* Accent color for active or hovered items */
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500 !important;
+
+    &:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
+  }
+
+  /* Sync dropdown toggles, search bars, and responsive toggle buttons */
+  #search-toggle, .dropdown-toggle, i, .navbar-toggler-icon {
+    color: rgba(255, 255, 255, 0.85) !important;
   }
 }
 
-/* Force Footer text and background layout */
-footer.fixed-bottom {
-  background-color: #000c33 !important;
-  border-top: 1px solid #e2e8f0 !important;
-  color: #475569 !important;
+/* Ensure active page highlight behaves uniformly on subpages */
+.navbar .nav-item.active .nav-link {
+  color: #ffffff !important;
+}
 
+/* Apply matching frame continuity onto the global footer layout */
+footer.fixed-bottom {
+  background-color: #0f3460 !important; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  
+  &, span, a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
   a {
-    color: #00779b !important;
-    text-decoration: none;
-    
+    text-decoration: underline;
     &:hover {
-      text-decoration: underline;
+      color: #ffffff !important;
     }
   }
 }
