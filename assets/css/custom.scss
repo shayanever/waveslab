@@ -4,11 +4,11 @@
 
 /* Force Navbar Header text/links to a clean modern gray */
 .navbar {
-  background-color: #ffffff !important;
+  background-color: #000c33 !important;
   border-bottom: 1px solid #e2e8f0 !important;
 
   .nav-link {
-    color: #475569 !important;
+    color: #d5d9dd !important;
     
     &:hover, &.active {
       color: #00779b !important; /* Accent color for active or hovered items */
@@ -18,7 +18,7 @@
 
 /* Force Footer text and background layout */
 footer.fixed-bottom {
-  background-color: #ffffff !important;
+  background-color: #000c33 !important;
   border-top: 1px solid #e2e8f0 !important;
   color: #475569 !important;
 

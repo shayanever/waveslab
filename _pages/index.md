@@ -229,12 +229,12 @@ permalink: /
   <!-- 2. Introduction Card -->
   <div class="section-block">
     <div class="intro-card text-center">
-      <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB1</h2>
+      <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB</h2>
       <p class="text-lg text-slate-600 leading-relaxed mb-4 max-w-2xl mx-auto">
         We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
       </p>
       <p class="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
-        A central goal of the lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
+        A central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
       </p>
     </div>
   </div>
