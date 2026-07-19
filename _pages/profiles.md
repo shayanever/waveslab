@@ -26,3 +26,4 @@ profiles:
       <p>123 your address street</p>
       <p>Your City, State 12345</p>
 ---
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">

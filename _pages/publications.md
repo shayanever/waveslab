@@ -18,3 +18,4 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">

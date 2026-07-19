@@ -95,3 +95,4 @@ Open a **Plugin Feature Proposal** issue if you want your plugin considered.
 4. If requesting default starter bundling, include `Gemfile` and `_config.yml` wiring updates in the same PR.
 
 Featuring and bundling are separate maintainer decisions.
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
