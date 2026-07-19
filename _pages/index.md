@@ -234,7 +234,7 @@ permalink: /
         We develop advanced methods for biosignal preprocessing, analysis, and modeling, with a focus on electroencephalography (EEG) and electrocardiography (ECG).
       </p>
       <p class="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
-        A central goal of our lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
+        A central goal of the lab is to address critical data-quality issues and build machine learning models that are robust to the intrinsic variability of biological signals.
       </p>
     </div>
   </div>
