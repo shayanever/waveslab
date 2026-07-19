@@ -196,23 +196,46 @@ permalink: /
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
   }
 
-  /* --- Seamless Navbar & Footer Overrides --- */
+/* --- Seamless Navbar & Footer Overrides --- */
   .navbar {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    background-color: #0f3460 !important; /* Premium Waves Lab Dark Blue */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1) !important;
   }
+  
+  /* Make the text link options bright white for high contrast readability against dark blue */
   .navbar .nav-link {
-    color: #475569 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500 !important;
   }
+  
+  /* Hover and active menu selections illuminate cleanly */
   .navbar .nav-link:hover, .navbar .nav-item.active .nav-link {
-    color: #00779b !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   }
+
+  /* Sync matching search icon color and dropdown toggles */
+  .navbar #search-toggle, .navbar .dropdown-toggle, .navbar i {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  /* Apply matching theme frame continuity onto the site footer layout */
   footer.fixed-bottom {
-    background-color: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
+    background-color: #0f3460 !important; /* Premium Waves Lab Dark Blue */
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
+  
   footer.fixed-bottom, footer.fixed-bottom span, footer.fixed-bottom a {
-    color: #475569 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  footer.fixed-bottom a {
+    text-decoration: underline;
+  }
+  
+  footer.fixed-bottom a:hover {
+    color: #ffffff !important;
   }
 </style>
 
