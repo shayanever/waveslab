@@ -1,0 +1,33 @@
+---
+# Front matter blocks allow Jekyll to compile this file
+---
+
+/* Force Navbar Header text/links to a clean modern gray */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+
+  .nav-link {
+    color: #475569 !important;
+    
+    &:hover, &.active {
+      color: #00779b !important; /* Accent color for active or hovered items */
+    }
+  }
+}
+
+/* Force Footer text and background layout */
+footer.fixed-bottom {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+
+  a {
+    color: #00779b !important;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
