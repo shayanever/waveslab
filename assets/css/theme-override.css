@@ -2,25 +2,39 @@
    WAVESLAB CENTRAL THEME OVERRIDES
    ========================================================================== */
 
-/* Navbar Background & Borders */
-header, nav, .navbar, #navbar {
+/* 1. Target STRICTLY the Navigation Top Bar (Prevents title blocks from turning blue) */
+header nav.navbar, 
+header .navbar, 
+#navbar {
   background-color: #0f3460 !important; /* Waves Lab Dark Blue */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Navbar Links */
-.navbar .nav-link, #navbar .nav-link, nav a {
+/* 2. Site Title / Brand on top left (waveslab) */
+.navbar-brand, 
+.navbar .navbar-brand,
+#navbar .navbar-brand {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* 3. Navigation Links Text Color */
+.navbar .nav-link, 
+#navbar .nav-link, 
+header nav a {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Hover & Active States */
+/* 4. Active & Hover Nav States */
 .navbar .nav-link:hover, 
 .navbar .nav-item.active .nav-link,
-#navbar .nav-link:hover {
+#navbar .nav-link:hover,
+#navbar .nav-item.active .nav-link {
   color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Icons & Search Bar */
+/* 5. Search Bar & Toggle Icons */
 .navbar #search-toggle, 
 .navbar .dropdown-toggle, 
 .navbar i, 
@@ -29,16 +43,36 @@ header, nav, .navbar, #navbar {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Footer Background & Text */
-footer, footer.fixed-bottom {
+/* 6. Footer Layout Background & Text */
+footer, 
+footer.fixed-bottom {
   background-color: #0f3460 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-footer, footer.fixed-bottom, footer span, footer a, footer.fixed-bottom a {
+footer, 
+footer.fixed-bottom, 
+footer span, 
+footer a, 
+footer.fixed-bottom a {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-footer a:hover, footer.fixed-bottom a:hover {
+footer a:hover, 
+footer.fixed-bottom a:hover {
   color: #ffffff !important;
+}
+
+/* 7. RESET PAGE TITLE HEADERS (Fixes the big blue block over page titles) */
+.post-header, 
+.header-bar, 
+header.post-header {
+  background-color: transparent !important;
+  background: none !important;
+  color: inherit !important;
+}
+
+.post-header h1, 
+.header-bar h1 {
+  color: #0f172a !important; /* Clean dark text for titles */
 }
