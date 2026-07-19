@@ -1,0 +1,44 @@
+/* ==========================================================================
+   WAVESLAB CENTRAL THEME OVERRIDES
+   ========================================================================== */
+
+/* Navbar Background & Borders */
+header, nav, .navbar, #navbar {
+  background-color: #0f3460 !important; /* Waves Lab Dark Blue */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navbar Links */
+.navbar .nav-link, #navbar .nav-link, nav a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Hover & Active States */
+.navbar .nav-link:hover, 
+.navbar .nav-item.active .nav-link,
+#navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Icons & Search Bar */
+.navbar #search-toggle, 
+.navbar .dropdown-toggle, 
+.navbar i, 
+.navbar .navbar-toggler-icon,
+.navbar .navbar-toggler {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Footer Background & Text */
+footer, footer.fixed-bottom {
+  background-color: #0f3460 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+footer, footer.fixed-bottom, footer span, footer a, footer.fixed-bottom a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+footer a:hover, footer.fixed-bottom a:hover {
+  color: #ffffff !important;
+}

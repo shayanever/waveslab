@@ -194,3 +194,4 @@ pagination:
 {% endif %}
 
 </div>
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
