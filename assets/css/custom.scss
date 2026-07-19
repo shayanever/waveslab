@@ -6,41 +6,37 @@
   background-color: #0f3460 !important; /* Premium Waves Lab Dark Blue */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1) !important;
-
-  .nav-link {
-    color: rgba(255, 255, 255, 0.85) !important;
-    font-weight: 500 !important;
-
-    &:hover {
-      color: #ffffff !important;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-    }
-  }
-
-  /* Sync dropdown toggles, search bars, and responsive toggle buttons */
-  #search-toggle, .dropdown-toggle, i, .navbar-toggler-icon {
-    color: rgba(255, 255, 255, 0.85) !important;
-  }
 }
 
-/* Ensure active page highlight behaves uniformly on subpages */
-.navbar .nav-item.active .nav-link {
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500 !important;
+}
+
+.navbar .nav-link:hover, .navbar .nav-item.active .nav-link {
   color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Sync dropdown toggles, search bars, and mobile menus */
+.navbar #search-toggle, .navbar .dropdown-toggle, .navbar i, .navbar .navbar-toggler-icon {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Apply matching frame continuity onto the global footer layout */
 footer.fixed-bottom {
   background-color: #0f3460 !important; 
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  
-  &, span, a {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-  
-  a {
-    text-decoration: underline;
-    &:hover {
-      color: #ffffff !important;
-    }
-  }
+}
+
+footer.fixed-bottom, footer.fixed-bottom span, footer.fixed-bottom a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+footer.fixed-bottom a {
+  text-decoration: underline !important;
+}
+
+footer.fixed-bottom a:hover {
+  color: #ffffff !important;
 }
