@@ -1,42 +1,48 @@
 /* ==========================================================================
-   WAVESLAB GLOBAL CUSTOM THEME OVERRIDES
+   WAVESLAB GLOBAL NAVIGATION & FOOTER OVERRIDES
    ========================================================================== */
 
-.navbar {
+/* Navbar Background & Borders across all subpages */
+header, nav, .navbar, #navbar {
   background-color: #0f3460 !important; /* Premium Waves Lab Dark Blue */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1) !important;
 }
 
-.navbar .nav-link {
+/* Link items inside the navigation menu */
+.navbar .nav-link, #navbar .nav-link, nav a {
   color: rgba(255, 255, 255, 0.85) !important;
   font-weight: 500 !important;
 }
 
-.navbar .nav-link:hover, .navbar .nav-item.active .nav-link {
+/* Hover and Active Link States */
+.navbar .nav-link:hover, 
+.navbar .nav-item.active .nav-link,
+#navbar .nav-link:hover {
   color: #ffffff !important;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Sync dropdown toggles, search bars, and mobile menus */
-.navbar #search-toggle, .navbar .dropdown-toggle, .navbar i, .navbar .navbar-toggler-icon {
+/* Search icons, dropdown indicators, and mobile menu bars */
+.navbar #search-toggle, 
+.navbar .dropdown-toggle, 
+.navbar i,
+.navbar .navbar-toggler {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Apply matching frame continuity onto the global footer layout */
-footer.fixed-bottom {
+/* Footer Container Styling */
+footer, footer.fixed-bottom {
   background-color: #0f3460 !important; 
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-footer.fixed-bottom, footer.fixed-bottom span, footer.fixed-bottom a {
+/* Footer Links & Text Elements */
+footer, footer.fixed-bottom, footer span, footer a, footer.fixed-bottom a {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-footer.fixed-bottom a {
-  text-decoration: underline !important;
-}
-
-footer.fixed-bottom a:hover {
+footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
+  text-decoration: underline !important;
 }
