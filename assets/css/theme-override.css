@@ -43,18 +43,3 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
-/* --- Fix Page Header Backgrounds (News, Projects, Publications, Events) --- */
-.header-bar, .post-header, div.header-bar {
-  background-color: transparent !important;
-  background: none !important;
-  padding: 2rem 0 1rem 0 !important;
-}
-
-.header-bar h1, .post-header h1 {
-  color: #0f172a !important; /* Soft dark slate heading */
-  font-weight: 800 !important;
-}
-
-.header-bar h2, .post-header h2 {
-  color: #64748b !important; /* Muted subtitle */
-}
