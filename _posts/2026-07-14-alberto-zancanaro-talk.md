@@ -7,7 +7,9 @@ thumbnail: assets/img/alberto_zancanaro.jpg
 preview: assets/img/alberto_zancanaro.jpg
 image: assets/img/alberto_zancanaro.jpg
 ---
-
+<div class="float-left mr-4 mb-3" style="max-width: 300px;">
+  {% include figure.liquid loading="eager" path="assets/img/alberto_zancanaro.jpg" class="img-fluid rounded z-depth-1" alt="Talk" %}
+</div>
 
 Our former lab member, **Dr. Alberto Zancanaro**, will give a brief talk on **AutoResearch** on **July 16th at 10:00 AM**. 
 
