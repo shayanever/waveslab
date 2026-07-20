@@ -122,7 +122,7 @@ horizontal: false
                       Read Details
                     </a>
 
-                    <!-- Optional External Link Button -->
+                    <!-- External Link Button -->
                     {% if project.external_link or project.redirect %}
                       {% assign ext_url = project.external_link | default: project.redirect %}
                       <a href="{{ ext_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-theme-primary">
@@ -130,12 +130,12 @@ horizontal: false
                       </a>
                     {% endif %}
 
-                    <!-- Loop through multiple related publication keys -->
+                    <!-- Related Publications Button -->
                     {% if project.related_publications %}
                       {% assign pub_keys = project.related_publications %}
                       {% for key in pub_keys %}
                       <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn btn-sm btn-theme-outline">
-                        Paper: {{ key }} <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
+                        Related Publication <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
                       </a>
                       {% endfor %}
                     {% endif %}
@@ -199,7 +199,7 @@ horizontal: false
                     {% assign pub_keys = project.related_publications %}
                     {% for key in pub_keys %}
                     <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn btn-sm btn-theme-outline">
-                      Paper: {{ key }} <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
+                      Related Publication <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
                     </a>
                     {% endfor %}
                   {% endif %}
