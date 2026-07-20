@@ -19,4 +19,4 @@ This study aims to develop explainable machine-learning and deep-learning models
 
 ### Related Publications
 
-{% bibliography -f papers -q "@*[project=ecg-screening]" %}
+{% bibliography -q "@*[project=ecg-screening]" %}
