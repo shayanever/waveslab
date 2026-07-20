@@ -20,3 +20,11 @@ This study aims to develop explainable machine-learning and deep-learning models
 ### Related Publications
 
 {% reference sharifi2026waveslab %}
+
+<!-- CSS to hide the extra automatic "References" heading at the bottom -->
+<style>
+  .publications h2.bibliography,
+  h2.references {
+    display: none !important;
+  }
+</style>
