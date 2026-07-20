@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: projects
 permalink: /projects/
 description: A growing collection of research initiatives and active projects.
