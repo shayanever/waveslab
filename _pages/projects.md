@@ -25,38 +25,40 @@ horizontal: false
     </a>
     {% assign sorted_projects = categorized_projects | sort: "importance" %}
     
-    <!-- Forces 1 project per column/row -->
     <div class="row row-cols-1 g-4 mb-5">
       {% for project in sorted_projects %}
         <div class="col">
-          <div class="card h-100 shadow-sm border-0 position-relative hoverable" style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0 !important; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+          <div class="card h-100 shadow-sm border-0 position-relative hoverable" style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0 !important;">
             
-            <!-- Entire Card Clickable Area -> Internal Project Page -->
-            <a href="{{ project.url | relative_url }}" class="text-decoration-none text-reset stretched-link"></a>
-
             <div class="row g-0 align-items-center">
               {% if project.img %}
-              <div class="col-md-4 p-3 text-center" style="z-index: 1;">
-                <img src="{{ project.img | relative_url }}" class="img-fluid rounded" alt="{{ project.title }}" style="max-height: 220px; object-fit: contain;">
+              <div class="col-md-4 p-3 text-center">
+                <a href="{{ project.url | relative_url }}">
+                  <img src="{{ project.img | relative_url }}" class="img-fluid rounded" alt="{{ project.title }}" style="max-height: 220px; object-fit: contain;">
+                </a>
               </div>
               <div class="col-md-8">
               {% else %}
               <div class="col-md-12">
               {% endif %}
                 <div class="card-body p-4">
-                  <h3 class="card-title font-weight-bold" style="color: #0f172a; font-size: 1.35rem;">{{ project.title }}</h3>
+                  <!-- Title serves as the main stretched link for the whole card -->
+                  <h3 class="card-title font-weight-bold" style="color: #0f172a; font-size: 1.35rem;">
+                    <a href="{{ project.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
+                      {{ project.title }}
+                    </a>
+                  </h3>
                   <p class="card-text text-secondary my-3">{{ project.description }}</p>
                   
-                  <div class="d-flex align-items-center gap-2 mt-3" style="gap: 10px; position: relative; z-index: 2;">
-                    <!-- Read Details Tag -->
-                    <span class="btn btn-sm btn-outline-primary" style="font-weight: 600; border-radius: 6px; pointer-events: none;">
+                  <!-- Button Row (Layered above stretched-link) -->
+                  <div class="d-flex align-items-center gap-2 mt-3" style="gap: 10px; position: relative; z-index: 5;">
+                    <a href="{{ project.url | relative_url }}" class="btn btn-sm btn-outline-primary" style="font-weight: 600; border-radius: 6px;">
                       Read Details
-                    </span>
+                    </a>
 
-                    <!-- External Link / Read More button (clicks independently to external URL) -->
                     {% if project.redirect %}
                     <a href="{{ project.redirect }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" style="background-color: #0f3460; border-color: #0f3460; font-weight: 600; border-radius: 6px;">
-                      Read More <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+                      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
                     </a>
                     {% endif %}
                   </div>
@@ -77,33 +79,34 @@ horizontal: false
   <div class="row row-cols-1 g-4 mb-5">
     {% for project in sorted_projects %}
       <div class="col">
-        <div class="card h-100 shadow-sm border-0 position-relative hoverable" style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0 !important; transition: transform 0.2s ease, box-shadow 0.2s ease;">
-          
-          <!-- Entire Card Clickable Area -> Internal Project Page -->
-          <a href="{{ project.url | relative_url }}" class="text-decoration-none text-reset stretched-link"></a>
-
+        <div class="card h-100 shadow-sm border-0 position-relative hoverable" style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0 !important;">
           <div class="row g-0 align-items-center">
             {% if project.img %}
-            <div class="col-md-4 p-3 text-center" style="z-index: 1;">
-              <img src="{{ project.img | relative_url }}" class="img-fluid rounded" alt="{{ project.title }}" style="max-height: 220px; object-fit: contain;">
+            <div class="col-md-4 p-3 text-center">
+              <a href="{{ project.url | relative_url }}">
+                <img src="{{ project.img | relative_url }}" class="img-fluid rounded" alt="{{ project.title }}" style="max-height: 220px; object-fit: contain;">
+              </a>
             </div>
             <div class="col-md-8">
             {% else %}
             <div class="col-md-12">
             {% endif %}
               <div class="card-body p-4">
-                <h3 class="card-title font-weight-bold" style="color: #0f172a; font-size: 1.35rem;">{{ project.title }}</h3>
+                <h3 class="card-title font-weight-bold" style="color: #0f172a; font-size: 1.35rem;">
+                  <a href="{{ project.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
+                    {{ project.title }}
+                  </a>
+                </h3>
                 <p class="card-text text-secondary my-3">{{ project.description }}</p>
                 
-                <div class="d-flex align-items-center gap-2 mt-3" style="gap: 10px; position: relative; z-index: 2;">
-                  <!-- Read Details Tag -->
-                  <span class="btn btn-sm btn-outline-primary" style="font-weight: 600; border-radius: 6px; pointer-events: none;">
+                <div class="d-flex align-items-center gap-2 mt-3" style="gap: 10px; position: relative; z-index: 5;">
+                  <a href="{{ project.url | relative_url }}" class="btn btn-sm btn-outline-primary" style="font-weight: 600; border-radius: 6px;">
                     Read Details
-                  </span>
+                  </a>
 
                   {% if project.redirect %}
                   <a href="{{ project.redirect }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" style="background-color: #0f3460; border-color: #0f3460; font-weight: 600; border-radius: 6px;">
-                    Read More <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+                    External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
                   </a>
                   {% endif %}
                 </div>
