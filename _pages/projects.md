@@ -129,9 +129,9 @@ horizontal: false
                     </a>
                     {% endif %}
 
-                    <!-- Optional Related Publications Search Filter Button -->
+                    <!-- Optional Related Publications Anchor Jump Button -->
                     {% if project.related_publications %}
-                    <a href="{{ '/publications/' | relative_url }}?q={{ project.related_publications }}" class="btn btn-sm btn-theme-outline">
+                    <a href="{{ '/publications/' | relative_url }}#{{ project.related_publications }}" class="btn btn-sm btn-theme-outline">
                       Related Publications <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
                     </a>
                     {% endif %}
@@ -189,6 +189,7 @@ horizontal: false
                     External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
                   </a>
                   {% endif %}
+
                   {% if project.related_publications %}
                   <a href="{{ '/publications/' | relative_url }}#{{ project.related_publications }}" class="btn btn-sm btn-theme-outline">
                     Related Publications <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
