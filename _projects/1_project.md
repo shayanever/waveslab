@@ -19,4 +19,4 @@ This study aims to develop explainable machine-learning and deep-learning models
 
 ### Related Publications
 
-{% bibliography -q "@*[project=ecg-screening]" %}
+{% bibliography -q "@*[key=sharifi2026waveslab]" %}
