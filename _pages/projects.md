@@ -63,6 +63,9 @@ horizontal: false
     background-color: #0f3460 !important;
     color: #ffffff !important;
   }
+  .project-card .card-title {
+  color: var(--global-theme-color, #a21232) !important;
+}
 </style>
 
 <div class="header-bar mb-4">
