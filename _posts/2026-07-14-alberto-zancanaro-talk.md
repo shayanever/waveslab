@@ -3,8 +3,8 @@ layout: post
 title: Brief Talk on AutoResearch by Dr. Alberto Zancanaro
 date: 2026-07-14 14:00:00
 description: Former lab member Dr. Alberto Zancanaro will give a brief talk on AutoResearch on July 16th at 10 am.
-thumbnail: giulia_cisotto.jpg
-preview: giulia_cisotto.jpg
+thumbnail: assets/img/giulia_cisotto.jpg
+preview: assets/img/giulia_cisotto.jpg
 ---
 
 Our former lab member, **Dr. Alberto Zancanaro**, will give a brief talk on **AutoResearch** on **July 16th at 10:00 AM**. 
