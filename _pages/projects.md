@@ -123,17 +123,21 @@ horizontal: false
                     </a>
 
                     <!-- Optional External Link Button -->
-                    {% if project.redirect %}
-                    <a href="{{ project.redirect }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-theme-primary">
-                      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
-                    </a>
+                    {% if project.external_link or project.redirect %}
+                      {% assign ext_url = project.external_link | default: project.redirect %}
+                      <a href="{{ ext_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-theme-primary">
+                        External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+                      </a>
                     {% endif %}
 
-                    <!-- Optional Related Publications Anchor Jump Button -->
+                    <!-- Loop through multiple related publication keys -->
                     {% if project.related_publications %}
-                    <a href="{{ '/publications/' | relative_url }}#{{ project.related_publications }}" class="btn btn-sm btn-theme-outline">
-                      Related Publications <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
-                    </a>
+                      {% assign pub_keys = project.related_publications %}
+                      {% for key in pub_keys %}
+                      <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn btn-sm btn-theme-outline">
+                        Paper: {{ key }} <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
+                      </a>
+                      {% endfor %}
                     {% endif %}
                   </div>
                 </div>
@@ -184,16 +188,20 @@ horizontal: false
                     Read Details
                   </a>
 
-                  {% if project.redirect %}
-                  <a href="{{ project.redirect }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-theme-primary">
-                    External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
-                  </a>
+                  {% if project.external_link or project.redirect %}
+                    {% assign ext_url = project.external_link | default: project.redirect %}
+                    <a href="{{ ext_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-theme-primary">
+                      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+                    </a>
                   {% endif %}
 
                   {% if project.related_publications %}
-                  <a href="{{ '/publications/' | relative_url }}#{{ project.related_publications }}" class="btn btn-sm btn-theme-outline">
-                    Related Publications <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
-                  </a>
+                    {% assign pub_keys = project.related_publications %}
+                    {% for key in pub_keys %}
+                    <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn btn-sm btn-theme-outline">
+                      Paper: {{ key }} <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
+                    </a>
+                    {% endfor %}
                   {% endif %}
                 </div>
               </div>

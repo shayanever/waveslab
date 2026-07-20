@@ -4,7 +4,7 @@ title: Explainable AI for ECG-based Screening of Cardiomyopathies
 description: This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with contrast-enhanced cardiac magnetic resonance imaging features.
 img: assets/img/asugi.png
 logo: true
-redirect: https://asugi.sanita.fvg.it/it/schede/UniTS/index.html
+external_link: https://asugi.sanita.fvg.it/it/schede/UniTS/index.html
 importance: 1
 category: work
 preview: assets/img/news/asugi.png
@@ -20,3 +20,6 @@ This study aims to develop explainable machine-learning and deep-learning models
 ### Related Publications
 
 {% reference sharifi2026waveslab %}
+{% for key in page.related_publications %}
+* {% reference key %}
+{% endfor %}
