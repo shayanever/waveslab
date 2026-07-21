@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /news/
-title: news
+permalink: /News/
+title: News
 nav: true
 nav_order: 1
 pagination:

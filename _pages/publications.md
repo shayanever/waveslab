@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /publications/
-title: publications
+title: Publications
 description: Publications by categories in reverse chronological order.
 nav: true
 nav_order: 2

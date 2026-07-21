@@ -1,0 +1,23 @@
+# Main Lab Location Details
+location:
+  lab_name: "WAVESLAB - Biomedical Signal Processing & AI Group"
+  department: "Department of Mathematics, Informatics, and Geosciences (DMG)"
+  institution: "University of Trieste"
+  building: "ADSAI PhD school"
+  street: "Via Giovanni e Demetrio Economo 12/3"
+  city_zip: "34127 Trieste (TS), Italy"
+  google_maps_url: "https://maps.app.goo.gl/ngJkVMjmiX1yowBS6"
+
+# Direct Contact Numbers & Emails
+contact_info:
+  general_email: "giulia.cisotto@units.it"
+  secondary_email: "shayan.sharifi@phd.units.it"
+  phone: "+39 " # Institutional/Department Phone
+  office_hours: "Monday – Friday: 09:00 – 18:00 (By Appointment)"
+
+# Visiting Instructions
+visiting_guidelines:
+  - title: "By Bus / Public Transport"
+    detail: "Take Bus Line 17 or 9/ to ADSAI."
+  - title: "By Car / Parking"
+    detail: "Visitor parking is available on campus upon prior notification to the department office."

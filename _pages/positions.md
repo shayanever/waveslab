@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /Join us/
-title: Open Positions & Theses
+title: Join us
 description: Join WAVESLAB as a Ph.D. researcher, Postdoc, or Master/Bachelor thesis student.
 nav: true
 nav_order: 9

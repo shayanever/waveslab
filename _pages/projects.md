@@ -1,6 +1,6 @@
 ---
 layout: default
-title: projects
+title: Projects
 permalink: /projects/
 description: A growing collection of research initiatives and active projects.
 nav: true
