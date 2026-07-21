@@ -36,11 +36,6 @@ This study aims to develop explainable machine-learning and deep-learning models
     {% reference entry.key %}
   {% endif %}
 {% endfor %}
-
-{% if has_papers == false %}
-  <!-- Fallback: Standard scholar search using key/tag -->
-  {% reference sharifi2026waveslab %}
-{% endif %}
 </div>
 
 <style>
