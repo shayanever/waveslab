@@ -15,7 +15,7 @@ profiles:
     email: "giulia.cisotto@units.it"
     phone: "+39040 558 2644" # Optional phone number
     website: "https://sites.google.com/view/giulia-cisotto"
-    linkedin: "giulia-cisotto"
+    linkedin: "giuliacisotto"
     github: "CisottoGiulia"
     scholar: "CuSEKIsAAAAJ"
     more_info: >
@@ -163,7 +163,7 @@ alumni:
 
 <div class="header-bar mb-4">
   <h1 class="header-title">Team</h1>
-  <p class="header-subtitle">Researchers, engineers, and students advancing biomedical signal processing and AI at WAVESLAB.</p>
+  <p class="header-subtitle">Researchers, engineers, and students at WAVESLAB.</p>
 </div>
 
 <!-- Active Members Section -->
