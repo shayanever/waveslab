@@ -8,19 +8,6 @@ nav_order: 4
 ---
 
 <style>
-  .repo-card-wrapper {
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0 !important;
-    padding: 1.25rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .repo-card-wrapper:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(15, 52, 96, 0.08) !important;
-  }
-
   .btn-theme-outline {
     background-color: transparent !important;
     color: #0f3460 !important;
@@ -49,11 +36,9 @@ nav_order: 4
     GitHub Profiles
   </h2>
 
-  <div class="repositories row row-cols-1 row-cols-md-3 g-4 mb-5">
+  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center mb-5">
     {% for user in site.data.repositories.github_users %}
-      <div class="col">
-        {% include repository/repo_user.liquid username=user %}
-      </div>
+      {% include repository/repo_user.liquid username=user %}
     {% endfor %}
   </div>
 {% endif %}
@@ -63,7 +48,7 @@ nav_order: 4
     Featured Repositories
   </h2>
 
-  <div class="repositories row row-cols-1 row-cols-md-2 g-4 mb-5">
+  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center mb-5">
     {% for item in site.data.repositories.github_repos %}
       {% if item.repo %}
         {% assign repo_path = item.repo %}
@@ -73,23 +58,18 @@ nav_order: 4
         {% assign pub_keys = nil %}
       {% endif %}
 
-      <div class="col d-flex align-items-stretch">
-        <div class="repo-card-wrapper w-100 d-flex flex-column justify-content-between">
-          <div>
-            {% include repository/repo.liquid repository=repo_path %}
+      <div class="mb-4 w-100" style="max-width: 480px;">
+        {% include repository/repo.liquid repository=repo_path %}
+        
+        {% if pub_keys %}
+          <div class="mt-2 ms-1">
+            {% for key in pub_keys %}
+              <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn-theme-outline">
+                Related Publication <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
+              </a>
+            {% endfor %}
           </div>
-          
-          <!-- Related Publications Buttons -->
-          {% if pub_keys %}
-            <div class="mt-3 pt-2 border-top d-flex flex-wrap gap-2">
-              {% for key in pub_keys %}
-                <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn-theme-outline">
-                  Related Publication <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
