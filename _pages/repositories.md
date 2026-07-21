@@ -46,7 +46,7 @@ nav_order: 4
 
 {% if site.data.repositories.github_users %}
   <h2 class="mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    GitHub Organization & Profiles
+    GitHub Profiles
   </h2>
 
   <div class="repositories row row-cols-1 row-cols-md-3 g-4 mb-5">
@@ -56,17 +56,6 @@ nav_order: 4
       </div>
     {% endfor %}
   </div>
-
-  {% if site.repo_trophies.enabled %}
-    {% for user in site.data.repositories.github_users %}
-      {% if site.data.repositories.github_users.size > 1 %}
-        <h4 class="mt-4 mb-3">{{ user }}</h4>
-      {% endif %}
-      <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center mb-4">
-        {% include repository/repo_trophies.liquid username=user %}
-      </div>
-    {% endfor %}
-  {% endif %}
 {% endif %}
 
 {% if site.data.repositories.github_repos %}
