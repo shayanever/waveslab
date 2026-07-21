@@ -34,6 +34,29 @@ nav_order: 10
     font-size: 1.25rem;
   }
 
+  .social-link-btn {
+    color: #0f3460 !important;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none !important;
+  }
+
+  .social-link-btn:hover {
+    color: #ffffff !important;
+    background-color: #0f3460 !important;
+    border-color: #0f3460 !important;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.22);
+  }
+
   .btn-theme-primary {
     background-color: #0f3460 !important;
     color: #ffffff !important;
@@ -64,7 +87,7 @@ nav_order: 10
 
 <div class="row row-cols-1 row-cols-lg-2 g-4 mb-5">
   
-  <!-- Column 1: Address & General Contact Details -->
+  <!-- Column 1: Address, General Contact Details & Social Media -->
   <div class="col">
     <div class="contact-card d-flex flex-column justify-content-between">
       <div>
@@ -127,7 +150,7 @@ nav_order: 10
         {% endif %}
 
         {% if loc.office_hours %}
-          <div class="d-flex align-items-start gap-3">
+          <div class="d-flex align-items-start gap-3 mb-4">
             <div class="contact-icon-box">
               <i class="fa-solid fa-clock"></i>
             </div>
@@ -137,6 +160,22 @@ nav_order: 10
             </div>
           </div>
         {% endif %}
+
+        <!-- Social Media Section -->
+        {% if site.data.contact.social_media %}
+          <hr class="my-4" style="border-color: #e2e8f0;">
+          <h5 class="mb-3" style="color: #0f3460; font-weight: 700;">Connect With Us</h5>
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            {% for item in site.data.contact.social_media %}
+              {% if item.url and item.url != "" %}
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" title="{{ item.name }}" class="social-link-btn">
+                  <i class="{{ item.icon }}"></i>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
       </div>
 
       {% if info.google_maps_url %}
@@ -155,7 +194,7 @@ nav_order: 10
     <div class="map-container shadow-sm h-100" style="min-height: 320px;">
       <iframe 
         title="WAVESLAB Location"
-        src="https://maps.google.com/maps?q=Piazzale+Europa+1,+Trieste&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        src="https://maps.google.com/maps?q=Piazzale+Europa+1,+Trieste&t=&z=16&ie=UTF8&iwloc=&output=embed" 
         width="100%" 
         height="100%" 
         style="border:0; min-height: 320px;" 

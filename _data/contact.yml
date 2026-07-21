@@ -5,7 +5,7 @@ location:
   institution: "University of Trieste"
   building: "ADSAI PhD school"
   street: "Via Giovanni e Demetrio Economo 12/3"
-  city_zip: "34127 Trieste (TS), Italy"
+  city_zip: "34123 Trieste (TS), Italy"
   google_maps_url: "https://maps.app.goo.gl/ngJkVMjmiX1yowBS6"
 
 # Direct Contact Numbers & Emails
@@ -14,6 +14,25 @@ contact_info:
   secondary_email: "shayan.sharifi@phd.units.it"
   phone: "+39 " # Institutional/Department Phone
   office_hours: "Monday – Friday: 09:00 – 18:00 (By Appointment)"
+
+
+# Lab Social Media Accounts
+social_media:
+  - name: "GitHub"
+    url: "https://github.com/shayanever/waveslab"
+    icon: "fa-brands fa-github"
+  - name: "LinkedIn"
+    url: "https://linkedin.com/in/giulia-cisotto"
+    icon: "fa-brands fa-linkedin-in"
+  - name: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=CuSEKIsAAAAJ"
+    icon: "fa-solid fa-graduation-cap"
+  - name: "Twitter / X"
+    url: "" # Leave blank if you don't have one yet
+    icon: "fa-brands fa-x-twitter"
+  - name: "YouTube"
+    url: ""
+    icon: "fa-brands fa-youtube"
 
 # Visiting Instructions
 visiting_guidelines:
