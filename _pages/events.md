@@ -68,7 +68,7 @@ calendar: true
 </style>
 
 <div class="header-bar mb-4">
-  <h1 class="header-title">ٍEvents</h1>
+  <h1 class="header-title">Events</h1>
   <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p>
 </div>
 
