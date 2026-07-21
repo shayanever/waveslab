@@ -24,6 +24,10 @@ nav_order: 4
     background-color: #0f3460 !important;
     color: #ffffff !important;
   }
+
+  .repo-item {
+    margin-bottom: 2rem;
+  }
 </style>
 
 <div class="header-bar mb-4">
@@ -58,7 +62,7 @@ nav_order: 4
         {% assign pub_keys = nil %}
       {% endif %}
 
-      <div class="mb-4 w-100" style="max-width: 480px;">
+      <div class="repo-item w-100" style="max-width: 480px;">
         {% include repository/repo.liquid repository=repo_path %}
         
         {% if pub_keys %}

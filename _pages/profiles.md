@@ -1,7 +1,7 @@
 ---
 layout: profiles
-permalink: /people/
-title: people
+permalink: /team/
+title: Team
 description: members of the lab 
 nav: true
 nav_order: 7
@@ -26,4 +26,6 @@ profiles:
       <p>123 your address street</p>
       <p>Your City, State 12345</p>
 ---
+
+
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
