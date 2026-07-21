@@ -3,27 +3,29 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/team/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/waveslab/"> waveslab </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/waveslab/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/news/index.html">news </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/events/">events </a> </li> <li class="nav-item active"> <a class="nav-link" href="/waveslab/team/">Team <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  /* Active Member Card Styling */
   .team-card {
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 1px solid #e2e8f0 !important;
-    overflow: hidden;
+    padding: 2.25rem !important; /* Increased internal padding from borders */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .team-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(15, 52, 96, 0.08) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 52, 96, 0.09) !important;
   }
 
   .team-img-wrapper {
-    width: 150px;
-    height: 150px;
-    min-width: 150px;
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    border: 3px solid #0f3460;
+    border: 4px solid #f1f5f9;
+    box-shadow: 0 6px 16px rgba(15, 52, 96, 0.12);
   }
 
   .team-img-wrapper.circular {
@@ -31,7 +33,7 @@
   }
 
   .team-img-wrapper.square {
-    border-radius: 12px;
+    border-radius: 16px;
   }
 
   .team-img {
@@ -43,24 +45,25 @@
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 
   .team-role {
-    color: #475569;
+    color: #0f3460;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    margin-bottom: 0.75rem;
   }
 
-  /* Social Icons Styling & Smooth Hover Effects */
+  /* Social Icons */
   .team-social-icon {
     color: #0f3460 !important;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background-color: #f1f5f9;
     transition: all 0.2s ease-in-out;
@@ -70,23 +73,39 @@
   .team-social-icon:hover {
     color: #ffffff !important;
     background-color: #0f3460 !important;
-    transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.25);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.2);
   }
 
   .more-info p {
     margin-bottom: 0.35rem;
-    font-size: 0.9rem;
-    color: #64748b;
+    font-size: 0.92rem;
+    color: #475569;
   }
 
+  /* Alumni Card Styling */
   .alumni-card {
     background: #ffffff;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e2e8f0;
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem !important; /* Generous internal padding */
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-</style> <div class="header-bar mb-4"> <h1 class="header-title">Team</h1> <p class="header-subtitle">Researchers, engineers, and students advancing biomedical signal processing and AI at WAVESLAB.</p> </div> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="team-card p-4 p-md-5"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular shadow-sm"> <img src="/waveslab/assets/img/giulia_cisotto.jpg" class="team-img" alt="Giulia Cisotto, Ph.D."> </div> </div> <div class="col-md-9 ps-md-4"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-3"> <div> <h3 class="team-name mb-1">Giulia Cisotto, Ph.D.</h3> <div class="team-role mb-2">Assistant Professor / Lab Director</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://sites.google.com/view/giulia-cisotto" target="_blank" rel="noopener noreferrer" title="Personal Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="mailto:giulia.cisotto@units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/CisottoGiulia" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=CuSEKIsAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info mb-3"> <p><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3"> <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="https://www.reddit.com" rel="external nofollow noopener" target="_blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <code class="language-plaintext highlighter-rouge">prof_pic.jpg</code> and put it in the <code class="language-plaintext highlighter-rouge">img/</code> folder.</p> <p>Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing <code class="language-plaintext highlighter-rouge">profile</code> property of the YAML header of your <code class="language-plaintext highlighter-rouge">_pages/about.md</code>. Edit <code class="language-plaintext highlighter-rouge">_bibliography/papers.bib</code> and Jekyll will render your <a href="/al-folio/publications/">publications page</a> automatically.</p> <p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/" rel="external nofollow noopener" target="_blank">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/" rel="external nofollow noopener" target="_blank">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p> </div> </div> </div> </div> </div> <div class="col"> <div class="team-card p-4 p-md-5"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular shadow-sm"> <img src="/waveslab/assets/img/shayan_sharifi.jpg" class="team-img" alt="Shayan Sharifi"> </div> </div> <div class="col-md-9 ps-md-4"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-3"> <div> <h3 class="team-name mb-1">Shayan Sharifi</h3> <div class="team-role mb-2">Ph.D. Researcher</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://shayansharifi.net" target="_blank" rel="noopener noreferrer" title="Personal Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="mailto:shayan.sharifi@phd.units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/shayanever" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=Juzc7T8AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info mb-3"> <p><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3"> <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="https://www.reddit.com" rel="external nofollow noopener" target="_blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <code class="language-plaintext highlighter-rouge">prof_pic.jpg</code> and put it in the <code class="language-plaintext highlighter-rouge">img/</code> folder.</p> <p>Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing <code class="language-plaintext highlighter-rouge">profile</code> property of the YAML header of your <code class="language-plaintext highlighter-rouge">_pages/about.md</code>. Edit <code class="language-plaintext highlighter-rouge">_bibliography/papers.bib</code> and Jekyll will render your <a href="/al-folio/publications/">publications page</a> automatically.</p> <p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/" rel="external nofollow noopener" target="_blank">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/" rel="external nofollow noopener" target="_blank">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p> </div> </div> </div> </div> </div> </div> <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> Past Lab Members &amp; Alumni </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="alumni-card d-flex justify-content-between align-items-center"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alberto Zancanaro, PhD</h5> <p class="text-secondary small mb-1">Former PhD Student (2021 – 2024)</p> <p class="text-muted small mb-0"><em>Next: Postdoc researcher at University of Luxemburg</em></p> </div> <div class="d-flex align-items-center gap-2"> <a href="https://github.com/jesus-333" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> </div> </div> </div> <div class="col"> <div class="alumni-card d-flex justify-content-between align-items-center"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alessandro Minutolo, Msc</h5> <p class="text-secondary small mb-1">Former Master Student (2025 – 2026)</p> <p class="text-muted small mb-0"><em>Next: Researcher in Berlin</em></p> </div> <div class="d-flex align-items-center gap-2"> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
+
+  .alumni-card:hover {
+    box-shadow: 0 8px 20px rgba(15, 52, 96, 0.06);
+  }
+
+  .alumni-img-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+  }
+</style> <div class="header-bar mb-4"> <h1 class="header-title">Team</h1> <p class="header-subtitle">Researchers, engineers, and students advancing biomedical signal processing and AI at WAVESLAB.</p> </div> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="team-card"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular"> <img src="/waveslab/assets/img/giulia_cisotto.jpg" class="team-img" alt="Giulia Cisotto, Ph.D."> </div> </div> <div class="col-md-9 ps-md-3"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2"> <div> <h3 class="team-name mb-1">Giulia Cisotto, Ph.D.</h3> <div class="team-role">Assistant Professor / Lab Director</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://sites.google.com/view/giulia-cisotto" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="mailto:giulia.cisotto@units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/CisottoGiulia" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=CuSEKIsAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info my-2"> <p><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3 pt-2 border-top"> <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="https://www.reddit.com" rel="external nofollow noopener" target="_blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <code class="language-plaintext highlighter-rouge">prof_pic.jpg</code> and put it in the <code class="language-plaintext highlighter-rouge">img/</code> folder.</p> <p>Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing <code class="language-plaintext highlighter-rouge">profile</code> property of the YAML header of your <code class="language-plaintext highlighter-rouge">_pages/about.md</code>. Edit <code class="language-plaintext highlighter-rouge">_bibliography/papers.bib</code> and Jekyll will render your <a href="/al-folio/publications/">publications page</a> automatically.</p> <p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/" rel="external nofollow noopener" target="_blank">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/" rel="external nofollow noopener" target="_blank">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p> </div> </div> </div> </div> </div> <div class="col"> <div class="team-card"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular"> <img src="/waveslab/assets/img/shayan_sharifi.png" class="team-img" alt="Shayan Sharifi"> </div> </div> <div class="col-md-9 ps-md-3"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2"> <div> <h3 class="team-name mb-1">Shayan Sharifi</h3> <div class="team-role">Ph.D. Researcher</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://shayansharifi.net" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="mailto:shayan.sharifi@phd.units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/shayanever" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=Juzc7T8AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info my-2"> <p><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3 pt-2 border-top"> <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="https://www.reddit.com" rel="external nofollow noopener" target="_blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <code class="language-plaintext highlighter-rouge">prof_pic.jpg</code> and put it in the <code class="language-plaintext highlighter-rouge">img/</code> folder.</p> <p>Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing <code class="language-plaintext highlighter-rouge">profile</code> property of the YAML header of your <code class="language-plaintext highlighter-rouge">_pages/about.md</code>. Edit <code class="language-plaintext highlighter-rouge">_bibliography/papers.bib</code> and Jekyll will render your <a href="/al-folio/publications/">publications page</a> automatically.</p> <p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/" rel="external nofollow noopener" target="_blank">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/" rel="external nofollow noopener" target="_blank">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p> </div> </div> </div> </div> </div> </div> <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> Past Lab Members &amp; Alumni </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="alumni-img-wrapper"> <img src="/waveslab/assets/img/alberto_zancanaro.jpg" class="team-img" alt="Alberto Zancanaro, PhD"> </div> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alberto Zancanaro, PhD</h5> <p class="text-secondary small mb-1">Former PhD Student (2021 – 2024)</p> </div> <div class="d-flex align-items-center gap-2"> <a href="https://github.com/jesus-333" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon" style="width: 32px; height: 32px; font-size: 1rem;"> <i class="fa-brands fa-github"></i> </a> </div> </div> <p class="text-muted small mb-1"><em>Next: Postdoc researcher at University of Luxembourg</em></p> <p class="text-secondary small mb-0 mt-2 pt-2 border-top">Worked on variational autoencoders for EEG signal processing.</p> </div> </div> </div> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alessandro Minutolo, MSc</h5> <p class="text-secondary small mb-1">Former Master Student (2025 – 2026)</p> </div> <div class="d-flex align-items-center gap-2"> </div> </div> <p class="text-muted small mb-1"><em>Next: Researcher in Berlin</em></p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
