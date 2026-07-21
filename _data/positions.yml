@@ -1,0 +1,40 @@
+# How to apply instructions box
+application_info:
+  email: "giulia.cisotto@units.it"
+  requirements:
+    - "Curriculum Vitae (CV)"
+    - "Academic Transcripts / Grade Record"
+    - "Short Statement of Interest / Motivation (1 paragraph)"
+
+# Open Ph.D., Postdoc, or Research Fellow Positions
+open_roles:
+  - title: "Ph.D. Position in AI for Biomedical Signal Processing"
+    type: "Ph.D. Position"
+    deadline: "Open until filled"
+    location: "University of Trieste, Italy"
+    status: "Open" # Open or Closed
+    description: "We are seeking a motivated Ph.D. candidate to work on deep learning architectures, time-series modeling, and explainable AI applied to EEG/ECG signals."
+    requirements:
+      - "M.Sc. in Biomedical Engineering, Computer Science, Data Science, or related field"
+      - "Strong programming skills in Python (PyTorch or TensorFlow)"
+      - "Background in signal processing or machine learning"
+
+# Available Thesis Topics (B.Sc. / M.Sc.)
+thesis_topics:
+  - title: "Generative Models (VAEs/Diffusion) for Synthetic EEG Data Generation"
+    level: "M.Sc. Thesis"
+    advisor: "Prof. Giulia Cisotto & Shayan Sharifi"
+    prerequisites: "Python, Deep Learning basics (PyTorch)"
+    description: "Investigation of generative AI models to generate realistic synthetic EEG signals for data augmentation and privacy-preserving clinical benchmarks."
+
+  - title: "Benchmarking ECG R-Peak Detection in Wearable Cardiac Devices"
+    level: "B.Sc. / M.Sc. Thesis"
+    advisor: "Prof. Giulia Cisotto"
+    prerequisites: "Python, Signal Processing"
+    description: "Evaluating classical and deep-learning-based R-peak detection algorithms across noisy, real-world wearable ECG datasets."
+
+  - title: "EEG-EMG Co-registration and Feature Fusion for Motor Intent Decoding"
+    level: "M.Sc. Thesis"
+    advisor: "Prof. Giulia Cisotto"
+    prerequisites: "Signal Processing, Machine Learning, MATLAB/Python"
+    description: "Developing synchronized signal processing pipelines to analyze brain and muscle connectivity during motor execution and rehabilitation tasks."
