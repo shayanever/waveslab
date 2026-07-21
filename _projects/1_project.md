@@ -25,7 +25,7 @@ This study aims to develop explainable machine-learning and deep-learning models
        target="_blank" 
        rel="noopener noreferrer" 
        class="btn btn-sm text-white fw-semibold rounded-2" 
-       style="background-color: #0f3460; border: 1px solid #0f3460; padding: 0.35rem 0.85rem;">
+       style="background-color: #cbd1d7; border: 1px solid #0f3460; padding: 0.35rem 0.85rem;">
       External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
     </a>
   </div>
