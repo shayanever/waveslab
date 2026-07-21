@@ -13,7 +13,9 @@ profiles:
     content: _people/about_giulia.md
     image_circular: true
     email: "giulia.cisotto@units.it"
+    phone: "+39040 558 2644" # Optional phone number
     website: "https://sites.google.com/view/giulia-cisotto"
+    linkedin: "giulia-cisotto"
     github: "CisottoGiulia"
     scholar: "CuSEKIsAAAAJ"
     more_info: >
@@ -26,7 +28,9 @@ profiles:
     content: _people/about_shayan.md
     image_circular: true
     email: "shayan.sharifi@phd.units.it"
+    phone: "" # Leave empty if not needed
     website: "https://shayansharifi.net"
+    linkedin: "sharifi-shayan"
     github: "shayanever"
     scholar: "Juzc7T8AAAAJ"
     more_info: >
@@ -37,15 +41,19 @@ alumni:
   - name: "Alberto Zancanaro, PhD"
     role: "Former PhD Student"
     period: "2021 – 2024"
-    image: alberto_zancanaro.jpg  # Optional profile photo
+    image: alberto_zancanaro.jpg
     next_position: "Postdoc researcher at University of Luxembourg"
+    linkedin: "alberto-zancanaro"
     github: "jesus-333"
-    more_info: "Worked on variational autoencoders for EEG signal processing."
+    email: "alberto@example.com"
+    phone: ""
+    more_info: "Worked on federated learining and EEG signal processing."
 
   - name: "Alessandro Minutolo, MSc"
     role: "Former Master Student"
     period: "2025 – 2026"
     next_position: "Researcher in Berlin"
+    linkedin: 
 ---
 
 <style>
@@ -54,7 +62,7 @@ alumni:
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e2e8f0 !important;
-    padding: 2.25rem !important; /* Increased internal padding from borders */
+    padding: 2.25rem !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -134,7 +142,7 @@ alumni:
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #e2e8f0;
-    padding: 1.5rem !important; /* Generous internal padding */
+    padding: 1.5rem !important;
     height: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -186,16 +194,26 @@ alumni:
                   {% endif %}
                 </div>
 
-                <!-- Social Icons -->
+                <!-- Social & Contact Icons Bar -->
                 <div class="d-flex align-items-center gap-2">
                   {% if profile.website and profile.website != "" %}
                     <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                       <i class="fa-solid fa-globe"></i>
                     </a>
                   {% endif %}
+                  {% if profile.linkedin and profile.linkedin != "" %}
+                    <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                  {% endif %}
                   {% if profile.email and profile.email != "" %}
                     <a href="mailto:{{ profile.email }}" title="Email" class="team-social-icon">
                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                  {% endif %}
+                  {% if profile.phone and profile.phone != "" %}
+                    <a href="tel:{{ profile.phone }}" title="Phone: {{ profile.phone }}" class="team-social-icon">
+                      <i class="fa-solid fa-phone"></i>
                     </a>
                   {% endif %}
                   {% if profile.github and profile.github != "" %}
@@ -260,20 +278,30 @@ alumni:
                 <p class="text-secondary small mb-1">{{ person.role }} {% if person.period %}({{ person.period }}){% endif %}</p>
               </div>
 
-              <!-- Alumni Links -->
+              <!-- Alumni Contact & Social Links -->
               <div class="d-flex align-items-center gap-2">
                 {% if person.website and person.website != "" %}
-                  <a href="{{ person.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon" style="width: 32px; height: 32px; font-size: 1rem;">
+                  <a href="{{ person.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
                     <i class="fa-solid fa-globe"></i>
                   </a>
                 {% endif %}
+                {% if person.linkedin and person.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ person.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
                 {% if person.email and person.email != "" %}
-                  <a href="mailto:{{ person.email }}" title="Email" class="team-social-icon" style="width: 32px; height: 32px; font-size: 1rem;">
+                  <a href="mailto:{{ person.email }}" title="Email" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
                     <i class="fa-solid fa-envelope"></i>
                   </a>
                 {% endif %}
+                {% if person.phone and person.phone != "" %}
+                  <a href="tel:{{ person.phone }}" title="Phone: {{ person.phone }}" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
                 {% if person.github and person.github != "" %}
-                  <a href="https://github.com/{{ person.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon" style="width: 32px; height: 32px; font-size: 1rem;">
+                  <a href="https://github.com/{{ person.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
                     <i class="fa-brands fa-github"></i>
                   </a>
                 {% endif %}
