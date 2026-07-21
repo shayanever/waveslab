@@ -1,12 +1,23 @@
 github_users:
   - shayanever
-  - alshedivat
+  - CisottoGiulia
+  - jesus-333
 
 repo_description_lines_max: 2
 
 github_repos:
   - repo: CisottoGiulia/EEG-EMG-analytics
     related_publications:
+      - sharifi2026waveslab
+
   - repo: jesus-333/Variational-Autoencoder-for-EEG-analysis
     related_publications:
+      - sharifi2026waveslab
+
   - repo: shayanever/ecg-Rpeak-validation-neurokit
+    related_publications:
+      - sharifi2026waveslab
+
+  - repo: shayanever/Sleep-Apnea-and-Hypopnea-Detection
+    related_publications:
+      - sharifi2026waveslab
