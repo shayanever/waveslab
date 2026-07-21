@@ -1,0 +1,705 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Collaborations | waveslab </title> <meta name="author" content="WavesLab "> <meta name="description" content="Academic, clinical, and industrial partners collaborating with WAVESLAB."> <meta name="keywords" content="Waveslab, Giulia Cisotto, academic-website, University of Trieste"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/collaborations/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/waveslab/"> waveslab </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/waveslab/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/news/index.html">news </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/events/">events </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/team/">Team </a> </li> <li class="nav-item active"> <a class="nav-link" href="/waveslab/collaborations/">Collaborations <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .collab-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0 !important;
+    padding: 1.75rem !important;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .collab-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15, 52, 96, 0.08) !important;
+  }
+
+  .collab-title {
+    color: #0f3460 !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .collab-institution {
+    color: #0f3460;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .collab-location {
+    color: #64748b;
+    font-size: 0.88rem;
+  }
+
+  .collab-address {
+    color: #475569;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+
+  .collab-social-icon {
+    color: #0f3460 !important;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .collab-social-icon:hover {
+    background-color: #0f3460 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  .collab-img-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1f5f9;
+    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.1);
+  }
+
+  .collab-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style> <div class="header-bar mb-4"> <h1 class="header-title">Collaborations</h1> <p class="header-subtitle">Building interdisciplinary bridges across academic institutions, research hospitals, and industry leaders.</p> </div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"&gt;
+  &lt;i class="fa-solid fa-graduation-cap me-2" style="color: #0f3460;"&gt;&lt;/i&gt; Academia &amp; Universities
+&lt;/h2&gt;
+
+&lt;div class="row row-cols-1 row-cols-md-2 g-4 mb-5"&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Leonardo Badia&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;University of Padova&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Padova, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+                &lt;a href="https://www.dei.unipd.it/~badia/" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon"&gt;
+                  &lt;i class="fa-solid fa-globe"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+                &lt;a href="https://linkedin.com/in/leonardo-badia" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon"&gt;
+                  &lt;i class="fa-brands fa-linkedin-in"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+              
+              
+                &lt;a href="mailto:badia@dei.unipd.it" title="Email" class="collab-social-icon"&gt;
+                  &lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Via Gradenigo 6/b, 35131 Padova, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Collaborating on bio-signal processing algorithms and communication frameworks.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Dr. Alberto Zancanaro&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;University of Luxembourg&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Luxembourg&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+                &lt;a href="https://linkedin.com/in/alberto-zancanaro" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon"&gt;
+                  &lt;i class="fa-brands fa-linkedin-in"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+                &lt;a href="https://github.com/jesus-333" target="_blank" rel="noopener noreferrer" title="GitHub" class="collab-social-icon"&gt;
+                  &lt;i class="fa-brands fa-github"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Research collaboration on generative models and VAEs for EEG signals.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Ilaria Galidini &amp; Prof. Giulia Barbati&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;University of Trieste&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Trieste, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Piazzale Europa 1, 34127 Trieste, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Statistical modeling and biostatistical analysis for clinical biomedical data.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Mattia Zorzi&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;University of Padova&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Padova, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Joint work on system identification, control, and neural signal filtering.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Selina Wriessnegger&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;Technical University of Graz&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Graz, Austria&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Brain-Computer Interfaces (BCI) and non-invasive neuroimaging research.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Gabriel Pires&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;University of Coimbra&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Coimbra, Portugal&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Collaborative studies in assistive technology and EEG-based decoding.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+&lt;/div&gt;
+  
+
+  
+  
+  
+  
+  
+
+  
+&lt;h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"&gt;
+  &lt;i class="fa-solid fa-hospital me-2" style="color: #0f3460;"&gt;&lt;/i&gt; Clinical &amp; Research Hospitals
+&lt;/h2&gt;
+
+&lt;div class="row row-cols-1 row-cols-md-2 g-4 mb-5"&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. MD. Marco Merlo&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;Cattinara Hospital&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Trieste, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Strada di Fiume 447, 34149 Trieste, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Clinical partnerships in cardiovascular signal analysis and patient monitoring.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Prof. Viviana Betti&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;IRCCS 'Santa Lucia'&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Rome, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Via Ardeatina 306, 00179 Roma, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Neuroscience clinical research and neural dynamics in health and disease.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+&lt;/div&gt;
+  
+
+  
+  
+  
+  
+  
+
+  
+&lt;h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"&gt;
+  &lt;i class="fa-solid fa-building me-2" style="color: #0f3460;"&gt;&lt;/i&gt; Industry &amp; Corporate Partners
+&lt;/h2&gt;
+
+&lt;div class="row row-cols-1 row-cols-md-2 g-4 mb-5"&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Henesis srl&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;Industry Partner&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Parma, Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+                &lt;a href="https://www.henesis.eu" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon"&gt;
+                  &lt;i class="fa-solid fa-globe"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Via S. Leonardo 161, 43122 Parma PR, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;R&amp;D collaboration on embedded AI and smart sensor solutions.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col"&gt;
+      &lt;div class="collab-card d-flex flex-column justify-content-between"&gt;
+        &lt;div&gt;
+          &lt;div class="d-flex justify-content-between align-items-start gap-3 mb-3"&gt;
+            &lt;div class="d-flex align-items-center gap-3"&gt;
+              
+              &lt;div&gt;
+                &lt;h3 class="collab-title mb-0"&gt;Seletec Engineering srl&lt;/h3&gt;
+                &lt;div class="collab-institution"&gt;Industry Partner&lt;/div&gt;
+                
+                  &lt;div class="collab-location"&gt;&lt;i class="fa-solid fa-location-dot me-1"&gt;&lt;/i&gt;Brugherio (Milan), Italy&lt;/div&gt;
+                
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Contact &amp; Social Icons Bar --&gt;
+            &lt;div class="d-flex align-items-center gap-2 flex-wrap justify-content-end"&gt;
+              
+              
+              
+              
+              
+              
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Address Details if specified --&gt;
+          
+            &lt;div class="collab-address mb-2"&gt;
+              &lt;i class="fa-solid fa-building-user me-1"&gt;&lt;/i&gt; Via Dorderio 30, 20861 Brugherio MB, Italy
+            &lt;/div&gt;
+          
+
+          &lt;!-- Collaboration Focus / Description --&gt;
+          
+            &lt;p class="text-secondary small mt-3 pt-2 border-top mb-0"&gt;Industrial hardware-software engineering for biomedical devices.&lt;/p&gt;
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+&lt;/div&gt;
+</code></pre></div></div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/waveslab/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/waveslab/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/waveslab/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/waveslab/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/waveslab/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/waveslab/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/waveslab/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/waveslab/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/waveslab/assets/al_img_tools/js/zoom.js"></script> <script defer src="/waveslab/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/waveslab/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/waveslab/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-home",
+    title: "Home",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/waveslab/";
+    },
+  },{id: "nav-news",
+          title: "news",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/news/index.html";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Publications by categories in reverse chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of research initiatives and active projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/projects/";
+          },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "Open-source code, toolboxes, and software packages developed by WAVESLAB.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/repositories/";
+          },
+        },{id: "nav-events",
+          title: "events",
+          description: "Course materials, schedules, and resources for classes taught.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/events/";
+          },
+        },{id: "nav-team",
+          title: "Team",
+          description: "Meet the researchers, students, and collaborators at WAVESLAB.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/team/";
+          },
+        },{id: "nav-collaborations",
+          title: "Collaborations",
+          description: "Academic, clinical, and industrial partners collaborating with WAVESLAB.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/waveslab/collaborations/";
+          },
+        },{id: "post-brief-talk-on-autoresearch-by-dr-alberto-zancanaro",
+        
+          title: "Brief Talk on AutoResearch by Dr. Alberto Zancanaro",
+        
+        description: "Former lab member Dr. Alberto Zancanaro will give a brief talk on AutoResearch on July 16th at 10 am.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/waveslab/news/2026/alberto-zancanaro-talk/";
+          
+        },
+      },{id: "post-welcoming-visiting-student-yusuf-üveyik",
+        
+          title: "Welcoming Visiting Student Yusuf Üveyik!",
+        
+        description: "The WavesLab welcomes Yusuf Üveyik, BSc student from Marmara University, as a visiting student.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/waveslab/news/2026/welcome-yusuf/";
+          
+        },
+      },{id: "post-waveslab-at-trieste-next-2026",
+        
+          title: "WavesLab at Trieste Next 2026!",
+        
+        description: "The WavesLab will be present at Trieste Next 2026 in September, 25-27. Don&#39;t miss it out!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/waveslab/news/2026/trieste-next/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/waveslab/books/the_godfather/";
+            },},{id: "projects-explainable-ai-for-ecg-based-screening-of-cardiomyopathies",
+          title: 'Explainable AI for ECG-based Screening of Cardiomyopathies',
+          description: "This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with contrast-enhanced cardiac magnetic resonance imaging features.",
+          section: "Projects",handler: () => {
+              window.location.href = "/waveslab/projects/1_project/";
+            },},{id: "projects-project-5",
+          title: 'project 5',
+          description: "a project with a background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/waveslab/projects/2_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/waveslab/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/waveslab/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/waveslab/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-inspire',
+        title: 'Inspire HEP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/waveslab/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.alberteinstein.com/", "_blank");
+        },
+      },];
+
+</script> <script src="/waveslab/assets/al_search/js/shortcut-key.js"></script> </body> </html>
