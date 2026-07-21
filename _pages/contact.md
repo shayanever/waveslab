@@ -191,18 +191,21 @@ nav_order: 10
   <!-- Column 2: Interactive Map Embed & Directions -->
   <div class="col d-flex flex-column gap-4">
     <!-- Map Frame -->
-    <div class="map-container shadow-sm h-100" style="min-height: 320px;">
-      <iframe 
-        title="WAVESLAB Location"
-        src="https://maps.app.goo.gl/ngJkVMjmiX1yowBS6" 
-        width="100%" 
-        height="100%" 
-        style="border:0; min-height: 320px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+<div class="col d-flex flex-column gap-4">
+  <!-- Map Frame -->
+  <div class="map-container shadow-sm h-100" style="min-height: 320px;">
+    <iframe 
+      title="WAVESLAB Location"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.3182144002853!2d13.75561697671046!3d45.644431021394745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b6b8286ca9e4d%3A0xbbc74e9bcf558c!2sVia%20Giovanni%20e%20Demetrio%20Economo%2C%2012%2F3%2C%2034123%20Trieste%20TS!5e0!3m2!1sen!2sit!4v1784602497801!5m2!1sen!2sit"
+      width="100%" 
+      height="100%" 
+      style="border:0; min-height: 320px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
 
     <!-- Travel/Visiting Guidelines -->
     {% if site.data.contact.visiting_guidelines %}
