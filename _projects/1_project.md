@@ -28,12 +28,24 @@ This study aims to develop explainable machine-learning and deep-learning models
 
 ### Related Publications
 
-{% assign tagged_papers = site.data.bibtex | where_contains: "keywords", page.project_tag %}
-
-<ul>
-{% for entry in site.bibliography %}
-  {% if entry.keywords contains page.project_tag %}
-    <li class="mb-2">{% reference entry.key %}</li>
+<div class="publications">
+{% assign has_papers = false %}
+{% for entry in site.data.citations %}
+  {% if entry.keywords contains page.project_tag or entry.tags contains page.project_tag or entry.project == page.project_tag %}
+    {% assign has_papers = true %}
+    {% reference entry.key %}
   {% endif %}
 {% endfor %}
-</ul>
+
+{% if has_papers == false %}
+  <!-- Fallback: Standard scholar search using key/tag -->
+  {% reference sharifi2026waveslab %}
+{% endif %}
+</div>
+
+<style>
+  .publications h2.bibliography,
+  h2.references {
+    display: none !important;
+  }
+</style>
