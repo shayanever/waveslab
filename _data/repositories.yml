@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
+  - shayanever
   - alshedivat
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - repo: CisottoGiulia/EEG-EMG-analytics
+    related_publications:
+  - repo: jesus-333/Variational-Autoencoder-for-EEG-analysis
+    related_publications:
+  - repo: shayanever/ecg-Rpeak-validation-neurokit
