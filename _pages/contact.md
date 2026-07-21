@@ -194,7 +194,7 @@ nav_order: 10
     <div class="map-container shadow-sm h-100" style="min-height: 320px;">
       <iframe 
         title="WAVESLAB Location"
-        src="https://maps.google.com/maps?q=Piazzale+Europa+1,+Trieste&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+        src="https://maps.app.goo.gl/ngJkVMjmiX1yowBS6" 
         width="100%" 
         height="100%" 
         style="border:0; min-height: 320px;" 
