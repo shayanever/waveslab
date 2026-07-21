@@ -2,7 +2,7 @@
 layout: default
 permalink: /collaborations/
 title: Collaborations
-description: Academic, clinical, and industrial partners collaborating with WAVESLAB.
+description: Building interdisciplinary bridges across academic institutions, research hospitals, and industry leaders.
 nav: true
 nav_order: 8
 ---
@@ -88,94 +88,241 @@ nav_order: 8
   <p class="header-subtitle">Building interdisciplinary bridges across academic institutions, research hospitals, and industry leaders.</p>
 </div>
 
-{% assign sections = "academia|Academia & Universities|fa-graduation-cap,hospitals|Clinical & Research Hospitals|fa-hospital,companies|Industry & Corporate Partners|fa-building" | split: "," %}
+<!-- 1. ACADEMIA SECTION -->
+{% if site.data.collaborations.academia %}
+  <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-graduation-cap me-2" style="color: #0f3460;"></i> Academia & Universities
+  </h2>
 
-{% for sec in sections %}
-  {% assign sec_parts = sec | split: "|" %}
-  {% assign key = sec_parts[0] %}
-  {% assign title = sec_parts[1] %}
-  {% assign icon = sec_parts[2] %}
-  {% assign partners = site.data.collaborations[key] %}
-
-  {% if partners %}
-    <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-      <i class="fa-solid {{ icon }} me-2" style="color: #0f3460;"></i> {{ title }}
-    </h2>
-
-    <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
-      {% for partner in partners %}
-        <div class="col">
-          <div class="collab-card d-flex flex-column justify-content-between">
-            <div>
-              <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-                <div class="d-flex align-items-center gap-3">
-                  {% if partner.image and partner.image != "" %}
-                    {% assign img_path = partner.image | prepend: 'assets/img/' %}
-                    <div class="collab-img-wrapper">
-                      <img src="{{ img_path | relative_url }}" class="collab-img" alt="{{ partner.name }}">
-                    </div>
-                  {% endif %}
-                  <div>
-                    <h3 class="collab-title mb-0">{{ partner.name }}</h3>
-                    <div class="collab-institution">{{ partner.institution }}</div>
-                    {% if partner.location and partner.location != "" %}
-                      <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
-                    {% endif %}
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    {% for partner in site.data.collaborations.academia %}
+      <div class="col">
+        <div class="collab-card d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+              <div class="d-flex align-items-center gap-3">
+                {% if partner.image and partner.image != "" %}
+                  {% assign img_path = partner.image | prepend: 'assets/img/' %}
+                  <div class="collab-img-wrapper">
+                    <img src="{{ img_path | relative_url }}" class="collab-img" alt="{{ partner.name }}">
                   </div>
-                </div>
-
-                <!-- Contact & Social Icons Bar -->
-                <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
-                  {% if partner.website and partner.website != "" %}
-                    <a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon">
-                      <i class="fa-solid fa-globe"></i>
-                    </a>
-                  {% endif %}
-                  {% if partner.linkedin and partner.linkedin != "" %}
-                    <a href="https://linkedin.com/in/{{ partner.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon">
-                      <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  {% endif %}
-                  {% if partner.github and partner.github != "" %}
-                    <a href="https://github.com/{{ partner.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="collab-social-icon">
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                  {% endif %}
-                  {% if partner.scholar and partner.scholar != "" %}
-                    <a href="https://scholar.google.com/citations?user={{ partner.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="collab-social-icon">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                    </a>
-                  {% endif %}
-                  {% if partner.email and partner.email != "" %}
-                    <a href="mailto:{{ partner.email }}" title="Email" class="collab-social-icon">
-                      <i class="fa-solid fa-envelope"></i>
-                    </a>
-                  {% endif %}
-                  {% if partner.phone and partner.phone != "" %}
-                    <a href="tel:{{ partner.phone }}" title="Phone: {{ partner.phone }}" class="collab-social-icon">
-                      <i class="fa-solid fa-phone"></i>
-                    </a>
+                {% endif %}
+                <div>
+                  <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  <div class="collab-institution">{{ partner.institution }}</div>
+                  {% if partner.location and partner.location != "" %}
+                    <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
                   {% endif %}
                 </div>
               </div>
 
-              <!-- Address Details if specified -->
-              {% if partner.address and partner.address != "" %}
-                <div class="collab-address mb-2">
-                  <i class="fa-solid fa-building-user me-1"></i> {{ partner.address }}
-                </div>
-              {% endif %}
-
-              <!-- Collaboration Focus / Description -->
-              {% if partner.description and partner.description != "" %}
-                <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
-              {% endif %}
+              <!-- Contact & Social Icons Bar -->
+              <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
+                {% if partner.website and partner.website != "" %}
+                  <a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                {% endif %}
+                {% if partner.linkedin and partner.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ partner.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
+                {% if partner.github and partner.github != "" %}
+                  <a href="https://github.com/{{ partner.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="collab-social-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if partner.scholar and partner.scholar != "" %}
+                  <a href="https://scholar.google.com/citations?user={{ partner.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="collab-social-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                {% endif %}
+                {% if partner.email and partner.email != "" %}
+                  <a href="mailto:{{ partner.email }}" title="Email" class="collab-social-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                {% endif %}
+                {% if partner.phone and partner.phone != "" %}
+                  <a href="tel:{{ partner.phone }}" title="Phone: {{ partner.phone }}" class="collab-social-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
+              </div>
             </div>
+
+            {% if partner.address and partner.address != "" %}
+              <div class="collab-address mb-2">
+                <i class="fa-solid fa-building-user me-1"></i> {{ partner.address }}
+              </div>
+            {% endif %}
+
+            {% if partner.description and partner.description != "" %}
+              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
+            {% endif %}
           </div>
         </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<!-- 2. CLINICAL & HOSPITALS SECTION -->
+{% if site.data.collaborations.hospitals %}
+  <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-hospital me-2" style="color: #0f3460;"></i> Clinical & Research Hospitals
+  </h2>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    {% for partner in site.data.collaborations.hospitals %}
+      <div class="col">
+        <div class="collab-card d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+              <div class="d-flex align-items-center gap-3">
+                {% if partner.image and partner.image != "" %}
+                  {% assign img_path = partner.image | prepend: 'assets/img/' %}
+                  <div class="collab-img-wrapper">
+                    <img src="{{ img_path | relative_url }}" class="collab-img" alt="{{ partner.name }}">
+                  </div>
+                {% endif %}
+                <div>
+                  <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  <div class="collab-institution">{{ partner.institution }}</div>
+                  {% if partner.location and partner.location != "" %}
+                    <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Contact & Social Icons Bar -->
+              <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
+                {% if partner.website and partner.website != "" %}
+                  <a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                {% endif %}
+                {% if partner.linkedin and partner.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ partner.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
+                {% if partner.github and partner.github != "" %}
+                  <a href="https://github.com/{{ partner.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="collab-social-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if partner.scholar and partner.scholar != "" %}
+                  <a href="https://scholar.google.com/citations?user={{ partner.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="collab-social-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                {% endif %}
+                {% if partner.email and partner.email != "" %}
+                  <a href="mailto:{{ partner.email }}" title="Email" class="collab-social-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                {% endif %}
+                {% if partner.phone and partner.phone != "" %}
+                  <a href="tel:{{ partner.phone }}" title="Phone: {{ partner.phone }}" class="collab-social-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if partner.address and partner.address != "" %}
+              <div class="collab-address mb-2">
+                <i class="fa-solid fa-building-user me-1"></i> {{ partner.address }}
+              </div>
+            {% endif %}
+
+            {% if partner.description and partner.description != "" %}
+              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<!-- 3. INDUSTRY PARTNERS SECTION -->
+{% if site.data.collaborations.companies %}
+  <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-building me-2" style="color: #0f3460;"></i> Industry & Corporate Partners
+  </h2>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    {% for partner in site.data.collaborations.companies %}
+      <div class="col">
+        <div class="collab-card d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+              <div class="d-flex align-items-center gap-3">
+                {% if partner.image and partner.image != "" %}
+                  {% assign img_path = partner.image | prepend: 'assets/img/' %}
+                  <div class="collab-img-wrapper">
+                    <img src="{{ img_path | relative_url }}" class="collab-img" alt="{{ partner.name }}">
+                  </div>
+                {% endif %}
+                <div>
+                  <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  <div class="collab-institution">{{ partner.institution }}</div>
+                  {% if partner.location and partner.location != "" %}
+                    <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Contact & Social Icons Bar -->
+              <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
+                {% if partner.website and partner.website != "" %}
+                  <a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="collab-social-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                {% endif %}
+                {% if partner.linkedin and partner.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ partner.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="collab-social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
+                {% if partner.github and partner.github != "" %}
+                  <a href="https://github.com/{{ partner.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="collab-social-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if partner.scholar and partner.scholar != "" %}
+                  <a href="https://scholar.google.com/citations?user={{ partner.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="collab-social-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                {% endif %}
+                {% if partner.email and partner.email != "" %}
+                  <a href="mailto:{{ partner.email }}" title="Email" class="collab-social-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                {% endif %}
+                {% if partner.phone and partner.phone != "" %}
+                  <a href="tel:{{ partner.phone }}" title="Phone: {{ partner.phone }}" class="collab-social-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if partner.address and partner.address != "" %}
+              <div class="collab-address mb-2">
+                <i class="fa-solid fa-building-user me-1"></i> {{ partner.address }}
+              </div>
+            {% endif %}
+
+            {% if partner.description and partner.description != "" %}
+              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
