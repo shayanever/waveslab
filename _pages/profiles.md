@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 permalink: /team/
 title: Team
 description: Meet the researchers, students, and collaborators at WAVESLAB.
@@ -12,7 +12,7 @@ profiles:
     align: left
     image: giulia_cisotto.jpg
     content: _people/about_giulia.md
-    image_circular: true
+    image_circular: false
     email: "giulia.cisotto@units.it"
     github: "CisottoGiulia"
     scholar: "YOUR_SCHOLAR_ID"
@@ -23,7 +23,7 @@ profiles:
   - name: "Shayan Sharifi"
     role: "Ph.D. Researcher"
     align: left
-    image: shayan_sharifi.jpg
+    image: shayan_sharifi.png
     content: _people/about_shayan.md
     image_circular: true
     email: "shayan.sharifi@units.it"
