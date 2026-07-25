@@ -44,27 +44,22 @@ footer a:hover, footer.fixed-bottom a:hover {
 }
 
 /* ==========================================================================
-   HIDE "ctrl k" SHORTCUT TEXT IN NAVBAR
+   HIDE "ctrl k" TEXT IN NAVBAR SEARCH
    ========================================================================== */
 
-/* Target <kbd> tags, text wrappers, and spans inside search buttons/links */
+/* Target kbd elements, search tags, and text nodes in the search button */
 #search-toggle kbd,
-#search-toggle span,
 #search-toggle .search-tag,
 .open-search kbd,
-.open-search span,
 .open-search .search-tag,
-button[aria-label*="Search"] kbd,
-button[aria-label*="Search"] span {
+kbd.search-tag,
+kbd {
   display: none !important;
 }
 
-/* Ensure the button shrinks down to fit only the magnifier icon */
+/* Style the search button to display only the magnifier icon */
 #search-toggle,
 .open-search {
-  padding-left: 0.4rem !important;
-  padding-right: 0.4rem !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0 !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 }
