@@ -42,3 +42,17 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
+/* Hide text inside search button while keeping the icon visible */
+#search-toggle,
+.search-toggle,
+nav #search-toggle {
+  font-size: 0 !important;
+}
+
+/* Restore the font size for the search icon */
+#search-toggle i,
+#search-toggle svg,
+.search-toggle i,
+.search-toggle svg {
+  font-size: 1rem !important;
+}
