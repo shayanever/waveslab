@@ -42,14 +42,23 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
-/* Hide the "ctrl k" / "Ctrl K" text in the navbar search button */
+/* ==========================================================================
+   HIDE "ctrl k" SHORTCUT TEXT IN NAVBAR
+   ========================================================================== */
 
-button#search-toggle span {
+/* Target <kbd> tags, text wrappers, and spans inside search buttons/links */
+#search-toggle kbd,
+#search-toggle span,
+button[aria-label*="Search"] kbd,
+button[aria-label*="Search"] span {
   display: none !important;
 }
 
-/* Ensure search button only takes icon width */
+/* Ensure the button shrinks down to fit only the magnifier icon */
 #search-toggle {
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+  padding-left: 0.4rem !important;
+  padding-right: 0.4rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
 }
