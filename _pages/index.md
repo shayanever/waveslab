@@ -202,7 +202,7 @@ permalink: /
   <canvas id="waveCanvas"></canvas>
   <div class="logo-overlay">
     <img src="{{ '/assets/img/waveslab_logo.png' | relative_url }}" alt="WAVESLAB Logo">
-    <h1 class="text-3xl font-extrabold mb-4" style="color: #6a1b9a; letter-spacing: -0.02em;">Since November 2025 in Trieste</h1> 
+    <h2 class="text-3xl font-extrabold mb-4" style="color: #6a1b9a; margin: center;  letter-spacing: -0.02em;">Since November 2025 in Trieste</h2> 
   </div>
 </div>
 
