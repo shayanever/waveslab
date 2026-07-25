@@ -4,7 +4,7 @@ permalink: /collaborations/
 title: Collaborations
 description: Building interdisciplinary bridges across academic institutions, research hospitals, and industry leaders.
 nav: true
-nav_order: 8
+nav_order: 7
 ---
 
 <style>

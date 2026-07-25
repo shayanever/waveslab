@@ -4,7 +4,7 @@ permalink: /contact/
 title: Contact
 description: Get in touch with WAVESLAB or visit our facilities at the University of Trieste.
 nav: true
-nav_order: 10
+nav_order: 9
 ---
 
 <style>

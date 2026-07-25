@@ -4,7 +4,7 @@ permalink: /team/
 title: Team
 description: Meet the researchers, students, and collaborators at WAVESLAB.
 nav: true
-nav_order: 7
+nav_order: 3
 
 profiles:
   - name: "Giulia Cisotto, Ph.D."

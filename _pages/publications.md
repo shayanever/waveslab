@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: Publications by categories in reverse chronological order.
 nav: true
-nav_order: 2
+nav_order: 4
 ---
 
 <!-- Custom Clean Header -->

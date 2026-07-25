@@ -4,7 +4,7 @@ permalink: /repositories/
 title: Repos
 description: Open-source code, toolboxes, and software packages developed by WAVESLAB.
 nav: true
-nav_order: 4
+nav_order: 6
 ---
 
 <style>

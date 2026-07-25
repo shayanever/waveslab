@@ -4,7 +4,7 @@ permalink: /Join us/
 title: Join us
 description: Join WAVESLAB as a Ph.D. researcher, Postdoc, or Master/Bachelor thesis student.
 nav: true
-nav_order: 9
+nav_order: 8
 ---
 
 <style>

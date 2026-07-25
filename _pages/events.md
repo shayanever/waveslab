@@ -4,7 +4,7 @@ permalink: /Events/
 title: Events
 description: Course materials, schedules, and resources for classes taught.
 nav: true
-nav_order: 6
+nav_order: 10
 calendar: true
 ---
 <style>
