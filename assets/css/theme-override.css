@@ -43,3 +43,15 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
+/* Hide the "ctrl k" / "Ctrl K" text in the navbar search button */
+#search-toggle span.search-tag,
+#search-toggle .search-tag,
+button#search-toggle span {
+  display: none !important;
+}
+
+/* Ensure search button only takes icon width */
+#search-toggle {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
