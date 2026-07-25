@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
+        {% if site.title %}
+          <span class="font-weight-bold">{{ site.title }}</span>
+        {% endif %}
+      </a>
+
+      <!-- Responsive Toggle Button for Mobile -->
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-menu ml-auto flex-nowrap align-items-center">
+          {% for page in site.pages %}
+            {% if page.nav %}
+              <li class="nav-item {% if page.permalink == page.permalink %}active{% endif %}">
+                <a class="nav-link" href="{{ page.url | relative_url }}">
+                  {{ page.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Search Button (MODIFIED: Icon Only, no "Ctrl K" text) -->
+          {% if site.search_enabled %}
+            <li class="nav-item">
+              <button id="search-toggle" class="btn btn-sm text-secondary" type="button" title="Search (Ctrl + K)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
