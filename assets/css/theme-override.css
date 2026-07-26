@@ -118,3 +118,25 @@ div.publications h2.year,
   --global-divider-color: #0f3460 !important;
   --global-text-color-light: #0f3460 !important;
 }
+
+/* ==========================================================================
+   NAVBAR MENU ALIGNMENT FIX ACROSS ALL PAGES
+   ========================================================================== */
+
+/* Ensure the navbar container expands properly */
+.navbar .container,
+nav .container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Force the menu list to push cleanly to the right */
+.navbar-nav,
+.navbar-collapse ul,
+#navbarNav ul {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
