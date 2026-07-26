@@ -123,18 +123,10 @@ div.publications h2.year,
 
 
 /* ==========================================================================
-   FORCE NAVBAR BRAND VISIBILITY & RIGHT ALIGNMENT ON HOMEPAGE
+   HOMEPAGE NAVBAR RIGHT-ALIGNMENT FIX (PSEUDO-ELEMENT SPACER)
    ========================================================================== */
 
-/* 1. Make the brand title ("WavesLab") visible on the homepage */
-.navbar .navbar-brand,
-a.navbar-brand {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* 2. Ensure the container spreads brand (left) and menu (right) */
+/* 1. Ensure the nav container uses flex space-between */
 .navbar > .container,
 #navbar > .container {
   display: flex !important;
@@ -144,14 +136,23 @@ a.navbar-brand {
   max-width: 1180px !important;
 }
 
-/* 3. Keep menu items strictly aligned to the right edge */
-.navbar-collapse {
-  flex-grow: 1 !important;
-  display: flex !important;
-  justify-content: flex-end !important;
+/* 2. Create an invisible left-hand element when .navbar-brand is omitted */
+.navbar > .container::before {
+  content: "WavesLab" !important;
+  visibility: hidden !important; /* Takes up exact width of "WavesLab" without showing */
+  font-size: 1.25rem !important;
+  font-weight: 300 !important;
+  padding: 0.5rem 0 !important;
+  display: inline-block !important;
 }
 
-.navbar-nav {
+/* 3. If .navbar-brand exists on subpages, suppress the pseudo-element */
+.navbar > .container:has(.navbar-brand)::before {
+  display: none !important;
+}
+
+/* 4. Push menu items to the far right */
+.navbar-collapse {
+  flex-grow: 0 !important;
   margin-left: auto !important;
-  margin-right: 0 !important;
 }
