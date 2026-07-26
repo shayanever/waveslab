@@ -196,17 +196,7 @@ alumni:
                   {% if profile.role %}
                     <div class="team-role mb-2">{{ profile.role }}</div>
                   {% endif %}
-
-                  {% if profile.more_info %}
-                    <div class="more-info my-2">
-                      {{ profile.more_info }}
-                    </div>
-                  {% endif %}
-                </div>
-
-                <!-- Right Side: Social Icons placed in the Upper Right Corner -->
-                <div class="d-flex align-items-center gap-2 mt-1">
-                  {% if profile.website and profile.website != "" %}
+                 {% if profile.website and profile.website != "" %}
                     <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                       <i class="fa-solid fa-globe"></i>
                     </a>
@@ -236,6 +226,16 @@ alumni:
                       <i class="fa-solid fa-graduation-cap"></i>
                     </a>
                   {% endif %}
+                  {% if profile.more_info %}
+                    <div class="more-info my-2">
+                      {{ profile.more_info }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <!-- Right Side: Social Icons placed in the Upper Right Corner -->
+                <div class="d-flex align-items-center gap-2 mt-1">
+                 
                 </div>
 
               </div>
