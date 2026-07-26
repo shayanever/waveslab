@@ -71,10 +71,10 @@ alumni:
     box-shadow: 0 12px 28px rgba(15, 52, 96, 0.09) !important;
   }
 
-  /* Compact Profile Avatar Wrapper */
+  /* Profile Avatar Wrapper */
   .team-img-wrapper {
-    width: 170px;
-    height: 170px;
+    width: 180px;
+    height: 180px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -100,13 +100,13 @@ alumni:
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .team-role {
     color: #0f3460;
     font-weight: 600;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   /* Social Icons */
@@ -134,6 +134,13 @@ alumni:
   .more-info p {
     font-size: 0.88rem;
     color: #475569;
+  }
+
+  /* Vertical Border Separator on Desktop */
+  @media (min-width: 768px) {
+    .border-end-md {
+      border-right: 1px solid #e2e8f0;
+    }
   }
 
   /* Alumni Card Styling */
@@ -173,8 +180,8 @@ alumni:
         <div class="team-card">
           <div class="row align-items-start g-4">
             
-            <!-- LEFT COLUMN: Image & Location Info ONLY -->
-            <div class="col-12 col-md-4 col-lg-3 text-center d-flex flex-column align-items-center">
+            <!-- LEFT COLUMN: Image, Name, Role, & Social Icons -->
+            <div class="col-12 col-md-4 col-lg-3 text-center border-end-md pe-md-4 mb-3 mb-md-0 d-flex flex-column align-items-center">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                 <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
@@ -182,66 +189,61 @@ alumni:
                 </div>
               {% endif %}
 
-              <!-- Location & Affiliation below image -->
-              {% if profile.more_info %}
-                <div class="more-info text-center mt-1">
-                  {{ profile.more_info }}
-                </div>
+              <h3 class="team-name mb-1">{{ profile.name }}</h3>
+              {% if profile.role %}
+                <div class="team-role mb-2">{{ profile.role }}</div>
               {% endif %}
+
+              <!-- Social Icons Bar -->
+              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2">
+                {% if profile.website and profile.website != "" %}
+                  <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                {% endif %}
+                {% if profile.linkedin and profile.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
+                {% if profile.email and profile.email != "" %}
+                  <a href="mailto:{{ profile.email }}" title="Email" class="team-social-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                {% endif %}
+                {% if profile.phone and profile.phone != "" %}
+                  <a href="tel:{{ profile.phone }}" title="Phone: {{ profile.phone }}" class="team-social-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
+                {% if profile.github and profile.github != "" %}
+                  <a href="https://github.com/{{ profile.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if profile.scholar and profile.scholar != "" %}
+                  <a href="https://scholar.google.com/citations?user={{ profile.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                {% endif %}
+              </div>
             </div>
 
-            <!-- RIGHT COLUMN: Name, Role, Social Icons + Bio Content -->
-            <div class="col-12 col-md-8 col-lg-9 ps-md-3">
+            <!-- RIGHT COLUMN: Bio Markdown Content + Location at Bottom -->
+            <div class="col-12 col-md-8 col-lg-9 ps-md-3 d-flex flex-column justify-content-between h-100">
               
-              <!-- Header Bar: Name + Role on Left, Social Icons on Right -->
-              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start gap-3 mb-3 pb-3 border-bottom">
-                <div>
-                  <h3 class="team-name mb-1">{{ profile.name }}</h3>
-                  {% if profile.role %}
-                    <div class="team-role mb-0">{{ profile.role }}</div>
-                  {% endif %}
-                </div>
-
-                <!-- Social Icons Bar -->
-                <div class="d-flex align-items-center gap-2 flex-wrap">
-                  {% if profile.website and profile.website != "" %}
-                    <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
-                      <i class="fa-solid fa-globe"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.linkedin and profile.linkedin != "" %}
-                    <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon">
-                      <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.email and profile.email != "" %}
-                    <a href="mailto:{{ profile.email }}" title="Email" class="team-social-icon">
-                      <i class="fa-solid fa-envelope"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.phone and profile.phone != "" %}
-                    <a href="tel:{{ profile.phone }}" title="Phone: {{ profile.phone }}" class="team-social-icon">
-                      <i class="fa-solid fa-phone"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.github and profile.github != "" %}
-                    <a href="https://github.com/{{ profile.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon">
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.scholar and profile.scholar != "" %}
-                    <a href="https://scholar.google.com/citations?user={{ profile.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                    </a>
-                  {% endif %}
-                </div>
-              </div>
-
-              <!-- Bio Markdown Content -->
+              <!-- Bio Content -->
               {% if profile.content %}
-                <div class="profile-content text-secondary">
+                <div class="profile-content text-secondary mb-3">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
                   {{ profile_content | markdownify }}
+                </div>
+              {% endif %}
+
+              <!-- Location & Affiliation (Moved to Bottom Right) -->
+              {% if profile.more_info %}
+                <div class="more-info pt-2 border-top">
+                  {{ profile.more_info }}
                 </div>
               {% endif %}
 

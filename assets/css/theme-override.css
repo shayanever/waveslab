@@ -43,6 +43,7 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
+
 /* ==========================================================================
    HIDE ONLY "ctrl k" TEXT (KEEP MAGNIFIER ICON)
    ========================================================================== */
@@ -80,6 +81,7 @@ a.open-search,
   display: inline-block !important;
   color: rgba(255, 255, 255, 0.85) !important;
 }
+
 
 /* ==========================================================================
    VERTICAL ALIGNMENT FIX FOR NAVBAR SEARCH ICON
@@ -130,13 +132,16 @@ div.publications h2.year,
   --global-text-color-light: #0f3460 !important;
 }
 
+
 /* ==========================================================================
-   FORCE NAVBAR BRAND VISIBILITY ON HOMEPAGE
+   FORCE NAVBAR BRAND VISIBILITY & RIGHT ALIGNMENT ON HOMEPAGE
    ========================================================================== */
 
 /* 1. Make the brand title ("WavesLab") visible on the homepage */
 .navbar .navbar-brand,
-a.navbar-brand {
+a.navbar-brand,
+.navbar-brand.is-home,
+a.navbar-brand.d-none {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -157,4 +162,9 @@ a.navbar-brand {
   flex-grow: 1 !important;
   display: flex !important;
   justify-content: flex-end !important;
+}
+
+.navbar-nav {
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
