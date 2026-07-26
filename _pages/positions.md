@@ -158,7 +158,7 @@ nav_order: 8
     <i class="fa-solid fa-book-open-reader me-2" style="color: #0f3460;"></i> Available Thesis Opportunities
   </h2>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+  <div class="row row-cols-1 g-4 mb-5">
     {% for thesis in site.data.positions.thesis_topics %}
       <div class="col">
         <div class="pos-card d-flex flex-column justify-content-between">
