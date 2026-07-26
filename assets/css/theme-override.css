@@ -44,22 +44,39 @@ footer a:hover, footer.fixed-bottom a:hover {
 }
 
 /* ==========================================================================
-   HIDE "ctrl k" TEXT IN NAVBAR SEARCH
+   HIDE ONLY "ctrl k" TEXT (KEEP MAGNIFIER ICON)
    ========================================================================== */
 
-/* Target kbd elements, search tags, and text nodes in the search button */
-#search-toggle kbd,
-#search-toggle .search-tag,
-.open-search kbd,
-.open-search .search-tag,
-kbd.search-tag,
-kbd {
-  display: none !important;
-}
-
-/* Style the search button to display only the magnifier icon */
+/* 1. Target the search container / button and make text invisible */
 #search-toggle,
-.open-search {
+.open-search,
+button#search-toggle,
+a.open-search,
+.navbar #search-toggle {
+  font-size: 0 !important; /* Collapses all plain text ("ctrl k") to 0px */
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
+}
+
+/* 2. Target child kbd / span elements and collapse their text size */
+#search-toggle kbd,
+#search-toggle span,
+.open-search kbd,
+.open-search span {
+  font-size: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 3. Re-enable FontAwesome icon visibility and size */
+#search-toggle i,
+#search-toggle .fa-magnifying-glass,
+.open-search i,
+.open-search .fa-magnifying-glass {
+  font-size: 1rem !important; /* Restores the magnifier icon */
+  display: inline-block !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
