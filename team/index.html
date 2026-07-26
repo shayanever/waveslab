@@ -3,115 +3,212 @@
     --max-content-width: 1180px;
   }
 </style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/waveslab/assets/img/waveslab_logo.png?v=f5df269822ea1a14426cbe91d1d4d46b"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/team/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/waveslab/"> WavesLab </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/waveslab/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/News/index.html">News </a> </li> <li class="nav-item active"> <a class="nav-link" href="/waveslab/team/">Team <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">GitHub </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/collaborations/">Collaborations </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/Join%20us/">Join us </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/contact/">Contact </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/Events/">Events </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+
   /* Active Member Card Styling */
+
   .team-card {
+
     background: #ffffff;
+
     border-radius: 16px;
+
     border: 1px solid #e2e8f0 !important;
-    padding: 1.75rem !important;
+
+    padding: 2.25rem !important;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
   }
+
+
 
   .team-card:hover {
+
     transform: translateY(-3px);
+
     box-shadow: 0 12px 28px rgba(15, 52, 96, 0.09) !important;
+
   }
 
-  /* Profile Avatar Wrapper */
+
+
   .team-img-wrapper {
-    width: 180px;
-    height: 180px;
-    max-width: 100%;
+
+    width: 190px;
+
+    height: 190px;
+
+    min-width: 190px;
+
     margin: 0 auto;
+
     overflow: hidden;
+
     position: relative;
+
     border: 4px solid #f1f5f9;
+
     box-shadow: 0 6px 16px rgba(15, 52, 96, 0.12);
+
   }
+
+
 
   .team-img-wrapper.circular {
+
     border-radius: 50%;
+
   }
+
+
 
   .team-img-wrapper.square {
+
     border-radius: 16px;
+
   }
+
+
 
   .team-img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
   }
+
+
 
   .team-name {
+
     color: #0f3460 !important;
+
     font-weight: 700;
-    font-size: 1.35rem;
+
+    font-size: 1.4rem;
+
   }
+
+
 
   .team-role {
+
     color: #0f3460;
+
     font-weight: 600;
-    font-size: 0.95rem;
+
+    font-size: 0.98rem;
+
+    margin-bottom: 0.75rem;
+
   }
+
+
 
   /* Social Icons */
+
   .team-social-icon {
+
     color: #0f3460 !important;
-    font-size: 1.05rem;
+
+    font-size: 1.15rem;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
-    width: 36px;
-    height: 36px;
+
+    width: 38px;
+
+    height: 38px;
+
     border-radius: 50%;
+
     background-color: #f1f5f9;
+
     transition: all 0.2s ease-in-out;
+
     text-decoration: none !important;
+
   }
+
+
 
   .team-social-icon:hover {
+
     color: #ffffff !important;
+
     background-color: #0f3460 !important;
+
     transform: translateY(-2px) scale(1.05);
+
     box-shadow: 0 4px 10px rgba(15, 52, 96, 0.2);
+
   }
+
+
 
   .more-info p {
-    font-size: 0.88rem;
+
+    margin-bottom: 0.35rem;
+
+    font-size: 0.92rem;
+
     color: #475569;
+
   }
 
-  /* Vertical Border Separator on Desktop */
-  @media (min-width: 768px) {
-    .border-end-md {
-      border-right: 1px solid #e2e8f0;
-    }
-  }
+
 
   /* Alumni Card Styling */
+
   .alumni-card {
+
     background: #ffffff;
+
     border-radius: 12px;
+
     border: 1px solid #e2e8f0;
+
     padding: 1.5rem !important;
+
     height: 100%;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
   }
+
+
 
   .alumni-card:hover {
+
     box-shadow: 0 8px 20px rgba(15, 52, 96, 0.06);
+
   }
 
+
+
   .alumni-img-wrapper {
+
     width: 70px;
+
     height: 70px;
+
     min-width: 70px;
+
     border-radius: 50%;
+
     overflow: hidden;
+
     border: 2px solid #e2e8f0;
+
   }
-</style> <div class="header-bar mb-4"> <h1 class="header-title">Team</h1> <p class="header-subtitle">Researchers, engineers, and students at WAVESLAB.</p> </div> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="team-card"> <div class="row align-items-start g-4"> <div class="col-12 col-md-4 col-lg-3 text-center border-end-md pe-md-4 mb-3 mb-md-0 d-flex flex-column align-items-center"> <div class="team-img-wrapper circular mb-3"> <img src="/waveslab/assets/img/giulia_cisotto.jpg" class="team-img" alt="Giulia Cisotto, Ph.D."> </div> <h3 class="team-name mb-1">Giulia Cisotto, Ph.D.</h3> <div class="team-role mb-2">Assistant Professor / Lab Director</div> <div class="d-flex align-items-center justify-content-center flex-wrap gap-2"> <a href="https://sites.google.com/view/giulia-cisotto" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="https://linkedin.com/in/giuliacisotto" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:giulia.cisotto@units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="tel:+39040%20558%202644" title="Phone: +39040 558 2644" class="team-social-icon"> <i class="fa-solid fa-phone"></i> </a> <a href="https://github.com/CisottoGiulia" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=CuSEKIsAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="col-12 col-md-8 col-lg-9 ps-md-3 d-flex flex-column justify-content-between h-100"> <div class="profile-content text-secondary mb-3"> <p><strong>Giulia Cisotto</strong> is a Tenure-Track Assistant Professor (RTT) at the Department of Mathematics, Informatics and Geosciences at the <strong>University of Trieste, Italy</strong>.</p> <p>Since November 1st, 2025, she heads the <strong>Waves Lab</strong> at the University of Trieste, focusing on AI and machine learning modeling of biological time-series with applications to healthcare, Brain-Computer Interfaces (BCI), and computational neuroscience.</p> <p>She earned her Italian National Scientific Habilitation for Associate Professor in Computer Science (2025) and Telecommunication Engineering (2024). Previously, she served as a non-tenure Assistant Professor at the <a href="https://www.unimib.it/" rel="external nofollow noopener" target="_blank">University of Milano-Bicocca</a> (2022–2024) and the <a href="https://www.unipd.it/" rel="external nofollow noopener" target="_blank">University of Padova</a> (2019–2022). She was also a Post-doctoral Researcher in Padova and a Research Associate at <a href="https://www.keio.ac.jp/en/" rel="external nofollow noopener" target="_blank">Keio University of Tokyo</a>, Japan.</p> </div> <div class="more-info pt-2 border-top"> <p class="mb-1"><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p> <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> </div> </div> </div> </div> <div class="col"> <div class="team-card"> <div class="row align-items-start g-4"> <div class="col-12 col-md-4 col-lg-3 text-center border-end-md pe-md-4 mb-3 mb-md-0 d-flex flex-column align-items-center"> <div class="team-img-wrapper circular mb-3"> <img src="/waveslab/assets/img/shayan_sharifi.png" class="team-img" alt="Shayan Sharifi"> </div> <h3 class="team-name mb-1">Shayan Sharifi</h3> <div class="team-role mb-2">Ph.D. Researcher</div> <div class="d-flex align-items-center justify-content-center flex-wrap gap-2"> <a href="https://shayansharifi.net" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="https://linkedin.com/in/sharifi-shayan" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:shayan.sharifi@phd.units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/shayanever" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=Juzc7T8AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="col-12 col-md-8 col-lg-9 ps-md-3 d-flex flex-column justify-content-between h-100"> <div class="profile-content text-secondary mb-3"> <p><strong>Shayan Sharifi</strong> is a PhD candidate in AI and Applied Data Science, specializing in <strong>Machine Learning, Deep Learning, and Computer Vision</strong>.</p> <p>His research primarily focuses on <strong>Explainable Multi-Modal Learning</strong> and the development of machine/deep learning models and signal processing pipelines for physiological time-series data, particularly <strong>ECG and EEG signals</strong>.</p> <p>He holds a Bachelor’s degree in Computer Engineering and a Master’s degree in ICT Engineering from the <a href="https://www.unipd.it/en/" rel="external nofollow noopener" target="_blank">University of Padova</a>. Alongside his academic research, he brings a strong industry background as an <strong>AI Engineer</strong>, <strong>Web Developer</strong>, and former <strong>Head of IT</strong>.</p> </div> <div class="more-info pt-2 border-top"> <p class="mb-1"><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p> <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> </div> </div> </div> </div> </div> <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> Past Lab Members &amp; Alumni </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="alumni-img-wrapper"> <img src="/waveslab/assets/img/alberto_zancanaro.jpg" class="team-img" alt="Alberto Zancanaro, PhD"> </div> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alberto Zancanaro, PhD</h5> <p class="text-secondary small mb-1">Former PhD Student (2021 – 2024)</p> </div> <div class="d-flex align-items-center gap-2"> <a href="https://linkedin.com/in/alberto-zancanaro" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:alberto@example.com" title="Email" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/jesus-333" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-brands fa-github"></i> </a> </div> </div> <p class="text-muted small mb-1"><em>Next: Postdoc researcher at University of Luxembourg</em></p> <p class="text-secondary small mb-0 mt-2 pt-2 border-top">Worked on federated learning and EEG signal processing.</p> </div> </div> </div> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alessandro Minutolo, MSc</h5> <p class="text-secondary small mb-1">Former Master Student (2025 – 2026)</p> </div> <div class="d-flex align-items-center gap-2"> </div> </div> <p class="text-muted small mb-1"><em>Next: Researcher in Berlin</em></p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
+
+</style> <div class="header-bar mb-4"> <h1 class="header-title">Team</h1> <p class="header-subtitle">Researchers, engineers, and students at WAVESLAB.</p> </div> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="team-card"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular"> <img src="/waveslab/assets/img/giulia_cisotto.jpg" class="team-img" alt="Giulia Cisotto, Ph.D."> </div> </div> <div class="col-md-9 ps-md-3"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2"> <div> <h3 class="team-name mb-1">Giulia Cisotto, Ph.D.</h3> <div class="team-role">Assistant Professor / Lab Director</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://sites.google.com/view/giulia-cisotto" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="https://linkedin.com/in/giuliacisotto" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:giulia.cisotto@units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="tel:+39040%20558%202644" title="Phone: +39040 558 2644" class="team-social-icon"> <i class="fa-solid fa-phone"></i> </a> <a href="https://github.com/CisottoGiulia" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=CuSEKIsAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info my-2"> <p><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3 pt-2 border-top"> <p><strong>Giulia Cisotto</strong> is a Tenure-Track Assistant Professor (RTT) at the Department of Mathematics, Informatics and Geosciences at the <strong>University of Trieste, Italy</strong>.</p> <p>Since November 1st, 2025, she heads the <strong>Waves Lab</strong> at the University of Trieste, focusing on AI and machine learning modeling of biological time-series with applications to healthcare, Brain-Computer Interfaces (BCI), and computational neuroscience.</p> <p>She earned her Italian National Scientific Habilitation for Associate Professor in Computer Science (2025) and Telecommunication Engineering (2024). Previously, she served as a non-tenure Assistant Professor at the <a href="https://www.unimib.it/" rel="external nofollow noopener" target="_blank">University of Milano-Bicocca</a> (2022–2024) and the <a href="https://www.unipd.it/" rel="external nofollow noopener" target="_blank">University of Padova</a> (2019–2022). She was also a Post-doctoral Researcher in Padova and a Research Associate at <a href="https://www.keio.ac.jp/en/" rel="external nofollow noopener" target="_blank">Keio University of Tokyo</a>, Japan.</p> </div> </div> </div> </div> </div> <div class="col"> <div class="team-card"> <div class="row align-items-center g-4"> <div class="col-md-3 text-center pe-md-4"> <div class="team-img-wrapper circular"> <img src="/waveslab/assets/img/shayan_sharifi.png" class="team-img" alt="Shayan Sharifi"> </div> </div> <div class="col-md-9 ps-md-3"> <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2"> <div> <h3 class="team-name mb-1">Shayan Sharifi</h3> <div class="team-role">Ph.D. Researcher</div> </div> <div class="d-flex align-items-center gap-2"> <a href="https://shayansharifi.net" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon"> <i class="fa-solid fa-globe"></i> </a> <a href="https://linkedin.com/in/sharifi-shayan" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:shayan.sharifi@phd.units.it" title="Email" class="team-social-icon"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/shayanever" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon"> <i class="fa-brands fa-github"></i> </a> <a href="https://scholar.google.com/citations?user=Juzc7T8AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon"> <i class="fa-solid fa-graduation-cap"></i> </a> </div> </div> <div class="more-info my-2"> <p><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p> <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p> </div> <div class="profile-content text-secondary mt-3 pt-2 border-top"> <p><strong>Shayan Sharifi</strong> is a PhD candidate in AI and Applied Data Science, specializing in <strong>Machine Learning, Deep Learning, and Computer Vision</strong>.</p> <p>His research primarily focuses on <strong>Explainable Multi-Modal Learning</strong> and the development of machine/deep learning models and signal processing pipelines for physiological time-series data, particularly <strong>ECG and EEG signals</strong>.</p> <p>He holds a Bachelor’s degree in Computer Engineering and a Master’s degree in ICT Engineering from the <a href="https://www.unipd.it/en/" rel="external nofollow noopener" target="_blank">University of Padova</a>. Alongside his academic research, he brings a strong industry background as an <strong>AI Engineer</strong>, <strong>Web Developer</strong>, and former <strong>Head of IT</strong>.</p> </div> </div> </div> </div> </div> </div> <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> Past Lab Members &amp; Alumni </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="alumni-img-wrapper"> <img src="/waveslab/assets/img/alberto_zancanaro.jpg" class="team-img" alt="Alberto Zancanaro, PhD"> </div> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alberto Zancanaro, PhD</h5> <p class="text-secondary small mb-1">Former PhD Student (2021 – 2024)</p> </div> <div class="d-flex align-items-center gap-2"> <a href="https://linkedin.com/in/alberto-zancanaro" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-brands fa-linkedin-in"></i> </a> <a href="mailto:alberto@example.com" title="Email" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/jesus-333" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;"> <i class="fa-brands fa-github"></i> </a> </div> </div> <p class="text-muted small mb-1"><em>Next: Postdoc researcher at University of Luxembourg</em></p> <p class="text-secondary small mb-0 mt-2 pt-2 border-top">Worked on federated learining and EEG signal processing.</p> </div> </div> </div> <div class="col"> <div class="alumni-card d-flex align-items-start gap-3"> <div class="w-100"> <div class="d-flex justify-content-between align-items-start gap-2"> <div> <h5 class="mb-1" style="color: #0f3460; font-weight: 700;">Alessandro Minutolo, MSc</h5> <p class="text-secondary small mb-1">Former Master Student (2025 – 2026)</p> </div> <div class="d-flex align-items-center gap-2"> </div> </div> <p class="text-muted small mb-1"><em>Next: Researcher in Berlin</em></p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
