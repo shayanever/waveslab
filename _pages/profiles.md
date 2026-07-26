@@ -47,7 +47,7 @@ alumni:
     github: "jesus-333"
     email: "alberto@example.com"
     phone: ""
-    more_info: "Worked on federated learining and EEG signal processing."
+    more_info: "Worked on federated learning and EEG signal processing."
 
   - name: "Alessandro Minutolo, MSc"
     role: "Former Master Student"
@@ -71,6 +71,7 @@ alumni:
     box-shadow: 0 12px 28px rgba(15, 52, 96, 0.09) !important;
   }
 
+  /* Profile Avatar Wrapper */
   .team-img-wrapper {
     width: 220px;
     height: 220px;
@@ -106,7 +107,6 @@ alumni:
     color: #0f3460;
     font-weight: 600;
     font-size: 0.98rem;
-    margin-bottom: 0.75rem;
   }
 
   /* Social Icons */
@@ -132,12 +132,11 @@ alumni:
   }
 
   .more-info p {
-    margin-bottom: 0.35rem;
     font-size: 0.9rem;
     color: #475569;
   }
 
-  /* Divider line between left sidebar and right text on desktop */
+  /* Desktop Vertical Border Separator */
   @media (min-width: 768px) {
     .border-end-md {
       border-right: 1px solid #e2e8f0;
@@ -179,11 +178,11 @@ alumni:
     {% for profile in page.profiles %}
       <div class="col">
         <div class="team-card">
-          <!-- Row container with explicit horizontal column layout -->
-          <div class="row align-items-center g-4">
+          <!-- Main container: Stacks on mobile, side-by-side on desktop -->
+          <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4">
             
-            <!-- LEFT COLUMN: Image, Name, Role, Socials, Location -->
-            <div class="col-12 col-md-5 col-lg-4 text-center border-end-md pe-md-4">
+            <!-- LEFT COLUMN: Profile Image, Name, Role, Socials & Info -->
+            <div class="col-12 col-md-5 col-lg-4 text-center border-end-md pe-md-4 d-flex flex-column align-items-center flex-shrink-0">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                 <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
@@ -193,10 +192,10 @@ alumni:
 
               <h3 class="team-name mb-1">{{ profile.name }}</h3>
               {% if profile.role %}
-                <div class="team-role">{{ profile.role }}</div>
+                <div class="team-role mb-2">{{ profile.role }}</div>
               {% endif %}
 
-              <!-- Social Icons -->
+              <!-- Social Icons Bar -->
               <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-3">
                 {% if profile.website and profile.website != "" %}
                   <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
@@ -239,7 +238,7 @@ alumni:
             </div>
 
             <!-- RIGHT COLUMN: Bio Markdown Content -->
-            <div class="col-12 col-md-7 col-lg-8 ps-md-4">
+            <div class="col-12 col-md-7 col-lg-8 ps-md-2 flex-grow-1">
               {% if profile.content %}
                 <div class="profile-content text-secondary">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
@@ -299,7 +298,7 @@ alumni:
                   </a>
                 {% endif %}
                 {% if person.phone and person.phone != "" %}
-                  <a href="tel:{{ person.phone }}" title="Phone: {{ person.phone }}" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
+                  <a href="tel:{{ profile.phone }}" title="Phone: {{ person.phone }}" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
                     <i class="fa-solid fa-phone"></i>
                   </a>
                 {% endif %}
