@@ -99,25 +99,25 @@ alumni:
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .team-role {
     color: #0f3460;
     font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.98rem;
+    margin-bottom: 0.75rem;
   }
 
   /* Social Icons */
   .team-social-icon {
     color: #0f3460 !important;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background-color: #f1f5f9;
     transition: all 0.2s ease-in-out;
@@ -133,7 +133,7 @@ alumni:
 
   .more-info p {
     margin-bottom: 0.35rem;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: #475569;
   }
 
@@ -171,80 +171,75 @@ alumni:
   <div class="row row-cols-1 g-4 mb-5">
     {% for profile in page.profiles %}
       <div class="col">
-        <div class="team-card text-center">
-          <div class="row g-3 justify-content-center">
+        <div class="team-card">
+          <div class="row g-4 align-items-start">
             
-            <!-- Member Headshot (Top) -->
-            <div class="col-12 mb-2">
+            <!-- LEFT COLUMN: Image, Name, Role, Socials, Location -->
+            <div class="col-12 col-md-5 col-lg-4 text-center border-end-md pe-md-4">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
+                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
                   <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
                 </div>
               {% endif %}
-            </div>
 
-            <!-- Member Details & Description (Bottom) -->
-            <div class="col-12 col-lg-10">
-              <div class="d-flex flex-column align-items-center gap-2 mb-3">
-                <div>
-                  <h3 class="team-name mb-1">{{ profile.name }}</h3>
-                  {% if profile.role %}
-                    <div class="team-role">{{ profile.role }}</div>
-                  {% endif %}
-                </div>
+              <h3 class="team-name mb-1">{{ profile.name }}</h3>
+              {% if profile.role %}
+                <div class="team-role">{{ profile.role }}</div>
+              {% endif %}
 
-                <!-- Social & Contact Icons Bar -->
-                <div class="d-flex align-items-center justify-content-center gap-2 my-1">
-                  {% if profile.website and profile.website != "" %}
-                    <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
-                      <i class="fa-solid fa-globe"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.linkedin and profile.linkedin != "" %}
-                    <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon">
-                      <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.email and profile.email != "" %}
-                    <a href="mailto:{{ profile.email }}" title="Email" class="team-social-icon">
-                      <i class="fa-solid fa-envelope"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.phone and profile.phone != "" %}
-                    <a href="tel:{{ profile.phone }}" title="Phone: {{ profile.phone }}" class="team-social-icon">
-                      <i class="fa-solid fa-phone"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.github and profile.github != "" %}
-                    <a href="https://github.com/{{ profile.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon">
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                  {% endif %}
-                  {% if profile.scholar and profile.scholar != "" %}
-                    <a href="https://scholar.google.com/citations?user={{ profile.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                    </a>
-                  {% endif %}
-                </div>
+              <!-- Social Icons -->
+              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-3">
+                {% if profile.website and profile.website != "" %}
+                  <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                {% endif %}
+                {% if profile.linkedin and profile.linkedin != "" %}
+                  <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="team-social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                {% endif %}
+                {% if profile.email and profile.email != "" %}
+                  <a href="mailto:{{ profile.email }}" title="Email" class="team-social-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                {% endif %}
+                {% if profile.phone and profile.phone != "" %}
+                  <a href="tel:{{ profile.phone }}" title="Phone: {{ profile.phone }}" class="team-social-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                {% endif %}
+                {% if profile.github and profile.github != "" %}
+                  <a href="https://github.com/{{ profile.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="team-social-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if profile.scholar and profile.scholar != "" %}
+                  <a href="https://scholar.google.com/citations?user={{ profile.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="team-social-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </a>
+                {% endif %}
               </div>
 
               <!-- Location & Affiliation -->
               {% if profile.more_info %}
-                <div class="more-info my-2">
+                <div class="more-info text-center">
                   {{ profile.more_info }}
                 </div>
               {% endif %}
+            </div>
 
-              <!-- Bio Markdown Content -->
+            <!-- RIGHT COLUMN: Detailed Bio Markdown Content -->
+            <div class="col-12 col-md-7 col-lg-8 ps-md-4">
               {% if profile.content %}
-                <div class="profile-content text-secondary text-start mt-3 pt-3 border-top">
+                <div class="profile-content text-secondary">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
                   {{ profile_content | markdownify }}
                 </div>
               {% endif %}
-
             </div>
+
           </div>
         </div>
       </div>
