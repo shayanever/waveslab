@@ -85,24 +85,23 @@ a.open-search,
    VERTICAL ALIGNMENT FIX FOR NAVBAR SEARCH ICON
    ========================================================================== */
 
+/* Target the list item / button wrapping the search icon */
+.navbar #search-toggle,
+.navbar .open-search,
 #search-toggle,
-.open-search,
-button#search-toggle,
-.navbar #search-toggle {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 100% !important;
+.open-search {
+  position: relative !important;
+  top: 4px !important; /* Shifts the icon down to line up with text links */
+  display: inline-block !important;
   vertical-align: middle !important;
-  line-height: 1 !important;
-  margin: 0 !important;
-  transform: translateY(1px); /* Fine-tune vertical nudge if needed */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
+/* Ensure the FontAwesome icon itself inherits the alignment */
 #search-toggle i,
-#search-toggle .fa-magnifying-glass,
 .open-search i,
-.open-search .fa-magnifying-glass {
+.fa-magnifying-glass {
   vertical-align: middle !important;
-  line-height: 1 !important;
+  display: inline-block !important;
 }
