@@ -80,3 +80,29 @@ a.open-search,
   display: inline-block !important;
   color: rgba(255, 255, 255, 0.85) !important;
 }
+
+/* ==========================================================================
+   VERTICAL ALIGNMENT FIX FOR NAVBAR SEARCH ICON
+   ========================================================================== */
+
+#search-toggle,
+.open-search,
+button#search-toggle,
+.navbar #search-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  transform: translateY(1px); /* Fine-tune vertical nudge if needed */
+}
+
+#search-toggle i,
+#search-toggle .fa-magnifying-glass,
+.open-search i,
+.open-search .fa-magnifying-glass {
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
