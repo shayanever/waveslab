@@ -5,30 +5,36 @@ permalink: /
 ---
 
 <style>
-  /* --- Global Modern Layout & Grid Adjustments --- */
-  body {
+  /* --- Global Reset & Page Scroll Setup --- */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-color: #f8fafc !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
+
   .content-section {
     max-width: 960px;
     margin: 0 auto;
     padding: 4rem 1.5rem;
   }
 
-  /* --- Interactive Waves Banner Space --- */
+  /* --- Fullscreen Interactive Waves Banner --- */
   .banner-container {
     position: relative;
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
     margin-left: calc(-50vw + 50%);
-    margin-top: -2rem;
+    margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff !important;
+    background-color: #f8f9fa !important;
     overflow: hidden;
     border-bottom: 1px solid #e2e8f0;
   }
+
   canvas#waveCanvas {
     position: absolute;
     top: 0;
@@ -36,24 +42,87 @@ permalink: /
     width: 100%;
     height: 100%;
     z-index: 1;
-    pointer-events: none;
   }
-  .logo-overlay {
+
+  /* --- Central Content Wrapper --- */
+  .logo-wrapper {
     position: relative;
     z-index: 2;
-    max-width: 45%;
-    min-width: 280px;
-    user-select: none;
-    pointer-events: auto;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
+    border-radius: 50%;
   }
-  .logo-overlay:hover {
-    transform: scale(1.04);
+
+  /* Fade-in Animation for Logo */
+  .logo-overlay {
+    max-width: 460px;
+    width: 75vw;
+    opacity: 0;
+    animation: fadeInLogo 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.2s;
   }
+
   .logo-overlay img {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  @keyframes fadeInLogo {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Subtitle Typewriter Styling */
+  .subtitle {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0f3460;
+    min-height: 1.4em;
+    text-align: center;
+  }
+
+  /* Blinking cursor for the typewriter effect */
+  .typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #0f3460;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* --- Scroll-Driven Fade In for Page Elements --- */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* --- Premium Section Styling --- */
@@ -101,19 +170,18 @@ permalink: /
     transform: translateY(-1px);
   }
 
-  /* --- Intro Section Card --- */
+  /* Intro Section Card */
   .intro-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 3rem 2.5rem;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    margin-top: -4rem;
     position: relative;
     z-index: 10;
   }
 
-  /* --- Card-Based News Styling --- */
+  /* Card-Based News Styling */
   .news-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -164,7 +232,7 @@ permalink: /
     flex-grow: 1;
   }
 
-  /* --- Projects Grid Upgrade --- */
+  /* Projects Grid */
   .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -187,7 +255,7 @@ permalink: /
     border-color: #cbd5e1;
   }
 
-  /* --- Publication Box Design --- */
+  /* Publication Wrapper */
   .publication-wrapper {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -200,16 +268,18 @@ permalink: /
 <!-- 1. Full-Screen Interactive Waves Banner -->
 <div class="banner-container" id="banner">
   <canvas id="waveCanvas"></canvas>
-  <div class="logo-overlay">
-    <img src="{{ '/assets/img/waveslab_logo.png' | relative_url }}" alt="WAVESLAB Logo">
-    <h2 class="text-3xl font-extrabold mb-4" style="color: #6a1b9a; margin: center;  letter-spacing: -0.02em;">Since November 2025 in Trieste</h2> 
+  <div class="logo-wrapper">
+    <div class="logo-overlay">
+      <img src="{{ '/assets/img/waveslab_logo.png' | relative_url }}" alt="WAVESLAB Logo">
+    </div>
+    <div class="subtitle" id="typewriterSubtitle"></div>
   </div>
 </div>
 
 <div class="content-section">
   
   <!-- 2. Introduction Card -->
-  <div class="section-block">
+  <div class="section-block reveal-on-scroll">
     <div class="intro-card text-center">
       <h2 class="text-3xl font-extrabold mb-4" style="color: #0f172a; letter-spacing: -0.02em;">Welcome to WAVESLAB</h2>
       <p class="text-lg text-slate-600 leading-relaxed mb-4 max-w-2xl mx-auto">
@@ -222,7 +292,7 @@ permalink: /
   </div>
 
   <!-- 3. Dynamic Latest News Stream -->
-  <div class="section-block">
+  <div class="section-block reveal-on-scroll">
     <div class="section-title">
       <span>Latest News</span>
       <a href="{{ '/blog/' | relative_url }}" class="btn-more">View All News &rarr;</a>
@@ -268,7 +338,7 @@ permalink: /
   </div>
 
   <!-- 4. Research Tracks Component -->
-  <div class="section-block">
+  <div class="section-block reveal-on-scroll">
     <div class="section-title">
       <span>Active Research Tracks</span>
       <a href="{{ '/projects/' | relative_url }}" class="btn-more">Explore Projects &rarr;</a>
@@ -304,7 +374,7 @@ permalink: /
   </div>
 
   <!-- 5. Bibliography Pipeline -->
-  <div class="section-block">
+  <div class="section-block reveal-on-scroll">
     <div class="section-title">
       <span>Featured Publications</span>
       <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
@@ -316,72 +386,114 @@ permalink: /
 
 </div>
 
-<!-- Implementation Script Blocks -->
+<!-- Scripts -->
 <script>
-  // --- Wave Rendering Canvas Pipeline ---
-  const canvas = document.getElementById("waveCanvas");
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    const container = document.getElementById("banner");
+  // --- 1. Wave Canvas Pipeline ---
+  const canvas = document.getElementById('waveCanvas');
+  const ctx = canvas.getContext('2d');
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = container.clientHeight;
-    }
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    const mouse = {
-      x: window.innerWidth / 2,
-      y: container.clientHeight / 2,
-      targetX: window.innerWidth / 2,
-      targetY: container.clientHeight / 2,
-    };
-
-    container.addEventListener("mousemove", (e) => {
-      const rect = container.getBoundingClientRect();
-      mouse.targetX = e.clientX - rect.left;
-      mouse.targetY = e.clientY - rect.top;
-    });
-
-    let increment = 0;
-    const waveColors = [
-      "rgba(15, 52, 96, 0.15)",   /* Premium Deep Blue */
-      "rgba(106, 27, 154, 0.1)",  /* Clinical Violet */
-      "rgba(230, 18, 70, 0.08)"   /* Signal Red Accent */
-    ];
-
-    function animate() {
-      requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      mouse.x += (mouse.targetX - mouse.x) * 0.05;
-      mouse.y += (mouse.targetY - mouse.y) * 0.05;
-
-      waveColors.forEach((color, index) => {
-        ctx.beginPath();
-        const baseAmplitude = 60 + index * 20;
-        const mouseInfluenceY = (1 - mouse.y / canvas.height) * 80;
-        const amplitude = baseAmplitude + mouseInfluenceY;
-        const frequency = 0.003 + index * 0.001 + mouse.x * 0.000005;
-
-        ctx.moveTo(0, canvas.height / 2);
-
-        for (let i = 0; i < canvas.width; i++) {
-          const y =
-            canvas.height / 2 +
-            Math.sin(i * frequency + increment + index * 2) * amplitude;
-          ctx.lineTo(i, y);
-        }
-
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 3 - index * 0.5;
-        ctx.stroke();
-      });
-
-      increment += 0.015;
-    }
-    animate();
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const mouse = {
+    x: -1000,
+    y: canvas.height / 2,
+    targetX: -1000,
+    targetY: canvas.height / 2
+  };
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.targetX = e.clientX;
+    mouse.targetY = e.clientY;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouse.targetX = -1000;
+  });
+
+  let phase = 0;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    mouse.x += (mouse.targetX - mouse.x) * 0.1;
+    mouse.y += (mouse.targetY - mouse.y) * 0.1;
+
+    const centerY = canvas.height / 2;
+
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0.1, '#0f3460');
+    gradient.addColorStop(0.5, '#6a1b9a');
+    gradient.addColorStop(0.9, '#e61246');
+
+    ctx.beginPath();
+    ctx.moveTo(0, centerY);
+
+    for (let x = 0; x <= canvas.width; x += 2) {
+      const distToMouse = Math.abs(x - mouse.x);
+      const spread = 180;
+      const influence = Math.exp(-Math.pow(distToMouse / spread, 2));
+
+      const baseWave = Math.sin(x * 0.003 + phase) * 8;
+      const spikeFrequency = 0.04;
+      const spike = Math.sin(x * spikeFrequency - phase * 3) * (influence * 60);
+
+      const y = centerY + baseWave + spike;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    phase += 0.03;
+  }
+
+  animate();
+
+  // --- 2. Typewriter Effect for Subtitle ---
+  const textToType = "Since November 2025 · Trieste";
+  const subtitleContainer = document.getElementById('typewriterSubtitle');
+  let charIndex = 0;
+
+  function typeWriter() {
+    if (charIndex === 0) {
+      subtitleContainer.innerHTML = '<span id="typedText"></span><span class="typewriter-cursor"></span>';
+    }
+    
+    if (charIndex < textToType.length) {
+      document.getElementById('typedText').textContent += textToType.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWriter, 50); // Speed of typing in ms
+    }
+  }
+
+  // Delay typewriter slightly to synchronize with logo fade-in
+  setTimeout(typeWriter, 800);
+
+  // --- 3. Intersection Observer for Scroll Fade-In ---
+  const observerOptions = {
+    root: null,
+    threshold: 0.15
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Unobserve once animated
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-on-scroll').forEach(element => {
+    revealObserver.observe(element);
+  });
 </script>
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
