@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /repositories/
-title: Repositories
+title: GitHub
 description: Open-source code, toolboxes, and software packages developed by WAVESLAB.
 nav: true
 nav_order: 6
