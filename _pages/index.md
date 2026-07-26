@@ -27,7 +27,7 @@ html, body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    margin-left: 0;
+    margin-left: calc(-50vw + 50%);
     margin-top: 0;
     display: flex;
     justify-content: center;
