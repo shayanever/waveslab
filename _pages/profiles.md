@@ -62,9 +62,9 @@ alumni:
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e2e8f0 !important;
-    padding: 2.25rem !important;
+    padding: 1.5rem 1.75rem !important; /* Reduced padding to eliminate excess white space */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden; /* Safety clip to prevent overflow */
+    overflow: hidden;
   }
 
   .team-card:hover {
@@ -74,8 +74,8 @@ alumni:
 
   /* Profile Avatar Wrapper */
   .team-img-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 190px; /* Clean size that leaves zero extra lateral padding */
+    height: 190px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -101,24 +101,24 @@ alumni:
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .team-role {
     color: #0f3460;
     font-weight: 600;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   /* Social Icons */
   .team-social-icon {
     color: #0f3460 !important;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background-color: #f1f5f9;
     transition: all 0.2s ease-in-out;
@@ -133,7 +133,7 @@ alumni:
   }
 
   .more-info p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: #475569;
   }
 
@@ -179,14 +179,14 @@ alumni:
     {% for profile in page.profiles %}
       <div class="col">
         <div class="team-card">
-          <!-- Standard Bootstrap Grid Row -->
-          <div class="row align-items-start">
+          <!-- Align items centrally on desktop to balance vertical space -->
+          <div class="row align-items-center g-3">
             
-            <!-- LEFT COLUMN: Profile Image, Name, Role, Socials & Info -->
-            <div class="col-12 col-md-4 text-center border-end-md pe-md-4 mb-4 mb-md-0 d-flex flex-column align-items-center">
+            <!-- LEFT COLUMN: Image, Name, Role, Socials (Narrowed to col-md-3) -->
+            <div class="col-12 col-md-3 text-center border-end-md pe-md-3 mb-3 mb-md-0 d-flex flex-column align-items-center">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
+                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-2">
                   <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
                 </div>
               {% endif %}
@@ -197,7 +197,7 @@ alumni:
               {% endif %}
 
               <!-- Social Icons Bar -->
-              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-3">
+              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-2">
                 {% if profile.website and profile.website != "" %}
                   <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                     <i class="fa-solid fa-globe"></i>
@@ -238,10 +238,10 @@ alumni:
               {% endif %}
             </div>
 
-            <!-- RIGHT COLUMN: Bio Markdown Content -->
-            <div class="col-12 col-md-8 ps-md-4">
+            <!-- RIGHT COLUMN: Bio Content (Expanded to col-md-9) -->
+            <div class="col-12 col-md-9 ps-md-4">
               {% if profile.content %}
-                <div class="profile-content text-secondary">
+                <div class="profile-content text-secondary my-auto">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
                   {{ profile_content | markdownify }}
                 </div>
