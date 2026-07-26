@@ -43,7 +43,6 @@
   }
 
   /* --- Central Content Wrapper --- */
-  /* --- Central Content Wrapper --- */
   .logo-wrapper {
     position: relative;
     z-index: 2;
@@ -51,40 +50,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 80px;
+    padding: 40px 60px 60px 60px;
+    margin-top: -40px; /* Shifts the logo visually upward */
     
     /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
     background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
     border-radius: 50%;
-
-    /* Enable interactions so the hover effect works while passing mouse events to canvas */
     pointer-events: auto;
   }
 
-  /* Fade-in Animation & Sizing for Logo */
+  /* Entrance Animation for Outer Container */
   .logo-overlay {
-    max-width: 620px; /* Increased max width for a larger presence */
-    width: 85vw;      /* Scales nicely on responsive screens */
+    max-width: 620px;
+    width: 85vw;
     opacity: 0;
     cursor: pointer;
-    
-    /* Transition for the smooth hover scaling */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    
-    /* Initial entrance animation */
     animation: fadeInLogo 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     animation-delay: 0.2s;
   }
 
-  /* Hover effect to scale and enlarge logo on mouse over */
-  .logo-overlay:hover {
-    transform: scale(1.08); /* Scales up by 8% on hover */
-  }
-
+  /* Hover scaling on the image inside (prevents keyframe animation conflicts) */
   .logo-overlay img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform;
+  }
+
+  .logo-overlay:hover img {
+    transform: scale(1.08); /* Smoothly enlarges the logo image by 8% on hover */
   }
 
 
