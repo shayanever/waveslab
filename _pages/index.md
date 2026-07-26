@@ -55,7 +55,7 @@ permalink: /
     padding: 40px 60px 60px 60px;
     
     /* Shift logo upward visually */
-    margin-top: -70px; 
+    margin-top: -110px; 
     
     /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
     background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
