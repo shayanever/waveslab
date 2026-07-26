@@ -72,9 +72,9 @@ alumni:
   }
 
   .team-img-wrapper {
-    width: 280px;
-    height: 280px;
-    min-width: 280px;
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -99,14 +99,14 @@ alumni:
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .team-role {
     color: #0f3460;
     font-weight: 600;
-    font-size: 0.98rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Social Icons */
@@ -171,22 +171,22 @@ alumni:
   <div class="row row-cols-1 g-4 mb-5">
     {% for profile in page.profiles %}
       <div class="col">
-        <div class="team-card">
-          <div class="row align-items-center g-4">
+        <div class="team-card text-center">
+          <div class="row g-3 justify-content-center">
             
-            <!-- Member Headshot -->
-<div class="col-12 col-md-4 d-flex align-items-center justify-content-center pe-md-3">  
-{% if profile.image %}
-    {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-    <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
-      <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
-    </div>
-  {% endif %}
-</div>
+            <!-- Member Headshot (Top) -->
+            <div class="col-12 mb-2">
+              {% if profile.image %}
+                {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
+                  <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
+                </div>
+              {% endif %}
+            </div>
 
-            <!-- Member Details & Description -->
-<div class="col-12 col-md-8 ps-md-3">
-              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2">
+            <!-- Member Details & Description (Bottom) -->
+            <div class="col-12 col-lg-10">
+              <div class="d-flex flex-column align-items-center gap-2 mb-3">
                 <div>
                   <h3 class="team-name mb-1">{{ profile.name }}</h3>
                   {% if profile.role %}
@@ -195,7 +195,7 @@ alumni:
                 </div>
 
                 <!-- Social & Contact Icons Bar -->
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center justify-content-center gap-2 my-1">
                   {% if profile.website and profile.website != "" %}
                     <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                       <i class="fa-solid fa-globe"></i>
@@ -238,7 +238,7 @@ alumni:
 
               <!-- Bio Markdown Content -->
               {% if profile.content %}
-                <div class="profile-content text-secondary mt-3 pt-2 border-top">
+                <div class="profile-content text-secondary text-start mt-3 pt-3 border-top">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
                   {{ profile_content | markdownify }}
                 </div>
