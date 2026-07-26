@@ -111,15 +111,21 @@ a.open-search,
    PUBLICATION FLOATING YEAR MARKERS (HIGH VISIBILITY FIX)
    ========================================================================== */
 
-/* Target the right-aligned year text in the publications list */
-.publications .year,
-.bibliography .year,
+/* 1. Target the floating year headings directly */
+h2.year,
+.publications h2.year,
 div.publications h2.year,
-.publications span.year,
-div.publications .year-title,
-.bibliography-title {
+.bibliography h2.year {
   color: #0f3460 !important; /* WAVESLAB Deep Blue */
   opacity: 1 !important;      /* Removes the light fade/transparency */
   font-weight: 800 !important;
-  font-size: 1.75rem !important;
+  font-size: 2.2rem !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* 2. Override internal year variables if the theme uses them */
+.publications, .bibliography {
+  --global-divider-color: #0f3460 !important;
+  --global-text-color-light: #0f3460 !important;
 }
