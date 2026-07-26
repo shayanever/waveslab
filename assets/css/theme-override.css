@@ -131,41 +131,49 @@ div.publications h2.year,
 }
 
 /* ==========================================================================
-   NAVBAR MENU ALIGNMENT FIX ACROSS ALL PAGES
+   HOMEPAGE & GLOBAL NAVBAR RIGHT-ALIGNMENT FIX
    ========================================================================== */
 
-/* Ensure the navbar container expands properly */
-.navbar .container,
-nav .container {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
+/* 1. Force header/nav wrapper to take full width */
+header nav.navbar {
+  width: 100% !important;
 }
 
-/* Force the menu list to push cleanly to the right */
-.navbar-nav,
-.navbar-collapse ul,
-#navbarNav ul {
+/* 2. Ensure inner container fills width and uses flexbox alignment */
+.navbar > .container,
+#navbar > .container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 3. Force pseudo-brand space on home page so flex-space-between pushes menu right */
+.navbar > .container::before {
+  content: "" !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  width: 1px !important; /* Acts as invisible left spacer when brand logo is missing */
+  height: 1px !important;
+}
+
+/* 4. Push collapse area and nav links strictly to the right edge */
+.navbar-collapse,
+#navbarNav,
+#navbar-content {
+  flex-grow: 1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.navbar-nav {
   margin-left: auto !important;
   margin-right: 0 !important;
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
-}
-
-/* ==========================================================================
-   FORCE MENU TO RIGHT EDGE (EVEN WITHOUT BRAND LOGO)
-   ========================================================================== */
-
-.navbar .container,
-#navbar .container {
-  display: flex !important;
-  justify-content: flex-end !important; /* Pushes content to the right */
-  width: 100% !important;
-  max-width: 1180px !important;
-}
-
-#navbar-content,
-.navbar-collapse {
-  flex-grow: 0 !important;
-  margin-left: auto !important;
 }

@@ -64,6 +64,7 @@ alumni:
     border: 1px solid #e2e8f0 !important;
     padding: 2.25rem !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* Safety clip to prevent overflow */
   }
 
   .team-card:hover {
@@ -73,8 +74,8 @@ alumni:
 
   /* Profile Avatar Wrapper */
   .team-img-wrapper {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -136,7 +137,7 @@ alumni:
     color: #475569;
   }
 
-  /* Desktop Vertical Border Separator */
+  /* Vertical Border Separator on Desktop */
   @media (min-width: 768px) {
     .border-end-md {
       border-right: 1px solid #e2e8f0;
@@ -178,11 +179,11 @@ alumni:
     {% for profile in page.profiles %}
       <div class="col">
         <div class="team-card">
-          <!-- Main container: Stacks on mobile, side-by-side on desktop -->
-          <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4">
+          <!-- Standard Bootstrap Grid Row -->
+          <div class="row align-items-start">
             
             <!-- LEFT COLUMN: Profile Image, Name, Role, Socials & Info -->
-            <div class="col-12 col-md-5 col-lg-4 text-center border-end-md pe-md-4 d-flex flex-column align-items-center flex-shrink-0">
+            <div class="col-12 col-md-4 text-center border-end-md pe-md-4 mb-4 mb-md-0 d-flex flex-column align-items-center">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
                 <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
@@ -238,7 +239,7 @@ alumni:
             </div>
 
             <!-- RIGHT COLUMN: Bio Markdown Content -->
-            <div class="col-12 col-md-7 col-lg-8 ps-md-2 flex-grow-1">
+            <div class="col-12 col-md-8 ps-md-4">
               {% if profile.content %}
                 <div class="profile-content text-secondary">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
@@ -298,7 +299,7 @@ alumni:
                   </a>
                 {% endif %}
                 {% if person.phone and person.phone != "" %}
-                  <a href="tel:{{ profile.phone }}" title="Phone: {{ person.phone }}" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
+                  <a href="tel:{{ person.phone }}" title="Phone: {{ person.phone }}" class="team-social-icon" style="width: 32px; height: 32px; font-size: 0.95rem;">
                     <i class="fa-solid fa-phone"></i>
                   </a>
                 {% endif %}
