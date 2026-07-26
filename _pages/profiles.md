@@ -62,9 +62,8 @@ alumni:
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e2e8f0 !important;
-    padding: 1.5rem 1.75rem !important; /* Reduced padding to eliminate excess white space */
+    padding: 2rem !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden;
   }
 
   .team-card:hover {
@@ -74,8 +73,8 @@ alumni:
 
   /* Profile Avatar Wrapper */
   .team-img-wrapper {
-    width: 190px; /* Clean size that leaves zero extra lateral padding */
-    height: 190px;
+    width: 180px;
+    height: 180px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -179,14 +178,14 @@ alumni:
     {% for profile in page.profiles %}
       <div class="col">
         <div class="team-card">
-          <!-- Align items centrally on desktop to balance vertical space -->
-          <div class="row align-items-center g-3">
+          <!-- Main layout row aligned to top -->
+          <div class="row align-items-start g-4">
             
-            <!-- LEFT COLUMN: Image, Name, Role, Socials (Narrowed to col-md-3) -->
-            <div class="col-12 col-md-3 text-center border-end-md pe-md-3 mb-3 mb-md-0 d-flex flex-column align-items-center">
+            <!-- LEFT COLUMN: Profile Image, Name, Role, Socials & Info -->
+            <div class="col-12 col-md-4 col-lg-3 text-center border-end-md pe-md-4 mb-3 mb-md-0 d-flex flex-column align-items-center">
               {% if profile.image %}
                 {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-2">
+                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %} mb-3">
                   <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
                 </div>
               {% endif %}
@@ -197,7 +196,7 @@ alumni:
               {% endif %}
 
               <!-- Social Icons Bar -->
-              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-2">
+              <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-3">
                 {% if profile.website and profile.website != "" %}
                   <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                     <i class="fa-solid fa-globe"></i>
@@ -238,10 +237,10 @@ alumni:
               {% endif %}
             </div>
 
-            <!-- RIGHT COLUMN: Bio Content (Expanded to col-md-9) -->
-            <div class="col-12 col-md-9 ps-md-4">
+            <!-- RIGHT COLUMN: Bio Markdown Content -->
+            <div class="col-12 col-md-8 col-lg-9 ps-md-3">
               {% if profile.content %}
-                <div class="profile-content text-secondary my-auto">
+                <div class="profile-content text-secondary">
                   {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
                   {{ profile_content | markdownify }}
                 </div>
