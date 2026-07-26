@@ -6,10 +6,12 @@ permalink: /
 
 <style>
   /* --- Global Reset & Page Scroll Setup --- */
-  html, body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important; /* Prevents horizontal scroll entirely */
     background-color: #f8fafc !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
@@ -23,9 +25,9 @@ permalink: /
   /* --- Fullscreen Interactive Waves Banner --- */
   .banner-container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    margin-left: calc(-50vw + 50%);
+    margin-left: 0;
     margin-top: 0;
     display: flex;
     justify-content: center;
@@ -66,7 +68,7 @@ permalink: /
   /* Entrance Animation Container */
   .logo-overlay {
     max-width: 620px; /* Enlarged logo size */
-    width: 85vw;
+    width: 85%;
     opacity: 0;
     cursor: pointer;
     animation: fadeInLogo 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
