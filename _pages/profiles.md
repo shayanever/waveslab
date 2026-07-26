@@ -175,8 +175,8 @@ alumni:
           <div class="row align-items-center g-4">
             
             <!-- Member Headshot -->
-<div class="col-12 col-md-4 text-center pe-md-4">
-  {% if profile.image %}
+<div class="col-12 col-md-4 d-flex align-items-center justify-content-center pe-md-3">  
+{% if profile.image %}
     {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
     <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
       <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
