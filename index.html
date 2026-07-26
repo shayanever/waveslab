@@ -43,6 +43,7 @@
   }
 
   /* --- Central Content Wrapper --- */
+  /* --- Central Content Wrapper --- */
   .logo-wrapper {
     position: relative;
     z-index: 2;
@@ -50,19 +51,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 60px;
-    pointer-events: none;
+    padding: 60px 80px;
+    
+    /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
     background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
     border-radius: 50%;
+
+    /* Enable interactions so the hover effect works while passing mouse events to canvas */
+    pointer-events: auto;
   }
 
-  /* Fade-in Animation for Logo */
+  /* Fade-in Animation & Sizing for Logo */
   .logo-overlay {
-    max-width: 460px;
-    width: 75vw;
+    max-width: 620px; /* Increased max width for a larger presence */
+    width: 85vw;      /* Scales nicely on responsive screens */
     opacity: 0;
+    cursor: pointer;
+    
+    /* Transition for the smooth hover scaling */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    /* Initial entrance animation */
     animation: fadeInLogo 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     animation-delay: 0.2s;
+  }
+
+  /* Hover effect to scale and enlarge logo on mouse over */
+  .logo-overlay:hover {
+    transform: scale(1.08); /* Scales up by 8% on hover */
   }
 
   .logo-overlay img {
@@ -70,6 +86,7 @@
     height: auto;
     display: block;
   }
+
 
   @keyframes fadeInLogo {
     from {
@@ -279,11 +296,12 @@
     targetX: -1000,
     targetY: canvas.height / 2
   };
-
+// Listen to window mouse movements so wave animations continue smoothly during logo hover
   window.addEventListener('mousemove', (e) => {
     mouse.targetX = e.clientX;
     mouse.targetY = e.clientY;
   });
+
 
   window.addEventListener('mouseleave', () => {
     mouse.targetX = -1000;
