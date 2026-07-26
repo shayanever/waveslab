@@ -72,9 +72,9 @@ alumni:
   }
 
   .team-img-wrapper {
-    width: 190px;
-    height: 190px;
-    min-width: 190px;
+    width: 230px;
+    height: 230px;
+    min-width: 230px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -175,17 +175,17 @@ alumni:
           <div class="row align-items-center g-4">
             
             <!-- Member Headshot -->
-            <div class="col-md-3 text-center pe-md-4">
-              {% if profile.image %}
-                {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
-                  <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
-                </div>
-              {% endif %}
-            </div>
+<div class="col-12 col-md-4 text-center pe-md-4">
+  {% if profile.image %}
+    {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+    <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
+      <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
+    </div>
+  {% endif %}
+</div>
 
             <!-- Member Details & Description -->
-            <div class="col-md-9 ps-md-3">
+<div class="col-12 col-md-8 ps-md-3">
               <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-2">
                 <div>
                   <h3 class="team-name mb-1">{{ profile.name }}</h3>
