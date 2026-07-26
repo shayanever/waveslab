@@ -6,7 +6,7 @@ permalink: /
 
 <style>
   /* --- Global Reset & Page Scroll Setup --- */
-html, body {
+  html, body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -59,8 +59,8 @@ html, body {
     /* Shift logo upward visually */
     margin-top: -110px; 
     
-    /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
-    background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
+    /* Radial soft fade effect blending cleanly into background color */
+    background: radial-gradient(circle, rgba(248, 249, 250, 0.98) 50%, rgba(248, 249, 250, 0) 75%);
     border-radius: 50%;
     pointer-events: auto;
   }
@@ -414,11 +414,14 @@ html, body {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
+  // Offset matching .logo-wrapper margin-top (-110px)
+  const verticalOffset = -110;
+
   const mouse = {
     x: -1000,
-    y: (canvas.height / 2) - 70,
+    y: (canvas.height / 2) + verticalOffset,
     targetX: -1000,
-    targetY: (canvas.height / 2) - 70
+    targetY: (canvas.height / 2) + verticalOffset
   };
 
   window.addEventListener('mousemove', (e) => {
@@ -439,8 +442,8 @@ html, body {
     mouse.x += (mouse.targetX - mouse.x) * 0.1;
     mouse.y += (mouse.targetY - mouse.y) * 0.1;
 
-    // Wave line shifted up by 70px to align with .logo-wrapper margin-top
-    const centerY = (canvas.height / 2) - 70;
+    // CenterY aligned exactly with logo position
+    const centerY = (canvas.height / 2) + verticalOffset;
 
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop(0.1, '#0f3460');
