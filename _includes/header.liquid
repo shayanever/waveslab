@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" role="navigation">
+    <div class="container d-flex justify-content-between align-items-center" style="max-width: 1180px;">
+      
+      <!-- Brand / Logo on Left (Always Visible on ALL Pages) -->
+      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
+        <span class="font-weight-bold">WavesLab</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <!-- Navigation Links (Aligned Strictly to Right) -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap align-items-center">
+          {% for page in site.pages %}
+            {% if page.nav %}
+              <li class="nav-item {% if page.url == page.url and page.permalink == page.permalink %}active{% endif %}">
+                <a class="nav-link" href="{{ page.url | relative_url }}">{{ page.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Search Toggle Icon -->
+          {% if site.search_enabled %}
+            <li class="nav-item">
+              <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>

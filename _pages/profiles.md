@@ -173,7 +173,7 @@ alumni:
       <div class="col">
         <div class="team-card">
           
-          <!-- Top Row: Image + Name, Position, Address & Social Icons in same horizontal block -->
+          <!-- Top Row: Image + Header Details -->
           <div class="row align-items-center g-4 mb-3">
             
             <!-- Member Headshot -->
@@ -186,16 +186,17 @@ alumni:
               {% endif %}
             </div>
 
-            <!-- Header Info Column (Name, Role, Address, Socials) -->
+            <!-- Header Info Column (Name, Role, Address, Upper-Right Socials) -->
             <div class="col-md-9">
               <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3">
+                
+                <!-- Left Side: Name, Role, Address -->
                 <div>
                   <h3 class="team-name mb-1">{{ profile.name }}</h3>
                   {% if profile.role %}
                     <div class="team-role mb-2">{{ profile.role }}</div>
                   {% endif %}
 
-                  <!-- Address / Location Info -->
                   {% if profile.more_info %}
                     <div class="more-info my-2">
                       {{ profile.more_info }}
@@ -203,8 +204,8 @@ alumni:
                   {% endif %}
                 </div>
 
-                <!-- Social & Contact Icons Bar -->
-                <div class="d-flex align-items-center gap-2">
+                <!-- Right Side: Social Icons placed in the Upper Right Corner -->
+                <div class="d-flex align-items-center gap-2 mt-1">
                   {% if profile.website and profile.website != "" %}
                     <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                       <i class="fa-solid fa-globe"></i>
@@ -236,6 +237,7 @@ alumni:
                     </a>
                   {% endif %}
                 </div>
+
               </div>
             </div>
 
