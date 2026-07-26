@@ -72,9 +72,9 @@ alumni:
   }
 
   .team-img-wrapper {
-    width: 160px;
-    height: 160px;
-    min-width: 160px;
+    width: 190px;
+    height: 190px;
+    min-width: 190px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;

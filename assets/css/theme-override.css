@@ -43,6 +43,7 @@ footer a:hover, footer.fixed-bottom a:hover {
   color: #ffffff !important;
 }
 
+
 /* ==========================================================================
    HIDE ONLY "ctrl k" TEXT (KEEP MAGNIFIER ICON)
    ========================================================================== */
@@ -80,6 +81,7 @@ a.open-search,
   display: inline-block !important;
   color: rgba(255, 255, 255, 0.85) !important;
 }
+
 
 /* ==========================================================================
    VERTICAL ALIGNMENT FIX FOR NAVBAR SEARCH ICON
@@ -130,19 +132,30 @@ div.publications h2.year,
   --global-text-color-light: #0f3460 !important;
 }
 
+
 /* ==========================================================================
-   NAVBAR MENU ALIGNMENT FIX ACROSS ALL PAGES
+   CONSISTENT RIGHT-ALIGNED NAVBAR MENU (HOME & ALL SUBPAGES)
    ========================================================================== */
 
-/* Ensure the navbar container expands properly */
+/* Flexbox container spacing */
 .navbar .container,
+#navbar .container,
 nav .container {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
+  width: 100% !important;
+  max-width: 1180px !important;
 }
 
-/* Force the menu list to push cleanly to the right */
+/* Ensure menu items always push to the far right */
+.navbar-collapse,
+#navbar-content {
+  flex-grow: 1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
 .navbar-nav,
 .navbar-collapse ul,
 #navbarNav ul {
