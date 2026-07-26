@@ -390,15 +390,7 @@ html, body {
 
   <!-- 5. Bibliography Pipeline -->
 
-  <!-- <div class="section-block reveal-on-scroll">
-    <div class="section-title">
-      <span>Featured Publications</span>
-      <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
-    </div>
-    <div class="publication-wrapper">
-      {% bibliography --query @*[selected=true]* %}
-    </div>
-  </div> -->
+
   <!-- 5. Bibliography Pipeline -->
   <div class="section-block reveal-on-scroll">
     <div class="section-title">
