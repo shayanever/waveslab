@@ -6,7 +6,7 @@ permalink: /
 
 <style>
   /* --- Global Reset & Page Scroll Setup --- */
-  html, body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -25,7 +25,7 @@ permalink: /
   /* --- Fullscreen Interactive Waves Banner --- */
   .banner-container {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     margin-left: 0;
     margin-top: 0;
@@ -59,8 +59,8 @@ permalink: /
     /* Shift logo upward visually */
     margin-top: -110px; 
     
-    /* Radial soft fade effect blending cleanly into background color */
-    background: radial-gradient(circle, rgba(248, 249, 250, 0.98) 50%, rgba(248, 249, 250, 0) 75%);
+    /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
+    background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
     border-radius: 50%;
     pointer-events: auto;
   }
@@ -68,7 +68,7 @@ permalink: /
   /* Entrance Animation Container */
   .logo-overlay {
     max-width: 620px; /* Enlarged logo size */
-    width: 85%;
+    width: 85vw;
     opacity: 0;
     cursor: pointer;
     animation: fadeInLogo 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -414,14 +414,11 @@ permalink: /
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
-  // Offset matching .logo-wrapper margin-top (-110px)
-  const verticalOffset = -110;
-
   const mouse = {
     x: -1000,
-    y: (canvas.height / 2) + verticalOffset,
+    y: (canvas.height / 2) - 70,
     targetX: -1000,
-    targetY: (canvas.height / 2) + verticalOffset
+    targetY: (canvas.height / 2) - 70
   };
 
   window.addEventListener('mousemove', (e) => {
@@ -442,8 +439,8 @@ permalink: /
     mouse.x += (mouse.targetX - mouse.x) * 0.1;
     mouse.y += (mouse.targetY - mouse.y) * 0.1;
 
-    // CenterY aligned exactly with logo position
-    const centerY = (canvas.height / 2) + verticalOffset;
+    // Wave line shifted up by 70px to align with .logo-wrapper margin-top
+    const centerY = (canvas.height / 2) - 70;
 
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop(0.1, '#0f3460');
