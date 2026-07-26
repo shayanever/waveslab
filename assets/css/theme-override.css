@@ -97,25 +97,16 @@ button#search-toggle,
 
 
 /* ==========================================================================
-   PUBLICATION YEARS HIGH-CONTRAST COLOR OVERRIDE
+   PUBLICATION FLOATING YEAR MARKERS (HIGH VISIBILITY FIX)
    ========================================================================== */
 
-/* Target year headers on the publications page */
+/* Target the right-aligned year text in the publications list */
+.publications .year,
+.bibliography .year,
 div.publications h2.year,
-.publications h2.year,
-h2.year {
+.publications span.year {
   color: #0f3460 !important; /* WAVESLAB Deep Blue */
+  opacity: 1 !important;      /* Removes the light fade/transparency */
   font-weight: 800 !important;
-  border-bottom: 2px solid #0f3460 !important;
-  padding-bottom: 0.25rem !important;
-  margin-top: 2rem !important;
+  font-size: 1.75rem !important;
 }
-
-/* Target year text/badges inside individual paper entries */
-
-span.year {
-  color: #0f3460 !important; /* WAVESLAB Deep Blue */
-  font-weight: 700 !important;
-}
-
-/* Optional: Highlight the year as a distinct colored badge/pill */
