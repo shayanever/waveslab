@@ -388,16 +388,15 @@ html, body {
     </div>
   </div>
 
+  <!-- 5. Bibliography Pipeline -->
 
-
-<!-- 5. Bibliography Pipeline -->
   <div class="section-block reveal-on-scroll">
     <div class="section-title">
-      <span>Latest Publications</span>
+      <span>Featured Publications</span>
       <a href="{{ '/publications/' | relative_url }}" class="btn-more">Full Bibliography &rarr;</a>
     </div>
     <div class="publication-wrapper">
-      {% bibliography --max 3 %}
+      {% bibliography --query @*[selected=true]* %}
     </div>
   </div>
 
