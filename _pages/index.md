@@ -53,7 +53,9 @@ permalink: /
     align-items: center;
     justify-content: center;
     padding: 40px 60px 60px 60px;
-    margin-top: -40px; /* Shifts the logo visually upward */
+    
+    /* Shift logo upward visually */
+    margin-top: -70px; 
     
     /* Radial soft fade effect so the wave behind the logo diminishes cleanly */
     background: radial-gradient(circle, rgba(248, 249, 250, 0.95) 62%, rgba(248, 249, 250, 0) 75%);
@@ -61,9 +63,9 @@ permalink: /
     pointer-events: auto;
   }
 
-  /* Entrance Animation for Outer Container */
+  /* Entrance Animation Container */
   .logo-overlay {
-    max-width: 620px;
+    max-width: 620px; /* Enlarged logo size */
     width: 85vw;
     opacity: 0;
     cursor: pointer;
@@ -71,7 +73,7 @@ permalink: /
     animation-delay: 0.2s;
   }
 
-  /* Hover scaling on the image inside (prevents keyframe animation conflicts) */
+  /* Hover effect separated on <img> to prevent CSS keyframe conflicts */
   .logo-overlay img {
     width: 100%;
     height: auto;
@@ -81,9 +83,8 @@ permalink: /
   }
 
   .logo-overlay:hover img {
-    transform: scale(1.08); /* Smoothly enlarges the logo image by 8% on hover */
+    transform: scale(1.08); /* Scales up logo smoothly on mouse hover */
   }
-
 
   @keyframes fadeInLogo {
     from {
@@ -413,16 +414,15 @@ permalink: /
 
   const mouse = {
     x: -1000,
-    y: canvas.height / 2,
+    y: (canvas.height / 2) - 70,
     targetX: -1000,
-    targetY: canvas.height / 2
+    targetY: (canvas.height / 2) - 70
   };
-// Listen to window mouse movements so wave animations continue smoothly during logo hover
+
   window.addEventListener('mousemove', (e) => {
     mouse.targetX = e.clientX;
     mouse.targetY = e.clientY;
   });
-
 
   window.addEventListener('mouseleave', () => {
     mouse.targetX = -1000;
@@ -437,7 +437,8 @@ permalink: /
     mouse.x += (mouse.targetX - mouse.x) * 0.1;
     mouse.y += (mouse.targetY - mouse.y) * 0.1;
 
-    const centerY = canvas.height / 2;
+    // Wave line shifted up by 70px to align with .logo-wrapper margin-top
+    const centerY = (canvas.height / 2) - 70;
 
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop(0.1, '#0f3460');
@@ -500,7 +501,7 @@ permalink: /
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Unobserve once animated
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
