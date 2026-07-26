@@ -19,8 +19,8 @@ profiles:
     github: "CisottoGiulia"
     scholar: "CuSEKIsAAAAJ"
     more_info: >
-      <p><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p>
-      <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
+      <p class="mb-1"><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p>
+      <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
 
   - name: "Shayan Sharifi"
     role: "Ph.D. Researcher"
@@ -34,8 +34,8 @@ profiles:
     github: "shayanever"
     scholar: "Juzc7T8AAAAJ"
     more_info: >
-      <p><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p>
-      <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
+      <p class="mb-1"><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p>
+      <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
 
 alumni:
   - name: "Alberto Zancanaro, PhD"
@@ -137,6 +137,13 @@ alumni:
     color: #475569;
   }
 
+  /* Divider line between left sidebar and right text on desktop */
+  @media (min-width: 768px) {
+    .border-end-md {
+      border-right: 1px solid #e2e8f0;
+    }
+  }
+
   /* Alumni Card Styling */
   .alumni-card {
     background: #ffffff;
@@ -172,7 +179,8 @@ alumni:
     {% for profile in page.profiles %}
       <div class="col">
         <div class="team-card">
-          <div class="row g-4 align-items-start">
+          <!-- Row container with explicit horizontal column layout -->
+          <div class="row align-items-center g-4">
             
             <!-- LEFT COLUMN: Image, Name, Role, Socials, Location -->
             <div class="col-12 col-md-5 col-lg-4 text-center border-end-md pe-md-4">
@@ -230,7 +238,7 @@ alumni:
               {% endif %}
             </div>
 
-            <!-- RIGHT COLUMN: Detailed Bio Markdown Content -->
+            <!-- RIGHT COLUMN: Bio Markdown Content -->
             <div class="col-12 col-md-7 col-lg-8 ps-md-4">
               {% if profile.content %}
                 <div class="profile-content text-secondary">
