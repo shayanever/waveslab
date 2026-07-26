@@ -19,8 +19,8 @@ profiles:
     github: "CisottoGiulia"
     scholar: "CuSEKIsAAAAJ"
     more_info: >
-      <p><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p>
-      <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
+      <p class="mb-1"><i class="fa-solid fa-building-user me-2"></i> Department of Mathematics, Informatics, and Geosciences</p>
+      <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
 
   - name: "Shayan Sharifi"
     role: "Ph.D. Researcher"
@@ -34,8 +34,8 @@ profiles:
     github: "shayanever"
     scholar: "Juzc7T8AAAAJ"
     more_info: >
-      <p><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p>
-      <p><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
+      <p class="mb-1"><i class="fa-solid fa-laptop-code me-2"></i> WAVESLAB Member</p>
+      <p class="mb-0"><i class="fa-solid fa-location-dot me-2"></i> University of Trieste, Italy</p>
 
 alumni:
   - name: "Alberto Zancanaro, PhD"
@@ -47,7 +47,7 @@ alumni:
     github: "jesus-333"
     email: "alberto@example.com"
     phone: ""
-    more_info: "Worked on federated learining and EEG signal processing."
+    more_info: "Worked on federated learning and EEG signal processing."
 
   - name: "Alessandro Minutolo, MSc"
     role: "Former Master Student"
@@ -72,10 +72,9 @@ alumni:
   }
 
   .team-img-wrapper {
-    width: 190px;
-    height: 190px;
-    min-width: 190px;
-    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
     overflow: hidden;
     position: relative;
     border: 4px solid #f1f5f9;
@@ -99,25 +98,25 @@ alumni:
   .team-name {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .team-role {
     color: #0f3460;
     font-weight: 600;
-    font-size: 0.98rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Social Icons */
   .team-social-icon {
     color: #0f3460 !important;
-    font-size: 1.15rem;
+    font-size: 1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background-color: #f1f5f9;
     transition: all 0.2s ease-in-out;
@@ -132,8 +131,7 @@ alumni:
   }
 
   .more-info p {
-    margin-bottom: 0.35rem;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: #475569;
   }
 
@@ -173,39 +171,37 @@ alumni:
       <div class="col">
         <div class="team-card">
           
-          <!-- Top Row: Image + Header Details -->
-          <div class="row align-items-center g-4 mb-3">
+          <!-- Header Flex Row (Image + Name & Position & Address + Top Right Social Icons) -->
+          <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 mb-3">
             
             <!-- Member Headshot -->
-            <div class="col-md-3 text-center text-md-start">
-              {% if profile.image %}
-                {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                <div class="team-img-wrapper {% if profile.image_circular %}circular{% else %}square{% endif %}">
-                  <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
-                </div>
-              {% endif %}
-            </div>
+            {% if profile.image %}
+              {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+              <div class="team-img-wrapper flex-shrink-0 {% if profile.image_circular %}circular{% else %}square{% endif %}">
+                <img src="{{ profile_image_path | relative_url }}" class="team-img" alt="{{ profile.name }}">
+              </div>
+            {% endif %}
 
-            <!-- Header Info Column (Name, Role, Address, Upper-Right Socials) -->
-            <div class="col-md-9">
-              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3">
+            <!-- Header Content Box -->
+            <div class="flex-grow-1 w-100">
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start gap-3">
                 
-                <!-- Left Side: Name, Role, Address -->
+                <!-- Left: Name, Role, Address -->
                 <div>
                   <h3 class="team-name mb-1">{{ profile.name }}</h3>
                   {% if profile.role %}
-                    <div class="team-role mb-2">{{ profile.role }}</div>
+                    <div class="team-role">{{ profile.role }}</div>
                   {% endif %}
 
                   {% if profile.more_info %}
-                    <div class="more-info my-2">
+                    <div class="more-info mt-2">
                       {{ profile.more_info }}
                     </div>
                   {% endif %}
                 </div>
 
-                <!-- Right Side: Social Icons placed in the Upper Right Corner -->
-                <div class="d-flex align-items-center gap-2 mt-1">
+                <!-- Right: Social Media Icons in upper corner -->
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                   {% if profile.website and profile.website != "" %}
                     <a href="{{ profile.website }}" target="_blank" rel="noopener noreferrer" title="Website" class="team-social-icon">
                       <i class="fa-solid fa-globe"></i>
@@ -243,7 +239,7 @@ alumni:
 
           </div>
 
-          <!-- Bio Markdown Content (Full Width Below Top Row) -->
+          <!-- Bio Markdown Content -->
           {% if profile.content %}
             <div class="profile-content text-secondary pt-3 border-top">
               {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}

@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" role="navigation">
     <div class="container d-flex justify-content-between align-items-center" style="max-width: 1180px;">
       
-      <!-- Brand / Logo on Left (Always Visible on ALL Pages) -->
-      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
-        <span class="font-weight-bold">WavesLab</span>
+      <!-- Brand / Logo on Left (Light Text to Match Theme) -->
+      <a class="navbar-brand title font-weight-lighter text-white" href="{{ '/' | relative_url }}">
+        <span class="font-weight-bold" style="color: #ffffff !important;">WavesLab</span>
       </a>
 
       <!-- Mobile Toggle Button -->
@@ -15,10 +15,11 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
 
-      <!-- Navigation Links (Aligned Strictly to Right) -->
+      <!-- Navigation Links (Sorted by nav_order) -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap align-items-center">
-          {% for page in site.pages %}
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for page in sorted_pages %}
             {% if page.nav %}
               <li class="nav-item {% if page.url == page.url and page.permalink == page.permalink %}active{% endif %}">
                 <a class="nav-link" href="{{ page.url | relative_url }}">{{ page.title }}</a>
