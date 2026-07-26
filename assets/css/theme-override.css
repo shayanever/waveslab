@@ -107,26 +107,36 @@ a.open-search,
 }
 
 
-/* Make Publication Year Headers Bold and Highly Visible */
+/* ==========================================================================
+   PUBLICATION YEARS HIGH-CONTRAST COLOR OVERRIDE
+   ========================================================================== */
+
+/* Target year headers on the publications page */
+div.publications h2.year,
 .publications h2.year,
-.bibliography-title,
-h2.post-year {
-  font-size: 2rem !important;
-  font-weight: 800 !important;
+h2.year,
+.bibliography-title {
   color: #0f3460 !important; /* WAVESLAB Deep Blue */
-  border-bottom: 2px solid #e2e8f0 !important;
-  padding-bottom: 0.4rem !important;
-  margin-top: 2.5rem !important;
-  margin-bottom: 1.5rem !important;
+  font-weight: 800 !important;
+  border-bottom: 2px solid #0f3460 !important;
+  padding-bottom: 0.25rem !important;
+  margin-top: 2rem !important;
 }
 
-/* If using inline badges for the year */
-.badge-year, 
-.publication-year-badge {
+/* Target year text/badges inside individual paper entries */
+.publication-year,
+.bib-year,
+.badge-year,
+span.year {
+  color: #0f3460 !important; /* WAVESLAB Deep Blue */
+  font-weight: 700 !important;
+}
+
+/* Optional: Highlight the year as a distinct colored badge/pill */
+.publications .year-badge {
   background-color: #0f3460 !important;
   color: #ffffff !important;
-  font-size: 0.95rem !important;
-  font-weight: 700 !important;
-  padding: 0.35rem 0.75rem !important;
-  border-radius: 6px !important;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 4px !important;
+  font-weight: bold !important;
 }
