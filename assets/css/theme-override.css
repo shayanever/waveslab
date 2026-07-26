@@ -105,3 +105,28 @@ a.open-search,
   vertical-align: middle !important;
   display: inline-block !important;
 }
+
+
+/* Make Publication Year Headers Bold and Highly Visible */
+.publications h2.year,
+.bibliography-title,
+h2.post-year {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f3460 !important; /* WAVESLAB Deep Blue */
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* If using inline badges for the year */
+.badge-year, 
+.publication-year-badge {
+  background-color: #0f3460 !important;
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 6px !important;
+}
