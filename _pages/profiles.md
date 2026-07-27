@@ -152,12 +152,12 @@ alumni:
   }
 
   .alumni-img-wrapper {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #e2e8f0;
+    border: 3px solid #e2e8f0;
   }
 </style>
 
