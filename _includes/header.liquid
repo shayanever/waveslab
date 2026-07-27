@@ -1,18 +1,14 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
-    <div class="container">
+  <nav id="navbar" class="navbar navbar-dark navbar-expand-md fixed-top" role="navigation" style="background-color: #0f3460 !important;">
+    <div class="container d-flex justify-content-between align-items-center" style="max-width: 1180px;">
       
-      <!-- Logo / Title (Always visible on all pages including Home) -->
-      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-        {% else %}
-          <span class="font-weight-bold">{{ site.title }}</span>
-        {% endif %}
+      <!-- Brand / Logo on Left (Light Text) -->
+      <a class="navbar-brand title font-weight-lighter text-white" href="{{ '/' | relative_url }}">
+        <span class="font-weight-bold" style="color: #ffffff !important;">WavesLab</span>
       </a>
 
-      <!-- Navbar Toggle for Mobile -->
+      <!-- Navbar Toggler for Mobile -->
       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar top-bar"></span>
@@ -20,37 +16,24 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
 
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="display: flex !important; visibility: visible !important;">
+        <ul class="navbar-nav ml-auto flex-nowrap align-items-center">
 
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %}
-              {% assign home_title = page.title %}
-            {% endif %}
-          {% endfor %}
+          <!-- Home tab -->
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/' | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important;">
+              Home
+            </a>
+          </li>
 
-          <!-- Home tab (if configured) -->
-          {% if site.nav_home %}
-            <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/' | relative_url }}">
-                {% if home_title %}{{ home_title }}{% else %}home{% endif %}
-                {% if page.permalink == '/' %}
-                  <span class="sr-only">(current)</span>
-                {% endif %}
-              </a>
-            </li>
-          {% endif %}
-
-          <!-- All other navigation pages ordered by nav_order -->
+          <!-- Other Navigation Pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autotitle != 'home' %}
+            {% if p.nav and p.permalink != '/' %}
               <li class="nav-item {% if page.url contains p.url %}active{% endif %}">
-                <a class="nav-link" href="{{ p.url | relative_url }}">
+                <a class="nav-link" href="{{ p.url | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important;">
                   {% if p.title %}{{ p.title }}{% else %}{{ p.autotitle }}{% endif %}
-                  {% if page.url contains p.url %}
-                    <span class="sr-only">(current)</span>
-                  {% endif %}
                 </a>
               </li>
             {% endif %}
@@ -59,7 +42,7 @@
           <!-- Search toggle if enabled -->
           {% if site.search_enabled %}
             <li class="nav-item">
-              <button id="search-toggle" class="btn nav-link" title="Search" aria-label="Search">
+              <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search" style="color: rgba(255, 255, 255, 0.9) !important;">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </li>
@@ -67,6 +50,7 @@
 
         </ul>
       </div>
+
     </div>
   </nav>
 </header>
