@@ -73,6 +73,14 @@ calendar: true
 </div>
 
 
-{% include calendar.liquid calendar_id='developer-calendar@google.com' timezone='Europe/Rome' %}
+{% include calendar.liquid calendar_id='en.italian%23holiday%40group.v.calendar.google.com' timezone='Europe/Rome' %}
+<div class="calendar-container my-4">
+  <iframe 
+    src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&ctz=Europe%2FRome" 
+    style="border: 0; width: 100%; height: 600px; border-radius: 8px;" 
+    frameborder="0" 
+    scrolling="no">
+  </iframe>
+</div>
 {% include courses.liquid %}
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
