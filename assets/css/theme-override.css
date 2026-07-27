@@ -26,8 +26,7 @@ header, nav, .navbar, #navbar {
 
 /* Icons & Search Bar */
 .navbar #search-toggle, 
-.navbar i, 
-.navbar .navbar-toggler-icon,
+.navbar i,
 .navbar .navbar-toggler {
   color: rgba(255, 255, 255, 0.85) !important;
 }
@@ -113,11 +112,6 @@ div.publications h2.year,
 
 /* DESKTOP (992px and above) */
 @media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    visibility: visible !important;
-    height: auto !important;
-  }
 
   .navbar-nav {
     flex-direction: row !important;
@@ -153,5 +147,51 @@ div.publications h2.year,
   .navbar-nav .nav-item {
     width: 100% !important;
     padding: 0.3rem 0 !important;
+  }
+}
+
+/* ==========================================================================
+   AL-FOLIO HEADER SPACING & VISIBILITY RECOVER
+   ========================================================================== */
+
+/* 1. Navbar text colors & spacing */
+.navbar .nav-link,
+#navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  display: inline-block !important;
+}
+
+.navbar .nav-link:hover,
+#navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  display: inline-block !important;
+}
+
+/* 2. Desktop navbar structure */
+@media (min-width: 576px) {
+  .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: row !important;
+  }
+}
+
+/* 3. Mobile dropdown clean box */
+@media (max-width: 575.98px) {
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
+    background-color: #0f3460 !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin-top: 0.5rem !important;
   }
 }
