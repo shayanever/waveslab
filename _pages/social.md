@@ -71,7 +71,7 @@ nav_order: 9
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-linkedin fa-3x mb-3" style="color: #0f3460;"></i>
+            <i class="fa-brands fa-linkedin fa-3x mb-3" ></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">LinkedIn</h4>
             <p class="card-text text-muted small">Follow our official page for lab news, vacancies, and academic achievements.</p>
           </div>
@@ -85,7 +85,7 @@ nav_order: 9
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-researchgate fa-3x mb-3" style="color: #0f3460;"></i>
+            <i class="fa-brands fa-researchgate fa-3x mb-3"></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">ResearchGate</h4>
             <p class="card-text text-muted small">Discover preprint updates, project logs, and full publication texts.</p>
           </div>
@@ -99,7 +99,7 @@ nav_order: 9
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-x-twitter fa-3x mb-3" style="color: #0f3460;"></i>
+            <i class="fa-brands fa-x-twitter fa-3x mb-3" ></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">X (Twitter)</h4>
             <p class="card-text text-muted small">Get real-time updates on conference presentations and paper releases.</p>
           </div>
