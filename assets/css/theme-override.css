@@ -22,8 +22,7 @@ header, nav, .navbar, #navbar {
 
 /* Icons & Search Bar */
 .navbar #search-toggle, 
-.navbar i, 
-.navbar .navbar-toggler-icon,
+.navbar i,
 .navbar .navbar-toggler {
   color: rgba(255, 255, 255, 0.85) !important;
 }

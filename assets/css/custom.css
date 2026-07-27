@@ -25,8 +25,7 @@ header, nav, .navbar, #navbar {
 
 /* Search icons, dropdown indicators, and mobile menu bars */
 .navbar #search-toggle, 
-.navbar i, 
-.navbar .navbar-toggler-icon,
+.navbar i,
 .navbar .navbar-toggler {
   color: rgba(255, 255, 255, 0.85) !important;
 }
