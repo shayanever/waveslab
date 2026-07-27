@@ -134,57 +134,27 @@ div.publications h2.year,
 
 
 /* ==========================================================================
-   HOMEPAGE NAVBAR RIGHT-ALIGNMENT FIX (PSEUDO-ELEMENT SPACER)
+   NAVBAR RESPONSIVE & MOBILE DROPDOWN STYLING
    ========================================================================== */
 
-/* 1. Ensure the nav container uses flex space-between */
-.navbar > .container,
-#navbar > .container {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 1180px !important;
-}
-
-/* 2. Create an invisible left-hand element when .navbar-brand is omitted */
-.navbar > .container::before {
-  content: "WavesLab" !important;
-  visibility: hidden !important; /* Takes up exact width of "WavesLab" without showing */
-  font-size: 1.25rem !important;
-  font-weight: 300 !important;
-  padding: 0.5rem 0 !important;
-  display: inline-block !important;
-}
-
-/* 3. If .navbar-brand exists on subpages, suppress the pseudo-element */
-.navbar > .container:has(.navbar-brand)::before {
-  display: none !important;
-}
-
-/* 4. Push menu items to the far right */
-.navbar-collapse {
-  flex-grow: 0 !important;
-  margin-left: auto !important;
-}
-
-/* ==========================================================================
-   NAVBAR & MOBILE MENU DISPLAY FIX
-   ========================================================================== */
-
-/* Ensure desktop navbar links are always visible on wider screens */
+/* Desktop view (768px and up): Force menu links to display inline on the far right */
 @media (min-width: 768px) {
-  .navbar-expand-md .navbar-collapse {
+  .navbar-toggler {
+    display: none !important; /* Hide hamburger icon on desktop */
+  }
+
+  .navbar-collapse {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    flex-grow: 0 !important;
   }
 }
 
-/* Mobile dropdown styling */
+/* Mobile view (below 768px): Hide links until expanded, style dropdown popup */
 @media (max-width: 767.98px) {
   .navbar-toggler {
-    display: block !important;
+    display: block !important; /* Show hamburger icon on mobile */
   }
 
   .navbar-collapse.show,
