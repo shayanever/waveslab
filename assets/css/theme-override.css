@@ -8,9 +8,13 @@ header, nav, .navbar, #navbar {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Navbar Links */
+/* Navbar Links Spacing & Color */
 .navbar .nav-link, #navbar .nav-link, nav a {
   color: rgba(255, 255, 255, 0.85) !important;
+  padding-left: 0.65rem !important;
+  padding-right: 0.65rem !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
 }
 
 /* Hover & Active States */
@@ -48,18 +52,16 @@ footer a:hover, footer.fixed-bottom a:hover {
    HIDE ONLY "ctrl k" TEXT (KEEP MAGNIFIER ICON)
    ========================================================================== */
 
-/* 1. Target the search container / button and make text invisible */
 #search-toggle,
 .open-search,
 button#search-toggle,
 a.open-search,
 .navbar #search-toggle {
-  font-size: 0 !important; /* Collapses all plain text ("ctrl k") to 0px */
+  font-size: 0 !important;
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
 }
 
-/* 2. Target child kbd / span elements and collapse their text size */
 #search-toggle kbd,
 #search-toggle span,
 .open-search kbd,
@@ -72,61 +74,42 @@ a.open-search,
   margin: 0 !important;
 }
 
-/* 3. Re-enable FontAwesome icon visibility and size */
 #search-toggle i,
 #search-toggle .fa-magnifying-glass,
 .open-search i,
 .open-search .fa-magnifying-glass {
-  font-size: 1rem !important; /* Restores the magnifier icon */
+  font-size: 1rem !important;
   display: inline-block !important;
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-
-/* ==========================================================================
-   VERTICAL ALIGNMENT FIX FOR NAVBAR SEARCH ICON
-   ========================================================================== */
-
-/* Target the list item / button wrapping the search icon */
 .navbar #search-toggle,
 .navbar .open-search,
 #search-toggle,
 .open-search {
   position: relative !important;
-  top: 4px !important; /* Shifts the icon down to line up with text links */
+  top: 2px !important;
   display: inline-block !important;
   vertical-align: middle !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* Ensure the FontAwesome icon itself inherits the alignment */
-#search-toggle i,
-.open-search i,
-.fa-magnifying-glass {
-  vertical-align: middle !important;
-  display: inline-block !important;
 }
 
 
 /* ==========================================================================
-   PUBLICATION FLOATING YEAR MARKERS (HIGH VISIBILITY FIX)
+   PUBLICATION FLOATING YEAR MARKERS
    ========================================================================== */
 
-/* 1. Target the floating year headings directly */
 h2.year,
 .publications h2.year,
 div.publications h2.year,
 .bibliography h2.year {
-  color: #0f3460 !important; /* WAVESLAB Deep Blue */
-  opacity: 1 !important;      /* Removes the light fade/transparency */
+  color: #0f3460 !important;
+  opacity: 1 !important;
   font-weight: 800 !important;
   font-size: 2.2rem !important;
   text-shadow: none !important;
   filter: none !important;
 }
 
-/* 2. Override internal year variables if the theme uses them */
 .publications, .bibliography {
   --global-divider-color: #0f3460 !important;
   --global-text-color-light: #0f3460 !important;
@@ -134,54 +117,50 @@ div.publications h2.year,
 
 
 /* ==========================================================================
-   NAVBAR RESPONSIVE & MOBILE DROPDOWN STYLING
+   RESPONSIVE LAYOUT FIXES (DESKTOP VS MOBILE)
    ========================================================================== */
 
-/* DESKTOP VIEW (768px and wider): Force menu titles visible inline on far right */
-@media (min-width: 768px) {
-  header nav.navbar .navbar-toggler {
-    display: none !important; /* Guarantee no hamburger button on desktop */
-  }
-
-  header nav.navbar .navbar-collapse {
-    display: flex !important; /* Force menu links visible on desktop */
+/* DESKTOP (992px and above) */
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
     visibility: visible !important;
-    opacity: 1 !important;
-    flex-grow: 0 !important;
     height: auto !important;
   }
 
-  header nav.navbar .navbar-nav {
-    display: flex !important;
+  .navbar-nav {
     flex-direction: row !important;
+  }
+
+  .navbar-toggler {
+    display: none !important;
   }
 }
 
-/* MOBILE VIEW (Below 768px): Hide links until toggled, style dropdown */
-@media (max-width: 767.98px) {
-  header nav.navbar .navbar-toggler {
-    display: block !important; /* Show hamburger button on mobile */
+/* MOBILE (Below 992px) */
+@media (max-width: 991.98px) {
+  .navbar-collapse:not(.show) {
+    display: none !important; /* Ensures dropdown is collapsed by default */
   }
 
-  /* When mobile dropdown is toggled open */
-  header nav.navbar .navbar-collapse.show,
-  header nav.navbar .navbar-collapse.collapsing {
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
     display: block !important;
     background-color: #0f3460 !important;
     padding: 1rem !important;
     border-radius: 8px !important;
     margin-top: 0.5rem !important;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4) !important;
   }
 
-  header nav.navbar .navbar-nav {
+  .navbar-nav {
     flex-direction: column !important;
     align-items: flex-start !important;
     width: 100% !important;
   }
 
-  header nav.navbar .navbar-nav .nav-item {
+  .navbar-nav .nav-item {
     width: 100% !important;
-    padding: 0.4rem 0 !important;
+    padding: 0.3rem 0 !important;
   }
 }
