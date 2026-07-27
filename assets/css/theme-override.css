@@ -157,3 +157,27 @@ div.publications h2.year,
   flex-grow: 0 !important;
   margin-left: auto !important;
 }
+
+/* ==========================================================================
+   MOBILE MENU FIX
+   ========================================================================== */
+
+/* Mobile view adjustments (screens smaller than 768px) */
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    background-color: #0f3460 !important; /* WavesLab Blue background on mobile dropdown */
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .navbar-nav .nav-item {
+    width: 100% !important;
+    padding: 0.25rem 0 !important;
+  }
+}
