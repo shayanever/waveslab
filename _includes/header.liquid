@@ -1,13 +1,13 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top" role="navigation">
+  <nav class="navbar navbar-expand-md fixed-top" role="navigation" style="background-color: #0f3460 !important;">
     <div class="container d-flex justify-content-between align-items-center" style="max-width: 1180px;">
       
       <!-- Brand / Logo on Left -->
-      <a class="navbar-brand title font-weight-lighter text-white" href="{{ '/' | relative_url }}">
+      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}" style="color: #ffffff !important;">
         <span class="font-weight-bold" style="color: #ffffff !important;">WavesLab</span>
       </a>
 
-      <!-- Mobile Hamburger Toggle Button (Uses FontAwesome Bars Icon) -->
+      <!-- Mobile Hamburger Toggle Button -->
       <button 
         class="navbar-toggler collapsed ml-auto" 
         type="button" 
@@ -18,8 +18,8 @@
         aria-controls="navbarNav" 
         aria-expanded="false" 
         aria-label="Toggle navigation"
-        style="border: none; outline: none;">
-        <i class="fa-solid fa-bars text-white" style="font-size: 1.4rem;"></i>
+        style="border: 1px solid rgba(255, 255, 255, 0.3) !important; padding: 4px 8px !important;">
+        <i class="fa-solid fa-bars" style="color: #ffffff !important; font-size: 1.25rem;"></i>
       </button>
 
       <!-- Navigation Links -->
@@ -29,7 +29,9 @@
           {% for page in sorted_pages %}
             {% if page.nav %}
               <li class="nav-item {% if page.url == page.url and page.permalink == page.permalink %}active{% endif %}">
-                <a class="nav-link" href="{{ page.url | relative_url }}">{{ page.title }}</a>
+                <a class="nav-link" href="{{ page.url | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important; font-weight: 500;">
+                  {{ page.title }}
+                </a>
               </li>
             {% endif %}
           {% endfor %}
@@ -37,7 +39,7 @@
           <!-- Search Toggle Icon -->
           {% if site.search_enabled %}
             <li class="nav-item">
-              <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search">
+              <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search" style="color: rgba(255, 255, 255, 0.9) !important;">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </li>
