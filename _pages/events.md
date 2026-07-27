@@ -73,6 +73,6 @@ calendar: true
 </div>
 
 
-{% include calendar.liquid calendar_id='en.italian%23holiday%40group.v.calendar.google.com' timezone='Europe/Rome' %}
+{% include calendar.liquid calendar_id='developer-calendar@google.com' timezone='Europe/Rome' %}
 {% include courses.liquid %}
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
