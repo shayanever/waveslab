@@ -14,7 +14,8 @@ header, nav, .navbar, #navbar {
 }
 
 /* Hover & Active States */
-.navbar .nav-link:hover,
+.navbar .nav-link:hover, 
+.navbar .nav-item.active .nav-link,
 #navbar .nav-link:hover {
   color: #ffffff !important;
 }
@@ -130,6 +131,19 @@ div.publications h2.year,
   header nav.navbar .navbar-toggler {
     display: none !important; /* Guarantee no hamburger button on desktop */
   }
+
+  header nav.navbar .navbar-collapse {
+    display: flex !important; /* Force menu links visible on desktop */
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+  }
+
+  header nav.navbar .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+  }
 }
 
 /* MOBILE VIEW (Below 768px): Hide links until toggled, style dropdown */
@@ -139,4 +153,24 @@ div.publications h2.year,
   }
 
   /* When mobile dropdown is toggled open */
+  header nav.navbar .navbar-collapse.show,
+  header nav.navbar .navbar-collapse.collapsing {
+    display: block !important;
+    background-color: #0f3460 !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin-top: 0.5rem !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  header nav.navbar .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+
+  header nav.navbar .navbar-nav .nav-item {
+    width: 100% !important;
+    padding: 0.4rem 0 !important;
+  }
 }
