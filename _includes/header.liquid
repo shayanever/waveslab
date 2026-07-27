@@ -7,7 +7,6 @@
         <span class="font-weight-bold" style="color: #ffffff !important;">WavesLab</span>
       </a>
 
-      <!-- Mobile Hamburger Button -->
       <button 
         id="waveslab-nav-toggler"
         class="navbar-toggler collapsed ml-auto d-md-none" 
@@ -17,21 +16,20 @@
         <i class="fa-solid fa-bars" style="color: #ffffff !important; font-size: 1.25rem;"></i>
       </button>
 
-      <!-- Navigation Links Container -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap align-items-center">
+        <ul class="navbar-nav ml-auto flex-nowrap align-items-center" style="display: flex !important; flex-direction: row !important; gap: 0.5rem;">
+          
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
-          {% for page in sorted_pages %}
-            {% if page.nav %}
-              <li class="nav-item {% if page.url == page.url and page.permalink == page.permalink %}active{% endif %}">
-                <a class="nav-link" href="{{ page.url | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important; font-weight: 500;">
-                  {{ page.title }}
+          {% for p in sorted_pages %}
+            {% if p.nav %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ p.url | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important; font-weight: 500; font-size: 0.95rem;">
+                  {% if p.title %}{{ p.title }}{% else %}{{ p.autotitle }}{% endif %}
                 </a>
               </li>
             {% endif %}
           {% endfor %}
 
-          <!-- Search Toggle Icon -->
           {% if site.search_enabled %}
             <li class="nav-item">
               <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search" style="color: rgba(255, 255, 255, 0.9) !important;">
@@ -46,7 +44,6 @@
   </nav>
 </header>
 
-<!-- Fail-Safe Mobile Menu Toggle Script -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var toggler = document.getElementById("waveslab-nav-toggler");
