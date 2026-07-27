@@ -14,15 +14,13 @@ description: Connect with WavesLab across our official social media channels.
 
 <div class="post">
 
-  <!-- ====================================================================
-       FEATURED DIRECT YOUTUBE VIDEO EMBED
-       ==================================================================== -->
+
   <h3 class="font-weight-bold mb-3">Featured Video</h3>
   
   <div class="embed-responsive embed-responsive-16by9 mb-5 rounded shadow-sm">
     <iframe 
       class="embed-responsive-item" 
-      src="https://www.youtube.com/embed/ka5fEdkIZOc" 
+      src="https://www.youtube.com/embed/CGOohNAe868?si=9CNjRLQYVOL9Vq04" 
       title="WavesLab YouTube Video" 
       allowfullscreen>
     </iframe>
@@ -30,9 +28,7 @@ description: Connect with WavesLab across our official social media channels.
 
   <hr class="my-4">
 
-  <!-- ====================================================================
-       OFFICIAL SOCIAL MEDIA CHANNELS
-       ==================================================================== -->
+
   <h3 class="font-weight-bold mb-4">Official Channels</h3>
 
   <div class="row">
