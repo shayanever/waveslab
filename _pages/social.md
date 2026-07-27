@@ -52,12 +52,12 @@ nav_order: 9
   <h3 class="font-weight-bold mb-4" style="color: #0f3460;">Official Channels</h3>
 
   <div class="row">
-    <!-- YouTube Card -->
+    <!-- YouTube Card (Official Red) -->
     <div class="col-md-6 mb-4">
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-youtube fa-3x mb-3" style="color: #0f3460;"></i>
+            <i class="fa-brands fa-youtube fa-3x mb-3" style="color: #FF0000;"></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">YouTube</h4>
             <p class="card-text text-muted small">Watch recorded research talks, tutorials, and project demonstrations.</p>
           </div>
@@ -66,12 +66,12 @@ nav_order: 9
       </div>
     </div>
 
-    <!-- LinkedIn Card -->
+    <!-- LinkedIn Card (Official LinkedIn Blue) -->
     <div class="col-md-6 mb-4">
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-linkedin fa-3x mb-3" ></i>
+            <i class="fa-brands fa-linkedin fa-3x mb-3" style="color: #0A66C2;"></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">LinkedIn</h4>
             <p class="card-text text-muted small">Follow our official page for lab news, vacancies, and academic achievements.</p>
           </div>
@@ -80,12 +80,12 @@ nav_order: 9
       </div>
     </div>
 
-    <!-- ResearchGate Card -->
+    <!-- ResearchGate Card (Official ResearchGate Teal) -->
     <div class="col-md-6 mb-4">
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-researchgate fa-3x mb-3"></i>
+            <i class="fa-brands fa-researchgate fa-3x mb-3" style="color: #00CCBB;"></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">ResearchGate</h4>
             <p class="card-text text-muted small">Discover preprint updates, project logs, and full publication texts.</p>
           </div>
@@ -94,12 +94,12 @@ nav_order: 9
       </div>
     </div>
 
-    <!-- X (Twitter) Card -->
+    <!-- X / Twitter Card (Official Black) -->
     <div class="col-md-6 mb-4">
       <div class="card h-100 border shadow-sm text-center p-3" style="border-radius: 8px;">
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <div>
-            <i class="fa-brands fa-x-twitter fa-3x mb-3" ></i>
+            <i class="fa-brands fa-x-twitter fa-3x mb-3" style="color: #000000;"></i>
             <h4 class="card-title font-weight-bold" style="color: #0f3460;">X (Twitter)</h4>
             <p class="card-text text-muted small">Get real-time updates on conference presentations and paper releases.</p>
           </div>
