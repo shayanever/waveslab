@@ -1,0 +1,62 @@
+<header>
+  <nav class="navbar navbar-expand-md fixed-top" role="navigation" style="background-color: #0f3460 !important;">
+    <div class="container d-flex justify-content-between align-items-center" style="max-width: 1180px;">
+      
+      <!-- Brand / Logo on Left -->
+      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}" style="color: #ffffff !important;">
+        <span class="font-weight-bold" style="color: #ffffff !important;">WavesLab</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        id="waveslab-nav-toggler"
+        class="navbar-toggler collapsed ml-auto d-md-none" 
+        type="button" 
+        aria-label="Toggle navigation"
+        style="border: 1px solid rgba(255, 255, 255, 0.3) !important; padding: 4px 8px !important; background: transparent;">
+        <i class="fa-solid fa-bars" style="color: #ffffff !important; font-size: 1.25rem;"></i>
+      </button>
+
+      <!-- Navigation Links Container -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap align-items-center">
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for page in sorted_pages %}
+            {% if page.nav %}
+              <li class="nav-item {% if page.url == page.url and page.permalink == page.permalink %}active{% endif %}">
+                <a class="nav-link" href="{{ page.url | relative_url }}" style="color: rgba(255, 255, 255, 0.9) !important; font-weight: 500;">
+                  {{ page.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Search Toggle Icon -->
+          {% if site.search_enabled %}
+            <li class="nav-item">
+              <button id="search-toggle" class="btn nav-link ml-2" title="Search" aria-label="Search" style="color: rgba(255, 255, 255, 0.9) !important;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Fail-Safe Mobile Menu Toggle Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var toggler = document.getElementById("waveslab-nav-toggler");
+    var navMenu = document.getElementById("navbarNav");
+    
+    if (toggler && navMenu) {
+      toggler.addEventListener("click", function(e) {
+        e.preventDefault();
+        navMenu.classList.toggle("show-mobile-menu");
+      });
+    }
+  });
+</script>
