@@ -15,24 +15,41 @@ nav_order: 9
 <div class="post">
 
 
-  <h3 class="font-weight-bold mb-3">Featured Video</h3>
-  
-  <div class="embed-responsive embed-responsive-16by9 mb-5 rounded shadow-sm">
-    <iframe 
-      class="embed-responsive-item" 
-      src="https://www.youtube.com/embed/CGOohNAe868?si=9CNjRLQYVOL9Vq04" 
-      title="WavesLab YouTube Video" 
-      allowfullscreen>
-    </iframe>
+  <h3 class="font-weight-bold mb-4">Featured Videos</h3>
+
+  <div class="row">
+    {% for video in site.data.videos %}
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 border shadow-sm p-3">
+          <!-- Video Title & Presenter -->
+          <div class="text-center mb-3">
+            <h5 class="font-weight-bold mb-1">{{ video.title }}</h5>
+            {% if video.presenter %}
+              <p class="text-muted small mb-0">
+                <i class="fa-solid fa-user-tie mr-1"></i> Speaker: <strong>{{ video.presenter }}</strong>
+              </p>
+            {% endif %}
+          </div>
+
+          <!-- Video Embed -->
+          <div class="embed-responsive embed-responsive-16by9 rounded shadow-sm">
+            <iframe 
+              class="embed-responsive-item" 
+              src="https://www.youtube.com/embed/{{ video.youtube_id }}" 
+              title="{{ video.title }}" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 
-  <hr class="my-4">
-
+  <hr class="my-5">
 
   <h3 class="font-weight-bold mb-4">Official Channels</h3>
 
   <div class="row">
-
     <!-- YouTube Card -->
     <div class="col-md-6 mb-4">
       <div class="card h-100 border shadow-sm text-center p-3">
@@ -88,7 +105,6 @@ nav_order: 9
         </div>
       </div>
     </div>
-
   </div>
 
 </div>

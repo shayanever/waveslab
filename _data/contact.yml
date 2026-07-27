@@ -28,10 +28,10 @@ social_media:
     url: "https://scholar.google.com/citations?user=CuSEKIsAAAAJ"
     icon: "fa-solid fa-graduation-cap"
   - name: "Twitter / X"
-    url: "" # Leave blank if you don't have one yet
+    url: "https://x.com/" # Leave blank if you don't have one yet
     icon: "fa-brands fa-x-twitter"
   - name: "YouTube"
-    url: ""
+    url: "https://www.youtube.com/"
     icon: "fa-brands fa-youtube"
 
 # Visiting Instructions
