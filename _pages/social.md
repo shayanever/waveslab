@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Social Media
 permalink: /social/
+title: Social Media
+description: Connect with WavesLab across our official social media channels.
 nav: true
 nav_order: 9
-description: Connect with WavesLab across our official social media channels.
 ---
 
 <div class="header-bar mb-4">
@@ -92,3 +92,5 @@ description: Connect with WavesLab across our official social media channels.
   </div>
 
 </div>
+
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
