@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WAVESLAB Complete Website Administration Guide</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #0f3460;
+      border-bottom: 3px solid #0f3460;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #0f3460;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-left: 4px solid #0f3460;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.85em;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    blockquote {
+      background: #f0f4f8;
+      border-left: 4px solid #0f3460;
+      margin: 15px 0;
+      padding: 10px 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #0f3460;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      h2 {
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>WAVESLAB Complete Website Administration Guide</h1>
+  <p>Welcome to the official administrative guide for <strong>WAVESLAB</strong>. This document explains how to add, edit, or remove content across every section of the website. All site content is managed through simple text files (Markdown <code>.md</code> files) or data files (YAML <code>.yml</code> / BibTeX <code>.bib</code> files) in the GitHub repository without needing programming experience.</p>
+
+  <h2>Essential Rules for Editing Files</h2>
+  <ul>
+    <li><strong>Maintain Formatting &amp; Indentation:</strong> YAML files rely on precise spacing. Do not delete spaces or tabs at the beginning of lines.</li>
+    <li><strong>Use Quotation Marks:</strong> Wrap titles, names, descriptions, and string fields in quotation marks (e.g., <code>"Dr. Giulia Cisotto"</code>).</li>
+    <li><strong>Save Your Changes:</strong> Always click the <strong>Commit changes...</strong> button after editing a file on GitHub.</li>
+    <li><strong>Automated Live Deployment:</strong> Once changes are committed, GitHub Pages will automatically rebuild and publish the site live in <strong>1–2 minutes</strong>.</li>
+  </ul>
+
+
+  <!-- 1. NEWS -->
+  <h2>1. News (_posts/)</h2>
+  <p>News items automatically populate on both the Home Page stream and the main <code>/blog/</code> page.</p>
+  <ul>
+    <li><strong>Where to find files:</strong> <code>_posts/</code></li>
+    <li><strong>File Naming Format:</strong> <code>YYYY-MM-DD-title.md</code> (e.g., <code>2026-07-14-autoresearch-talk.md</code>)</li>
+  </ul>
+
+<pre>---
+layout: post
+title: "Brief Talk on AutoResearch by Dr. Alberto Zancanaro"
+date: 2026-07-14 14:00:00
+description: "Former lab member Dr. Alberto Zancanaro will give a brief talk on AutoResearch on July 16th at 10 am."
+thumbnail: assets/img/alberto_zancanaro.jpg
+preview: assets/img/alberto_zancanaro.jpg
+---
+
+&lt;div class="float-right mr-4 mb-3" style="max-width: 300px;"&gt;
+  {% include figure.liquid loading="eager" path="assets/img/alberto_zancanaro.jpg" class="img-fluid rounded z-depth-1" alt="Talk" %}
+&lt;/div&gt;
+
+Our former lab member, **Dr. Alberto Zancanaro**, will give a brief talk on **AutoResearch** on **July 16th at 10:00 AM**. 
+
+Wish to listen? You can [attend the talk here](https://teams.microsoft.com/...).</pre>
+  <ul>
+    <li><strong>Image Location:</strong> Upload preview/thumbnail images into <code>assets/img/</code>.</li>
+  </ul>
+
+  <!-- 2. TEAM -->
+  <h2>2. Team &amp; Members (_pages/_profile.md &amp; _pages/_people/)</h2>
+  
+  <h3>Section A: Updating Member Roster (_pages/_profile.md)</h3>
+  <p>Open <code>_pages/_profile.md</code> and add or update team entries in YAML format:</p>
+
+<pre>- name: "Dr. Jane Doe"
+  role: "Postdoctoral Researcher"
+  avatar: "/assets/img/team/jane_doe.jpg"
+  bio: "Focuses on high-density EEG artifact removal and signal modeling."
+  email: "jane.doe@units.it"
+  google_scholar: "https://scholar.google.com/..."
+  github: "janedoe"</pre>
+
+  <h3>Section B: Individual Detailed Bio Pages (_pages/_people/)</h3>
+  <p>For long-form biographies or detailed research profiles:</p>
+  <ol>
+    <li>Create a new <code>.md</code> file inside <code>_pages/_people/</code> (e.g., <code>jane_doe.md</code>).</li>
+    <li>Upload headshot images to <code>assets/img/</code>.</li>
+    <li>Ensure the person is referenced inside <code>_pages/_profile.md</code> so the profile link connects properly.</li>
+  </ol>
+
+  <!-- 3. PUBLICATIONS -->
+  <h2>3. Publications (_bibliography/papers.bib)</h2>
+  <p>The bibliography is dynamically built from standard BibTeX format. Open <code>_bibliography/papers.bib</code> and paste the new publication's BibTeX entry at the bottom:</p>
+
+<pre>@article{PhysRev.47.777,
+  abbr              = {PhysRev},
+  title             = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
+  author            = {Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
+  abstract          = {In a complete theory there is an element complete.},
+  journal           = {Phys. Rev.},
+  location          = {New Jersey},
+  volume            = {47},
+  issue             = {10},
+  pages             = {777--780},
+  year              = {1935},
+  month             = {May},
+  publisher         = {aps},
+  doi               = {10.1103/PhysRev.47.777},
+  url               = {https://link.aps.org/doi/10.1103/PhysRev.47.777},
+  google_scholar_id = {qyhmnyLat1gC},
+  video             = {https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
+  additional_info   = {. *More Information* can be [found here](https://github.com/...)},
+  selected          = {true},
+  preview           = {brownian-motion.gif}
+}</pre>
+  <ul>
+    <li><strong>Key Toggle:</strong> Adding <code>selected={true}</code> automatically features the paper in the <strong>Featured Publications</strong> section on the Home Page. Removing <code>selected={true}</code> keeps it listed exclusively on the main Publications page.</li>
+  </ul>
+
+  <!-- 4. PROJECTS -->
+  <h2>4. Active Research Projects (_projects/)</h2>
+  <p>Projects are displayed on the Home Page grid and the main <code>/projects/</code> page.</p>
+  <ul>
+    <li><strong>Where to find files:</strong> <code>_projects/</code></li>
+    <li><strong>File Naming Format:</strong> <code>project-title.md</code> (e.g., <code>ecg-cardiomyopathies.md</code>)</li>
+  </ul>
+
+<pre>---
+layout: page
+title: "Explainable AI for ECG-based Screening of Cardiomyopathies"
+description: "This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures..."
+img: assets/img/asugi.png
+logo: true
+external_link: https://asugi.sanita.fvg.it/it/schede/UniTS/index.html
+importance: 1
+category: work
+preview: assets/img/news/asugi.png
+related_publications:
+  - sharifi2026waveslab
+---
+
+This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with cardiomyopathies... The study is carried out in collaboration with ASUGI–Cattinara.</pre>
+
+  <blockquote><strong>Note:</strong> <code>importance: 1</code> places the project at the top of the list. Higher numbers appear further down. To connect a publication, list its BibTeX key under <code>related_publications</code>.</blockquote>
+
+  <!-- 5. GITHUB -->
+  <h2>5. GitHub &amp; Software Repositories (_data/repositories.yml)</h2>
+  <p>Displays open-source codebases, tools, and datasets created by WAVESLAB. Open <code>_data/repositories.yml</code> and update user/repo lists:</p>
+
+<pre>github_users:
+  - shayanever
+  - CisottoGiulia
+  - jesus-333
+
+repo_description_lines_max: 2
+
+github_repos:
+  - name: EEG-EMG-analytics
+    user: CisottoGiulia
+    description: "Analytics pipeline and toolsets for synchronized EEG and EMG signal processing."
+    related_publications:
+      - sharifi2026waveslab
+
+  - name: Variational-Autoencoder-for-EEG-analysis
+    user: jesus-333
+    description: "Deep learning architecture based on VAEs for feature extraction from EEG data."
+    related_publications:
+      - sharifi2026waveslab
+
+  - name: ecg-Rpeak-validation-neurokit
+    user: shayanever
+    description: "Validation tools for ECG R-peak detection benchmarking against NeuroKit2."
+    related_publications:
+      - sharifi2026waveslab
+
+  - name: Sleep-Apnea-and-Hypopnea-Detection
+    user: shayanever
+    description: "Machine learning framework for automated sleep apnea and hypopnea detection."
+    related_publications:
+      - sharifi2026waveslab</pre>
+
+  <!-- 6. COLLABORATIONS -->
+  <h2>6. Collaborations (_pages/collaborations.md)</h2>
+  <p>Manages partner institutions, clinical partners, and university lab networks categorized by group (e.g., Academia, Hospitals). Open <code>_pages/collaborations.md</code> and add collaborator blocks under the appropriate section header:</p>
+
+<pre>- name: "Prof. Leonardo Badia"
+  institution: "University of Padova"
+  location: "Padova, Italy"
+  address: "Via Gradenigo 6/b, 35131 Padova, Italy"
+  image: "" # e.g., badia.jpg in assets/img/
+  website: "https://www.dei.unipd.it/~badia/"
+  linkedin: "leonardo-badia"
+  github: ""
+  scholar: ""
+  email: "badia@dei.unipd.it"
+  phone: ""
+  description: "Collaborating on bio-signal processing algorithms and communication frameworks."</pre>
+
+  <!-- 7. JOIN US -->
+  <h2>7. Join Us / Opportunities (_data/positions.yml)</h2>
+  <p>Houses open calls for PhD candidates, postdocs, master's thesis projects, and visiting researchers. Open <code>_data/positions.yml</code> and add or edit position listings:</p>
+
+<pre>- title: "PhD Position in Neural Signal Modeling"
+  deadline: "October 15, 2026"
+  location: "Trieste, Italy"
+  description: "We are seeking a motivated PhD candidate with a strong background in biomedical engineering or machine learning..."</pre>
+
+  <!-- 8. CONTACT -->
+  <h2>8. Contact Information (_data/contact.yml)</h2>
+  <p>Contains lab location, directions, and official contact email addresses. Open <code>_data/contact.yml</code> and update the values:</p>
+
+<pre>address: "Department of Engineering and Architecture, University of Trieste, Italy"
+email: "info@waveslab.org"</pre>
+
+  <!-- 9. SOCIAL MEDIA -->
+  <h2>9. Social Media &amp; Videos (_data/videos.yml &amp; _pages/social.md)</h2>
+  
+  <h3>Adding Featured YouTube Videos</h3>
+  <p>Open <code>_data/videos.yml</code> and add a new video block:</p>
+
+<pre>- title: "QUALI SONO I MISTERI DELL'EEG?"
+  presenter: "Dr. Giulia Cisotto"
+  youtube_id: "CGOohNAe868"
+
+- title: "Comprendere o calcolare? Al confine tra intelligenza umana e artificiale"
+  presenter: "Dr. Giulia Cisotto and Dr. F. Anselmi"
+  youtube_id: "WEGKDRCsB6U"</pre>
+  <ul>
+    <li><strong><code>youtube_id</code>:</strong> The unique string at the end of the YouTube URL (e.g., in <code>youtube.com/watch?v=CGOohNAe868</code>, the ID is <code>CGOohNAe868</code>).</li>
+  </ul>
+
+  <h3>Updating Social Links</h3>
+  <p>Open <code>_pages/social.md</code> to update official channel URLs or change status badges when accounts go live.</p>
+
+  <!-- 10. EVENTS -->
+  <h2>10. Events, Seminars &amp; Courses (_pages/events.md &amp; _teachings/)</h2>
+  
+  <h3>Calendar Integration (_pages/events.md)</h3>
+  <p>To change the embedded Google Calendar, open <code>_pages/events.md</code> and swap the <code>src</code> attribute inside the <code>&lt;iframe&gt;</code> tag:</p>
+
+<pre>&lt;div class="calendar-container my-4"&gt;
+  &lt;iframe 
+    src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&amp;ctz=Europe%2FRome" 
+    style="border: 0; width: 100%; height: 600px; border-radius: 8px;" 
+    frameborder="0" 
+    scrolling="no"&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;</pre>
+
+  <h3>Course &amp; Teaching Details (_teachings/)</h3>
+  <p>To add detailed course syllabi, lecture notes, or workshop materials:</p>
+  <ol>
+    <li>Navigate to <code>_teachings/</code>.</li>
+    <li>Create a new <code>.md</code> file (e.g., <code>biosignal-processing-2026.md</code>).</li>
+    <li>Fill in course metadata and content using standard Markdown like samples</li>
+  </ol>
+
+  <!-- CHEATSHEET -->
+  <h2>Quick Markdown Formatting Cheat Sheet</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Style</th>
+        <th>Syntax Example</th>
+        <th>Output Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Bold Text</strong></td>
+        <td><code>**sample text**</code></td>
+        <td><strong>sample text</strong></td>
+      </tr>
+      <tr>
+        <td><em>Italic Text</em></td>
+        <td><code>*sample text*</code></td>
+        <td><em>sample text</em></td>
+      </tr>
+      <tr>
+        <td><strong>Header Level 2</strong></td>
+        <td><code>## Section Title</code></td>
+        <td><strong>Sub-section heading</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Header Level 3</strong></td>
+        <td><code>### Subsection Title</code></td>
+        <td><strong>Minor section heading</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Web Link</strong></td>
+        <td><code>[WavesLab Website](https://shayansharifi.net/waveslab/)</code></td>
+        <td><a href="https://shayansharifi.net/waveslab/">WavesLab Website</a></td>
+      </tr>
+      <tr>
+        <td><strong>Bullet Points</strong></td>
+        <td><code>- First item</code><br><code>- Second item</code></td>
+        <td>&bull; First item<br>&bull; Second item</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Summary Cheatsheet: File Locations &amp; Formats</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Menu Item</th>
+        <th>File / Directory</th>
+        <th>Format</th>
+        <th>Key Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Home</strong></td>
+        <td><code>index.html</code> / <code>_includes/</code></td>
+        <td>HTML / JS</td>
+        <td>Banner text &amp; main landing page cards</td>
+      </tr>
+      <tr>
+        <td><strong>News</strong></td>
+        <td><code>_posts/</code></td>
+        <td>Markdown (<code>.md</code>)</td>
+        <td>Posts announcements &amp; talk details</td>
+      </tr>
+      <tr>
+        <td><strong>Team</strong></td>
+        <td><code>_pages/_profile.md</code> &amp; <code>_pages/_people/</code></td>
+        <td>YAML / Markdown</td>
+        <td>Member roster &amp; bio pages</td>
+      </tr>
+      <tr>
+        <td><strong>Publications</strong></td>
+        <td><code>_bibliography/papers.bib</code></td>
+        <td>BibTeX (<code>.bib</code>)</td>
+        <td>Dynamic publication library</td>
+      </tr>
+      <tr>
+        <td><strong>Projects</strong></td>
+        <td><code>_projects/</code></td>
+        <td>Markdown (<code>.md</code>)</td>
+        <td>Research track descriptions</td>
+      </tr>
+      <tr>
+        <td><strong>GitHub</strong></td>
+        <td><code>_data/repositories.yml</code></td>
+        <td>YAML (<code>.yml</code>)</td>
+        <td>Open-source GitHub repositories</td>
+      </tr>
+      <tr>
+        <td><strong>Collaborations</strong></td>
+        <td><code>_pages/collaborations.md</code></td>
+        <td>Markdown / YAML</td>
+        <td>Partner institutions &amp; researchers</td>
+      </tr>
+      <tr>
+        <td><strong>Join us</strong></td>
+        <td><code>_data/positions.yml</code></td>
+        <td>YAML (<code>.yml</code>)</td>
+        <td>Open PhD &amp; Postdoc vacancy calls</td>
+      </tr>
+      <tr>
+        <td><strong>Contact</strong></td>
+        <td><code>_data/contact.yml</code></td>
+        <td>YAML (<code>.yml</code>)</td>
+        <td>Lab address &amp; email details</td>
+      </tr>
+      <tr>
+        <td><strong>Social Media</strong></td>
+        <td><code>_data/videos.yml</code> &amp; <code>_pages/social.md</code></td>
+        <td>YAML / Markdown</td>
+        <td>Featured talks &amp; official channel links</td>
+      </tr>
+      <tr>
+        <td><strong>Events</strong></td>
+        <td><code>_pages/events.md</code> &amp; <code>_teachings/</code></td>
+        <td>HTML / Markdown</td>
+        <td>Google Calendar &amp; course materials</td>
+      </tr>
+    </tbody>
+  </table>
+<h2 margin="center">Prepared by <a href="http://shayansharifi.net" target="_blank">Shayan Sharifi,</a> WAVESLAB, 2026</h2>
+<h3 margin="center">Last Updated: July 2026</h3>
+</body>
+</html>
