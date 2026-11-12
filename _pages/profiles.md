@@ -8,7 +8,7 @@ nav_order: 3
 
 profiles:
   - name: "Giulia Cisotto, Ph.D."
-    role: "Assistant Professor / Lab Director"
+    role: "Associate Professor / Lab Director"
     image: giulia_cisotto.jpg
     content: _people/about_giulia.md
     image_circular: true

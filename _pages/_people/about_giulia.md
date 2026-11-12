@@ -1,4 +1,4 @@
-**Giulia Cisotto** is a Tenure-Track Assistant Professor (RTT) at the Department of Mathematics, Informatics and Geosciences at the **University of Trieste, Italy**. 
+**Giulia Cisotto** is an Associate Professor at the Department of Mathematics, Informatics and Geosciences at the **University of Trieste, Italy**. 
 
 Since November 1st, 2025, she heads the **Waves Lab** at the University of Trieste, focusing on AI and machine learning modeling of biological time-series with applications to healthcare, Brain-Computer Interfaces (BCI), and computational neuroscience.
 
