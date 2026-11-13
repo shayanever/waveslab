@@ -1,16 +1,16 @@
 ---
 layout: course
-title: Data Science Fundamentals
+title: Computational Neuroscience
 description: This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.
-instructor: Prof. Data
-year: 2024
-term: Spring
+instructor: Prof. Giulia Cisotto, Prof. Alberto d'Onofrio
+year: 2026
+term: Autumn
 location: Science Building, Room 202
-time: Mondays and Wednesdays, 2:00-3:30 PM
+time: Mondays and Tuesdays, 2:00-4:00 PM
 course_id: data-science-fundamentals
 schedule:
   - week: 1
-    date: Feb 5
+    date: Nov 9th
     topic: Introduction to Data Science
     description: Overview of the data science workflow and key concepts.
     materials:
