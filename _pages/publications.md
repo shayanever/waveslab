@@ -11,7 +11,7 @@ display_categories: [journal, conference]
 <!-- Custom Clean Header -->
 <div class="header-bar mb-4">
   <h1 class="header-title">Publications</h1>
-  <p class="header-subtitle">Selected journal papers, conference proceedings, and preprints from WAVESLAB.</p>
+  <p class="header-subtitle">Selected journal papers, conference proceedings, and preprints from the WavesLab.</p>
 </div>
 
 <div class="publications">

@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Seminar and round table with Prof. Selina Wriessnegger
-date: 2026-11-26
+date: 2026-11-26 14:00:00
 description: Seminar and round table with Prof. Selina Wriessnegger (TU Graz) at Palazzo Berlam in Trieste on November, 26th. Don't miss it out!
 ---
+
 
 The WavesLab is excited to announce that **Prof. Selina Wriessnegger from the Technical University of Graz (Austria)** will be Visiting Professor from November 23r to December 4th.
 
