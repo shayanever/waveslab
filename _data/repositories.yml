@@ -10,22 +10,22 @@ github_repos:
     user: CisottoGiulia
     description: Analytics pipeline and toolsets for synchronized EEG and EMG signal processing.
     related_publications:
-      - sharifi2026waveslab
+      - cisottoHEALTHCOM2018
 
   - name: Variational-Autoencoder-for-EEG-analysis
     user: jesus-333
     description: Deep learning architecture based on VAEs for feature extraction from EEG data.
     related_publications:
-      - sharifi2026waveslab
+      - hveegnet2024, zancanaroCIBB2024
 
   - name: ecg-Rpeak-validation-neurokit
     user: shayanever
     description: Validation tools for ECG R-peak detection benchmarking against NeuroKit2.
     related_publications:
-      - sharifi2026waveslab
+      - sharifi2026learning
 
   - name: Sleep-Apnea-and-Hypopnea-Detection
     user: shayanever
     description: Machine learning framework for automated sleep apnea and hypopnea detection.
     related_publications:
-      - sharifi2026waveslab
+      - cisottoItalIA2025
