@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Seminar and round table with Prof. Selina Wriessnegger
-date: 2026-11-26 14:00:00
+date: 2026-11-13 14:00:00
 description: Seminar and round table with Prof. Selina Wriessnegger (TU Graz) at Palazzo Berlam in Trieste on November, 26th. Don't miss it out!
 ---
 

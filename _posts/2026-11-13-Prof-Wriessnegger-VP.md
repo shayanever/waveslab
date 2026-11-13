@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Prof. Selina Wriessnegger Visiting Professor at the WavesLab
-date: 2026-11-23 8:00:00
+date: 2026-11-13 8:00:00
 description: Prof. Selina Wriessnegger (TU Graz) will visit Units from Nov.23rd to Dec.4th
 thumbnail: assets/img/selina_in_her_lab.jpg
 preview: assets/img/selina_in_her_lab.jpg
