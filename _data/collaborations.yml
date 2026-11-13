@@ -1,29 +1,4 @@
 academia:
-  - name: "Prof. Leonardo Badia"
-    institution: "University of Padova"
-    location: "Padova, Italy"
-    address: "Via Gradenigo 6/b, 35131 Padova, Italy"
-    image: "" # e.g., badia.jpg in assets/img/
-    website: "https://www.dei.unipd.it/~badia/"
-    linkedin: "leonardo-badia"
-    github: ""
-    scholar: ""
-    email: "badia@dei.unipd.it"
-    phone: ""
-    description: "Collaborating on bio-signal processing algorithms and communication frameworks."
-
-  - name: "Dr. Alberto Zancanaro"
-    institution: "University of Luxembourg"
-    location: "Luxembourg"
-    address: ""
-    image: ""
-    website: ""
-    linkedin: "alberto-zancanaro"
-    github: "jesus-333"
-    scholar: ""
-    email: ""
-    phone: ""
-    description: "Research collaboration on generative models and VAEs for EEG signals."
 
   - name: "Prof. Ilaria Galidini & Prof. Giulia Barbati"
     institution: "University of Trieste"
@@ -37,10 +12,37 @@ academia:
     email: ""
     phone: ""
     description: "Statistical modeling and biostatistical analysis for clinical biomedical data."
+  
+  - name: "Dr. Alberto Zancanaro"
+    institution: "University of Luxembourg"
+    location: "Luxembourg"
+    address: ""
+    image: ""
+    website: ""
+    linkedin: "alberto-zancanaro"
+    github: "jesus-333"
+    scholar: ""
+    email: ""
+    phone: ""
+    description: "Research collaboration on generative models and VAEs for EEG signals."
+  
+  - name: "Dr. Erica Salvato"
+    institution: "University of Trieste"
+    location: "Trieste, Italy"
+    address: "Piazzale Europa 1, 34127 Trieste, Italy"
+    image: ""
+    website: ""
+    linkedin: ""
+    github: ""
+    scholar: ""
+    email: ""
+    phone: ""
+    description: "Control systems, robotics."
 
-  - name: "Prof. Mattia Zorzi"
-    institution: "University of Padova"
-    location: "Padova, Italy"
+
+  - name: "Dr. Marco Zennaro"
+    institution: "Abdus Salam International Centre for Theoretical Physics (ICTP)"
+    location: "Trieste, Italy"
     address: ""
     image: ""
     website: ""
@@ -49,10 +51,38 @@ academia:
     scholar: ""
     email: ""
     phone: ""
-    description: "Joint work on system identification, control, and neural signal filtering."
+    description: "IoT, TinyML, Edge computing, Industry 4.0."
+  
+  
+  
+  - name: "Prof. Leonardo Badia"
+    institution: "University of Padova"
+    location: "Padova, Italy"
+    address: "Via Gradenigo 6/b, 35131 Padova, Italy"
+    image: "" # e.g., badia.jpg in assets/img/
+    website: "https://www.dei.unipd.it/~badia/"
+    linkedin: "leonardo-badia"
+    github: ""
+    scholar: ""
+    email: ""
+    phone: ""
+    description: "Value of information, sensor networks."
+
+  - name: "Prof. Mattia Zorzi"
+    institution: "University of Padova"
+    location: "Padova, Italy"
+    address: "Via Gradenigo 6/b, 35131 Padova, Italy"
+    image: ""
+    website: ""
+    linkedin: ""
+    github: ""
+    scholar: ""
+    email: ""
+    phone: ""
+    description: "System identification, control, and neural signal filtering."
 
   - name: "Prof. Selina Wriessnegger"
-    institution: "Technical University of Graz"
+    institution: "Institue of Neural Engineering, Technical University of Graz"
     location: "Graz, Austria"
     address: ""
     image: ""
@@ -65,7 +95,7 @@ academia:
     description: "Brain-Computer Interfaces (BCI) and non-invasive neuroimaging research."
 
   - name: "Prof. Gabriel Pires"
-    institution: "University of Coimbra"
+    institution: "Institute of Systems and Robotics, University of Coimbra"
     location: "Coimbra, Portugal"
     address: ""
     image: ""
@@ -75,7 +105,9 @@ academia:
     scholar: ""
     email: ""
     phone: ""
-    description: "Collaborative studies in assistive technology and EEG-based decoding."
+    description: "Deep learning for EEG and brain-computer interface."
+
+
 
 hospitals:
   - name: "Prof. MD. Marco Merlo"
@@ -104,6 +136,10 @@ hospitals:
     phone: ""
     description: "Neuroscience clinical research and neural dynamics in health and disease."
 
+
+
+
+
 companies:
   - name: "Henesis srl"
     institution: "Industry Partner"
@@ -129,4 +165,4 @@ companies:
     scholar: ""
     email: ""
     phone: ""
-    description: "Industrial hardware-software engineering for biomedical devices."
+    description: "Industrial hardware-software engineering for NIRS devices for plants health monitoring."
