@@ -3,7 +3,7 @@ layout: default
 permalink: /social/
 title: Social Media
 description: Connect with WavesLab across our official social media channels.
-nav: true
+nav: false
 nav_order: 9
 ---
 
