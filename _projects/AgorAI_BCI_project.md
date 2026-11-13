@@ -32,4 +32,26 @@ The project starts on January, 1st 2027. More details to come..
 </div>
 
 
-{% endraw %}
+
+<!-- don't modify the below part  -->
+
+{% if page.external_link or page.redirect %}
+  {% assign ext_url = page.external_link | default: page.redirect %}
+  <div class="my-4">
+    <a href="{{ ext_url }}" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn btn-sm text-white fw-semibold rounded-2" 
+       style="background-color: #cbd1d7; border: 1px solid #0f3460; padding: 0.35rem 0.85rem;">
+      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+    </a>
+  </div>
+{% endif %}
+
+---
+
+### Related Publications
+
+{% for key in page.related_publications %}
+* {% reference key %}
+{% endfor %}
