@@ -1,10 +1,13 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+title: Edge AI-enabled BCI for Speech Rehabilitation
+description: Speech and language impairments following neurological damage, developmental conditions, or neurodegenerative diseases often require intensive and repeated rehabilitation. Although technology-based and home-based interventions are increasingly available, current approaches provide limited objective multimodal feedback (mostly a numerical score) and personalized real-time adaptation. Moreover, access to specialist rehabilitation services remains challenging in rural and resource-constrained settings. These limitations motivate the development of an affordable, privacy-preserving, real-time rehabilitation system deployable beyond clinical environments, enhanced by a local LLM providing personalized natural-language feedback. The expected impact is more accessible, personalized home rehabilitation and longitudinal monitoring, with sensitive data processed locally and reduced dependence on reliable connectivity.
+img: assets/img/AgorAI_project_scheme.png
+logo: true
+external_link: https://www.agorai.it/en/agorai
+importance: 1
+category: work
+preview: assets/img/AgorAI_project_scheme.png
 ---
 
 Every project has a beautiful feature showcase page.

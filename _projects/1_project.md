@@ -5,7 +5,7 @@ description: This study aims to develop explainable machine-learning and deep-le
 img: assets/img/asugi.png
 logo: true
 external_link: https://asugi.sanita.fvg.it/it/schede/UniTS/index.html
-importance: 1
+importance: 2
 category: work
 preview: assets/img/news/asugi.png
 related_publications:
