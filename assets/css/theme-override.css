@@ -106,3 +106,18 @@ div.publications h2.year,
 }
 
 
+/* ==========================================================================
+   REMOVE NUMBERING ("1.") FROM FEATURED PUBLICATIONS ON HOME PAGE
+   ========================================================================== */
+
+
+.publications ol.bibliography {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+}
+
+
+.publications ol.bibliography li::marker {
+  content: none !important;
+  display: none !important;
+}
