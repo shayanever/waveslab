@@ -310,7 +310,7 @@ html, body {
   <div class="section-block reveal-on-scroll">
     <div class="section-title">
       <span>Latest News</span>
-      <a href="{{ '/blog/' | relative_url }}" class="btn-more">View All News &rarr;</a>
+      <a href="{{ '/news/' | relative_url }}" class="btn-more">View All News &rarr;</a>
     </div>
     <div class="news-container">
       {% if site.posts and site.posts.size > 0 %}

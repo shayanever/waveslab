@@ -117,17 +117,32 @@ div.publications h2.year,
 
 
 /* ==========================================================================
-   REMOVE NUMBERING ("1.") FROM FEATURED PUBLICATIONS ON HOME PAGE
+   FORCE REMOVE NUMBERING ("1.") FROM PUBLICATIONS
    ========================================================================== */
 
-.selected-publications ol.bibliography,
-.publications ol.bibliography {
+/* 1. Remove standard HTML ordered list numbering */
+ol.bibliography,
+.publications ol,
+.bibliography ol {
+  list-style: none !important;
   list-style-type: none !important;
+  counter-reset: none !important;
   padding-left: 0 !important;
 }
 
-.selected-publications ol.bibliography li::marker,
-.publications ol.bibliography li::marker {
+/* 2. Remove custom CSS pseudo-element counters if used by the theme */
+ol.bibliography li,
+.publications ol li,
+.bibliography li {
+  list-style: none !important;
+  list-style-type: none !important;
+  counter-increment: none !important;
+}
+
+ol.bibliography li::before,
+.publications ol li::before,
+.bibliography li::before,
+ol.bibliography li::marker {
   content: none !important;
   display: none !important;
 }
