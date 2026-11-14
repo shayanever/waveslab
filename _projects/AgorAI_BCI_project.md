@@ -8,6 +8,7 @@ external_link: https://www.agorai.it/en/agorai
 importance: 1
 category: work
 preview: assets/img/AgorAI_project_scheme.png
+funder: "AgorAI Innovation Hub"
 ---
 
 The project starts on January, 1st 2027. More details to come..
