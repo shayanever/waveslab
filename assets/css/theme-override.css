@@ -146,3 +146,15 @@ ol.bibliography li::marker {
   content: none !important;
   display: none !important;
 }
+
+/* ==========================================================================
+   HIDE AUTO-GENERATED "REFERENCES" SECTION ONLY ON PROJECT PAGES
+   ========================================================================== */
+
+/* Hide any auto-injected References heading or bibliography block that follows .waveslab-project */
+.waveslab-project ~ h2,
+.waveslab-project ~ .publications,
+.post:has(.waveslab-project) > h2,
+.post:has(.waveslab-project) > .publications {
+  display: none !important;
+}
