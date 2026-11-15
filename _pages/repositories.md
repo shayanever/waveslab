@@ -155,7 +155,7 @@ nav_order: 6
             {% if pub_keys %}
               {% for key in pub_keys %}
                 {% assign clean_key = key | strip %}
-                <a href="{{ '/bibliography/' | append: clean_key | append: '/' | relative_url }}" 
+                <a href="{{ '/publications/' | relative_url }}#{{ clean_key }}" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="btn-theme-outline">
@@ -163,6 +163,7 @@ nav_order: 6
                 </a>
               {% endfor %}
             {% endif %}
+            
           </div>
 
         </div>
