@@ -5,14 +5,14 @@ upcoming:
     location: "Palazzo Berlam, Trieste"
     image: "selina_in_her_lab.jpg" # Optional: file inside assets/img/
     description: "Visiting Professor seminar on passive BCIs in EEG-based neuroadaptive systems, followed by an open round table discussion."
-    registration_link: "google.com" # Add your registration form URL here once ready
+    registration_link: "https://www.google.com" # Add your registration form URL here once ready
 
 past:
   - title: "Trieste Next 2026"
     speaker: "WAVESLAB Team"
     date_time: "September 25–27, 2026"
     location: "Piazza Unità d'Italia, Trieste"
-    image: "" # e.g., trieste_next_2026.jpg in assets/img/
+    image: "trieste_next_2026.jpg"
     description: "Interactive public science demonstrations and hands-on brain-computer interface showcases at Trieste Next."
     registration_link: "https://www.triestenext.it/"
 
