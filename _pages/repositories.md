@@ -109,6 +109,27 @@ nav_order: 6
     display: block;
   }
 
+  /* Bullet markers inside the expandable publication drawer */
+  .repo-pub-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+  }
+
+  .repo-pub-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .repo-pub-bullet {
+    font-weight: 700;
+    color: #0f3460;
+    min-width: 0.85rem;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
   /* Force al-folio's bib.liquid layout to stay compact inside the drawer */
   .repo-pub-box .row {
     display: block !important;
@@ -219,12 +240,17 @@ nav_order: 6
 
             {% if pub_keys %}
               <div id="pub-box-{{ forloop.index }}" class="repo-pub-box">
-                {% for key in pub_keys %}
-                  {% assign clean_key = key | strip %}
-                  <div class="{% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
-                    {% reference clean_key %}
-                  </div>
-                {% endfor %}
+                <ul class="repo-pub-list">
+                  {% for key in pub_keys %}
+                    {% assign clean_key = key | strip %}
+                    <li class="repo-pub-item {% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
+                      <span class="repo-pub-bullet">&bull;</span>
+                      <div class="flex-grow-1">
+                        {% reference clean_key %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
               </div>
             {% endif %}
           </div>
