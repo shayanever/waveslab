@@ -152,18 +152,18 @@ nav_order: 6
             </a>
 
 <!-- Related Publication Buttons -->
-            {% if pub_keys %}
-              {% for key in pub_keys %}
-                {% assign clean_key = key | strip %}
-                <a href="{{ '/publications/' | relative_url }}#{{ clean_key }}" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn-theme-outline">
-                  Related Publication{% if pub_keys.size > 1 %} {{ forloop.index }}{% endif %} <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
-                </a>
-              {% endfor %}
-            {% endif %}
-            
+{% if pub_keys %}
+  {% for term in pub_keys %}
+    {% assign encoded_term = term | strip | url_encode %}
+    <a href="{{ '/publications/' | relative_url }}#{{ encoded_term }}" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn-theme-outline">
+      Related Publication{% if pub_keys.size > 1 %} {{ forloop.index }}{% endif %} <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+    </a>
+  {% endfor %}
+{% endif %}
+
           </div>
 
         </div>
