@@ -1,68 +1,25 @@
 ---
-layout: page
 title: Edge AI-enabled BCI for Speech Rehabilitation
-description: Speech and language impairments following neurological damage, developmental conditions, or neurodegenerative diseases often require intensive and repeated rehabilitation. Although technology-based and home-based interventions are increasingly available, current approaches provide limited objective multimodal feedback (mostly a numerical score) and personalized real-time adaptation. Moreover, access to specialist rehabilitation services remains challenging in rural and resource-constrained settings. These limitations motivate the development of an affordable, privacy-preserving, real-time rehabilitation system deployable beyond clinical environments, enhanced by a local LLM providing personalized natural-language feedback. The expected impact is more accessible, personalized home rehabilitation and longitudinal monitoring, with sensitive data processed locally and reduced dependence on reliable connectivity.
+description: Developing an affordable, privacy-preserving, real-time home rehabilitation system enhanced by a local LLM.
 img: assets/img/AgorAI_project_scheme.png
-logo: true
+aim_figure: assets/img/AgorAI_project_scheme.png
+aim_caption: Conceptual architecture of the Edge AI-enabled BCI rehabilitation system.
+funder: "AgorAI Innovation Hub"
+project_id: 1
 external_link: https://www.agorai.it/en/agorai
 importance: 1
 category: work
-preview: assets/img/AgorAI_project_scheme.png
-funder: "AgorAI Innovation Hub"
-project id: 1
----
-{% if page.funder or page.project_id %}
-<div class="alert alert-light border my-3" style="border-left: 4px solid #0f3460 !important;">
-  {% if page.funder %}<div><strong>Funder:</strong> {{ page.funder }}</div>{% endif %}
-  {% if page.project_id %}<div><strong>Project ID:</strong> {{ page.project_id }}</div>{% endif %}
-</div>
-{% endif %}
-
-
-The project starts on January, 1st 2027. More details to come..
-
-
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/units.png" title="Project framework" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/ictp-logo.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/SISSA-logo2.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/agorai_logo.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
-<div class="caption">
-    Project partners.
-</div>
-
-
-
-<!-- don't modify the below part  -->
-
-{% if page.external_link or page.redirect %}
-  {% assign ext_url = page.external_link | default: page.redirect %}
-  <div class="my-4">
-    <a href="{{ ext_url }}" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="btn btn-sm text-white fw-semibold rounded-2" 
-       style="background-color: #cbd1d7; border: 1px solid #0f3460; padding: 0.35rem 0.85rem;">
-      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
-    </a>
-  </div>
-{% endif %}
-
+partners:
+  - name: "University of Trieste"
+    logo: "assets/img/units.png"
+  - name: "ICTP"
+    logo: "assets/img/ictp-logo.jpg"
+  - name: "SISSA"
+    logo: "assets/img/SISSA-logo2.jpg"
+  - name: "AgorAI"
+    logo: "assets/img/agorai_logo.jpg"
 ---
 
-### Related Publications
+Speech and language impairments following neurological damage, developmental conditions, or neurodegenerative diseases often require intensive and repeated rehabilitation. Although technology-based and home-based interventions are increasingly available, current approaches provide limited objective multimodal feedback (mostly a numerical score) and personalized real-time adaptation.
 
-{% for key in page.related_publications %}
-* {% reference key %}
-{% endfor %}
+The project starts on January 1st, 2027. More details to come.

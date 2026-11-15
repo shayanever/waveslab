@@ -1,0 +1,61 @@
+---
+layout: page
+---
+
+<!-- 1. Funder & Project ID Box -->
+{% if page.funder or page.project_id %}
+<div class="alert alert-light border my-3" style="border-left: 4px solid #0f3460 !important;">
+  {% if page.funder %}<div><strong>Funder:</strong> {{ page.funder }}</div>{% endif %}
+  {% if page.project_id %}<div><strong>Project ID:</strong> {{ page.project_id }}</div>{% endif %}
+</div>
+{% endif %}
+
+<!-- 2. Main Project Description (Written in Markdown) -->
+{{ content }}
+
+<!-- 3. Main Aim / Conceptual Figure -->
+{% if page.aim_figure %}
+<div class="my-4 text-center">
+  {% include figure.liquid loading="eager" path=page.aim_figure title=page.title class="img-fluid rounded z-depth-1" %}
+  {% if page.aim_caption %}
+    <div class="caption">{{ page.aim_caption }}</div>
+  {% endif %}
+</div>
+{% endif %}
+
+<!-- 4. Partner Logos Grid -->
+{% if page.partners %}
+<div class="row align-items-center justify-content-center my-4">
+  {% for partner in page.partners %}
+  <div class="col-6 col-sm-3 text-center my-2">
+    {% include figure.liquid loading="eager" path=partner.logo title=partner.name class="img-fluid" style="max-height: 70px;" %}
+  </div>
+  {% endfor %}
+</div>
+<div class="caption">Project partners.</div>
+{% endif %}
+
+<!-- 5. External Link Button -->
+{% if page.external_link or page.redirect %}
+  {% assign ext_url = page.external_link | default: page.redirect %}
+  <div class="my-4">
+    <a href="{{ ext_url }}" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn btn-sm text-white fw-semibold rounded-2" 
+       style="background-color: #0f3460; border: 1px solid #0f3460; padding: 0.35rem 0.85rem;">
+      External Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+    </a>
+  </div>
+{% endif %}
+
+<!-- 6. Related Publications (Only shows if publications exist) -->
+{% if page.related_publications %}
+<hr>
+<h3>Related Publications</h3>
+<ul>
+  {% for key in page.related_publications %}
+  <li>{% reference key %}</li>
+  {% endfor %}
+</ul>
+{% endif %}
