@@ -10,33 +10,44 @@ calendar: true
 <style>
   .event-card {
     background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 14px;
     border: 1px solid #e2e8f0 !important;
+    padding: 1.5rem !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     height: 100%;
   }
 
   .event-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(15, 52, 96, 0.08) !important;
+    box-shadow: 0 10px 24px rgba(15, 52, 96, 0.08) !important;
   }
 
- .event-card-img {
+  /* Framed portrait / thumbnail on the left so vertical photos never crop faces */
+  .event-thumb-wrapper {
+    width: 115px;
+    height: 135px;
+    min-width: 115px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #f1f5f9;
+    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.08);
+    background-color: #f8fafc;
+  }
+
+  .event-thumb-img {
     width: 100%;
-    height: 240px;
+    height: 100%;
     object-fit: cover;
-    object-position: center 20%; /* Keeps faces near the top visible */
-    border-bottom: 1px solid #e2e8f0;
+    object-position: center top;
   }
 
   .event-badge-incoming {
     background-color: #0f3460;
     color: #ffffff;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    padding: 0.25rem 0.65rem;
+    padding: 0.22rem 0.6rem;
     border-radius: 999px;
     text-transform: uppercase;
     display: inline-block;
@@ -46,10 +57,10 @@ calendar: true
     background-color: #f1f5f9;
     color: #475569;
     border: 1px solid #cbd5e1;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    padding: 0.25rem 0.65rem;
+    padding: 0.22rem 0.6rem;
     border-radius: 999px;
     text-transform: uppercase;
     display: inline-block;
@@ -58,9 +69,10 @@ calendar: true
   .event-title {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.15rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.35rem;
+    font-size: 1.12rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
   }
 
   .event-meta {
@@ -124,35 +136,39 @@ calendar: true
       <div class="col">
         <div class="event-card d-flex flex-column justify-content-between">
           <div>
-            {% if event.image and event.image != "" %}
-              {% assign img_path = event.image | prepend: 'assets/img/' %}
-              <img src="{{ img_path | relative_url }}" class="event-card-img" alt="{{ event.title }}">
-            {% endif %}
-
-            <div class="p-4">
-              <span class="event-badge-incoming">Incoming</span>
-              <h3 class="event-title">{{ event.title }}</h3>
-
-              {% if event.speaker and event.speaker != "" %}
-                <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+            <div class="d-flex align-items-start gap-3">
+              {% if event.image and event.image != "" %}
+                {% assign img_path = event.image | prepend: 'assets/img/' %}
+                <div class="event-thumb-wrapper">
+                  <img src="{{ img_path | relative_url }}" class="event-thumb-img" alt="{{ event.title }}">
+                </div>
               {% endif %}
 
-              {% if event.date_time and event.date_time != "" %}
-                <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
-              {% endif %}
+              <div class="flex-grow-1">
+                <span class="event-badge-incoming">Incoming</span>
+                <h3 class="event-title">{{ event.title }}</h3>
 
-              {% if event.location and event.location != "" %}
-                <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
-              {% endif %}
+                {% if event.speaker and event.speaker != "" %}
+                  <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+                {% endif %}
 
-              {% if event.description and event.description != "" %}
-                <p class="text-secondary small mt-3 mb-0">{{ event.description }}</p>
-              {% endif %}
+                {% if event.date_time and event.date_time != "" %}
+                  <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
+                {% endif %}
+
+                {% if event.location and event.location != "" %}
+                  <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
+                {% endif %}
+              </div>
             </div>
+
+            {% if event.description and event.description != "" %}
+              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ event.description }}</p>
+            {% endif %}
           </div>
 
           {% if event.registration_link and event.registration_link != "" %}
-            <div class="px-4 pb-4 pt-2">
+            <div class="pt-3 mt-3 border-top">
               <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
                 Registration Form <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
               </a>
@@ -175,35 +191,39 @@ calendar: true
       <div class="col">
         <div class="event-card d-flex flex-column justify-content-between">
           <div>
-            {% if event.image and event.image != "" %}
-              {% assign img_path = event.image | prepend: 'assets/img/' %}
-              <img src="{{ img_path | relative_url }}" class="event-card-img" alt="{{ event.title }}">
-            {% endif %}
-
-            <div class="p-4">
-              <span class="event-badge-past">Past Event</span>
-              <h3 class="event-title">{{ event.title }}</h3>
-
-              {% if event.speaker and event.speaker != "" %}
-                <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+            <div class="d-flex align-items-start gap-3">
+              {% if event.image and event.image != "" %}
+                {% assign img_path = event.image | prepend: 'assets/img/' %}
+                <div class="event-thumb-wrapper">
+                  <img src="{{ img_path | relative_url }}" class="event-thumb-img" alt="{{ event.title }}">
+                </div>
               {% endif %}
 
-              {% if event.date_time and event.date_time != "" %}
-                <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
-              {% endif %}
+              <div class="flex-grow-1">
+                <span class="event-badge-past">Past Event</span>
+                <h3 class="event-title">{{ event.title }}</h3>
 
-              {% if event.location and event.location != "" %}
-                <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
-              {% endif %}
+                {% if event.speaker and event.speaker != "" %}
+                  <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+                {% endif %}
 
-              {% if event.description and event.description != "" %}
-                <p class="text-secondary small mt-3 mb-0">{{ event.description }}</p>
-              {% endif %}
+                {% if event.date_time and event.date_time != "" %}
+                  <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
+                {% endif %}
+
+                {% if event.location and event.location != "" %}
+                  <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
+                {% endif %}
+              </div>
             </div>
+
+            {% if event.description and event.description != "" %}
+              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ event.description }}</p>
+            {% endif %}
           </div>
 
           {% if event.registration_link and event.registration_link != "" %}
-            <div class="px-4 pb-4 pt-2">
+            <div class="pt-3 mt-3 border-top">
               <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-outline">
                 Event Details / Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
               </a>
