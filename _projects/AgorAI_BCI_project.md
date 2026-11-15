@@ -9,6 +9,7 @@ importance: 1
 category: work
 preview: assets/img/AgorAI_project_scheme.png
 funder: "AgorAI Innovation Hub"
+project id: 1
 ---
 {% if page.funder or page.project_id %}
 <div class="alert alert-light border my-3" style="border-left: 4px solid #0f3460 !important;">
