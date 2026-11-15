@@ -286,12 +286,17 @@ plugins:
   - al_comments
   - al_newsletter
 
-# Sitemap settings
+# Sitemap & Layout Defaults
 defaults:
   - scope:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 sass:
   style: compressed
@@ -701,9 +706,3 @@ jsonresume:
   - interests
   - references
 
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
