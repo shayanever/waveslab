@@ -15,7 +15,7 @@ partners:
     logo: "assets/img/units.png"
   - name: "ASUGI–Cattinara"
     logo: "assets/img/asugi.png"
-related_publications:
+project_publications:
   - sharifi2026learning
 ---
 

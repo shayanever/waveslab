@@ -50,14 +50,13 @@ layout: page
     </div>
   {% endif %}
 
-  <!-- 6. Related Publications -->
-  {% if page.related_publications %}
+<!-- 6. Related Publications -->
+  {% if page.project_publications %}
   <hr>
   <h3>Related Publications</h3>
   <ul>
-    {% for key in page.related_publications %}
+    {% for key in page.project_publications %}
     <li>{% reference key %}</li>
     {% endfor %}
   </ul>
   {% endif %}
-</div>
