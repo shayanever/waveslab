@@ -151,14 +151,26 @@ nav_order: 6
               View Repository <i class="fa-brands fa-github fa-xs ms-1"></i>
             </a>
 
-            <!-- Related Publication Buttons -->
+          <!-- Buttons & Related Publications Container -->
+          <div class="pt-2 mt-2 border-top">
+            <div class="mb-2">
+              <a href="https://github.com/{{ repo_user }}/{{ repo_name }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
+                View Repository <i class="fa-brands fa-github fa-xs ms-1"></i>
+              </a>
+            </div>
+
             {% if pub_keys %}
-              {% for key in pub_keys %}
-                <a href="{{ '/publications/' | relative_url }}#{{ key }}" class="btn-theme-outline">
-                  Related Publication <i class="fa-solid fa-book-bookmark fa-xs ms-1"></i>
-                </a>
-              {% endfor %}
+              <div class="small text-muted mt-2 pt-2 border-top">
+                <strong class="d-block mb-1" style="color: #0f3460;">Related Publications:</strong>
+                <ul class="ps-3 mb-0">
+                  {% for key in pub_keys %}
+                    {% assign clean_key = key | strip %}
+                    <li class="mb-1">{% reference clean_key %}</li>
+                  {% endfor %}
+                </ul>
+              </div>
             {% endif %}
+          </div>
           </div>
 
         </div>

@@ -16,8 +16,9 @@ github_repos:
     user: jesus-333
     description: Deep learning architecture based on VAEs for feature extraction from EEG data.
     related_publications:
-      - hveegnet2024, zancanaroCIBB2024
-
+      - hveegnet2024
+      - zancanaroCIBB2024
+      
   - name: ecg-Rpeak-validation-neurokit
     user: shayanever
     description: Validation tools for ECG R-peak detection benchmarking against NeuroKit2.

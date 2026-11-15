@@ -19,6 +19,8 @@ partners:
     logo: "assets/img/SISSA-logo2.jpg"
   - name: "AgorAI"
     logo: "assets/img/agorai_logo.jpg"
+project_publications:
+  - sharifi2026learning
 ---
 
 Speech and language impairments following neurological damage, developmental conditions, or neurodegenerative diseases often require intensive and repeated rehabilitation. Although technology-based and home-based interventions are increasingly available, current approaches provide limited objective multimodal feedback (mostly a numerical score) and personalized real-time adaptation.
