@@ -43,7 +43,9 @@ nav_order: 6
     padding: 0.3rem 0.75rem;
     font-size: 0.85rem;
     text-decoration: none !important;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
   }
 
   .btn-theme-primary:hover {
@@ -51,7 +53,7 @@ nav_order: 6
     color: #ffffff !important;
   }
 
-  /* Outline Button */
+  /* Outline Toggle Button */
   .btn-theme-outline {
     background-color: transparent !important;
     color: #0f3460 !important;
@@ -61,10 +63,13 @@ nav_order: 6
     padding: 0.3rem 0.75rem;
     font-size: 0.85rem;
     text-decoration: none !important;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
   }
 
-  .btn-theme-outline:hover {
+  .btn-theme-outline:hover,
+  .btn-theme-outline.active {
     background-color: #0f3460 !important;
     color: #ffffff !important;
   }
@@ -85,6 +90,59 @@ nav_order: 6
   .user-badge:hover {
     background-color: #e2e8f0;
     color: #0f3460;
+  }
+
+  /* Expandable Publication Drawer Inside Card */
+  .repo-pub-box {
+    display: none;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f3460;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #1e293b;
+  }
+
+  .repo-pub-box.open {
+    display: block;
+  }
+
+  /* Force al-folio's bib.liquid layout to stay compact inside the drawer */
+  .repo-pub-box .row {
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .repo-pub-box .abbr,
+  .repo-pub-box .preview,
+  .repo-pub-box .badges {
+    display: none !important;
+  }
+
+  .repo-pub-box .col-sm-8,
+  .repo-pub-box .col-sm-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .repo-pub-box .title {
+    font-weight: 700 !important;
+    color: #0f3460 !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .repo-pub-box .links a.btn {
+    padding: 0.15rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    margin-top: 0.35rem !important;
+    border: 1px solid #0f3460 !important;
+    color: #0f3460 !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
   }
 </style>
 
@@ -144,21 +202,30 @@ nav_order: 6
             {% endif %}
           </div>
 
-<!-- Buttons & Related Publications Container -->
-          <div class="pt-2 mt-2 border-top d-flex flex-wrap align-items-center gap-2">
-            <!-- GitHub Repository Direct Link Button -->
-            <a href="https://github.com/{{ repo_user }}/{{ repo_name }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
-              View Repository <i class="fa-brands fa-github fa-xs ms-1"></i>
-            </a>
+          <!-- Buttons & Expandable Publication Box -->
+          <div class="pt-2 mt-2 border-top">
+            <div class="d-flex flex-wrap gap-2">
+              <a href="https://github.com/{{ repo_user }}/{{ repo_name }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
+                View Repository <i class="fa-brands fa-github fa-xs ms-1"></i>
+              </a>
 
-            <!-- Related Publication Buttons -->
+              {% if pub_keys %}
+                <button type="button" class="btn-theme-outline" onclick="toggleRepoPub('pub-box-{{ forloop.index }}', this)">
+                  Related Publication{% if pub_keys.size > 1 %}s ({{ pub_keys.size }}){% endif %}
+                  <i class="fa-solid fa-chevron-down fa-xs ms-1"></i>
+                </button>
+              {% endif %}
+            </div>
+
             {% if pub_keys %}
-              {% for key in pub_keys %}
-                {% assign clean_key = key | strip %}
-                <a href="{{ '/publications/' | relative_url }}#{{ clean_key }}" class="btn-theme-outline">
-                  <i class="fa-solid fa-file-lines me-1"></i> {{ clean_key }}
-                </a>
-              {% endfor %}
+              <div id="pub-box-{{ forloop.index }}" class="repo-pub-box">
+                {% for key in pub_keys %}
+                  {% assign clean_key = key | strip %}
+                  <div class="{% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
+                    {% reference clean_key %}
+                  </div>
+                {% endfor %}
+              </div>
             {% endif %}
           </div>
 
@@ -167,5 +234,19 @@ nav_order: 6
     {% endfor %}
   </div>
 {% endif %}
+
+<script>
+  function toggleRepoPub(boxId, btn) {
+    const box = document.getElementById(boxId);
+    if (!box) return;
+    box.classList.toggle('open');
+    btn.classList.toggle('active');
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    }
+  }
+</script>
 
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">

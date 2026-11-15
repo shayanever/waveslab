@@ -18,7 +18,7 @@ github_repos:
     related_publications:
       - hveegnet2024
       - zancanaroCIBB2024
-      
+
   - name: ecg-Rpeak-validation-neurokit
     user: shayanever
     description: Validation tools for ECG R-peak detection benchmarking against NeuroKit2.
