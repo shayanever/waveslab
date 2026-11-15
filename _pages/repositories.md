@@ -147,9 +147,12 @@ nav_order: 6
           <!-- Buttons Container -->
           <div class="pt-2 mt-2 border-top d-flex flex-wrap gap-2">
             <!-- GitHub Repository Direct Link Button -->
-            <a href="https://github.com/{{ repo_user }}/{{ repo_name }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
-              View Repository <i class="fa-brands fa-github fa-xs ms-1"></i>
-            </a>
+<a href="{{ '/bibliography/' | append: clean_key | append: '/' | relative_url }}" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="btn-theme-outline">
+  Related Publication{% if pub_keys.size > 1 %} {{ forloop.index }}{% endif %} <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-1"></i>
+</a>
 
 <!-- Related Publication Buttons -->
 {% if pub_keys %}
