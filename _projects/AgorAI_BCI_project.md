@@ -10,6 +10,13 @@ category: work
 preview: assets/img/AgorAI_project_scheme.png
 funder: "AgorAI Innovation Hub"
 ---
+{% if page.funder or page.project_id %}
+<div class="alert alert-light border my-3" style="border-left: 4px solid #0f3460 !important;">
+  {% if page.funder %}<div><strong>Funder:</strong> {{ page.funder }}</div>{% endif %}
+  {% if page.project_id %}<div><strong>Project ID:</strong> {{ page.project_id }}</div>{% endif %}
+</div>
+{% endif %}
+
 
 The project starts on January, 1st 2027. More details to come..
 
