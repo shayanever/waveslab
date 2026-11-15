@@ -159,7 +159,3 @@ ol.bibliography li::marker {
   display: none !important;
 }
 
-/* Offset anchor scroll position for fixed top navbar on Publications page */
-ol.bibliography li[id] {
-  scroll-margin-top: 90px;
-}
