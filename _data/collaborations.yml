@@ -1,6 +1,7 @@
 academia:
 
   - name: "Prof. Ilaria Galidini & Prof. Giulia Barbati"
+    department: "Department of Medicine, Surgery and Health Sciences"
     institution: "University of Trieste"
     location: "Trieste, Italy"
     address: "Piazzale Europa 1, 34127 Trieste, Italy"
@@ -12,8 +13,11 @@ academia:
     email: ""
     phone: ""
     description: "Statistical modeling and biostatistical analysis for clinical biomedical data."
+    related_publications:
+      - sharifi2026learning
   
   - name: "Dr. Alberto Zancanaro"
+    department: "Department of Computer Science"
     institution: "University of Luxembourg"
     location: "Luxembourg"
     address: ""
@@ -25,8 +29,12 @@ academia:
     email: ""
     phone: ""
     description: "Research collaboration on generative models and VAEs for EEG signals."
+    related_publications:
+      - hveegnet2024
+      - zancanaroCIBB2024
   
   - name: "Dr. Erica Salvato, Ph.D."
+    department: "Department of Engineering and Architecture"
     institution: "University of Trieste"
     location: "Trieste, Italy"
     address: "Piazzale Europa 1, 34127 Trieste, Italy"
@@ -39,8 +47,8 @@ academia:
     phone: ""
     description: "Control systems, robotics."
 
-
   - name: "Prof. Marco Zennaro"
+    department: "Science, Technology and Innovation Unit"
     institution: "Abdus Salam International Centre for Theoretical Physics (ICTP)"
     location: "Trieste, Italy"
     address: ""
@@ -53,13 +61,12 @@ academia:
     phone: ""
     description: "IoT, TinyML, Edge computing, Industry 4.0."
   
-  
-  
   - name: "Prof. Leonardo Badia"
+    department: "Department of Information Engineering"
     institution: "University of Padova"
     location: "Padova, Italy"
     address: "Via Gradenigo 6/b, 35131 Padova, Italy"
-    image: "" # e.g., badia.jpg in assets/img/
+    image: ""
     website: "https://www.dei.unipd.it/~badia/"
     linkedin: "leonardo-badia"
     github: ""
@@ -69,6 +76,7 @@ academia:
     description: "Value of information, sensor networks."
 
   - name: "Prof. Mattia Zorzi"
+    department: "Department of Information Engineering"
     institution: "University of Padova"
     location: "Padova, Italy"
     address: "Via Gradenigo 6/b, 35131 Padova, Italy"
@@ -82,7 +90,8 @@ academia:
     description: "System identification, control, and neural signal filtering."
 
   - name: "Prof. Selina Wriessnegger"
-    institution: "Institue of Neural Engineering, Technical University of Graz"
+    department: "Institute of Neural Engineering"
+    institution: "Technical University of Graz"
     location: "Graz, Austria"
     address: ""
     image: ""
@@ -95,7 +104,8 @@ academia:
     description: "Brain-Computer Interfaces (BCI) and non-invasive neuroimaging research."
 
   - name: "Prof. Gabriel Pires"
-    institution: "Institute of Systems and Robotics, University of Coimbra"
+    department: "Institute of Systems and Robotics"
+    institution: "University of Coimbra"
     location: "Coimbra, Portugal"
     address: ""
     image: ""
@@ -107,11 +117,10 @@ academia:
     phone: ""
     description: "Deep learning for EEG and brain-computer interface."
 
-
-
 hospitals:
   - name: "Prof. MD. Marco Merlo"
-    institution: "Cattinara Hospital"
+    department: "Cardiothoracovascular Department"
+    institution: "Cattinara Hospital (ASUGI)"
     location: "Trieste, Italy"
     address: "Strada di Fiume 447, 34149 Trieste, Italy"
     image: ""
@@ -122,8 +131,11 @@ hospitals:
     email: ""
     phone: ""
     description: "Clinical partnerships in cardiovascular signal analysis and patient monitoring."
+    related_publications:
+      - sharifi2026learning
 
   - name: "Prof. Viviana Betti"
+    department: ""
     institution: "IRCCS 'Santa Lucia'"
     location: "Rome, Italy"
     address: "Via Ardeatina 306, 00179 Roma, Italy"
@@ -136,16 +148,13 @@ hospitals:
     phone: ""
     description: "Neuroscience clinical research and neural dynamics in health and disease."
 
-
-
-
-
 companies:
   - name: "Henesis srl"
+    department: ""
     institution: "Industry Partner"
     location: "Parma, Italy"
     address: "Via S. Leonardo 161, 43122 Parma PR, Italy"
-    image: "" # Add company logo filename here (e.g. henesis.png)
+    image: ""
     website: "https://www.henesis.eu"
     linkedin: ""
     github: ""
@@ -155,6 +164,7 @@ companies:
     description: "R&D collaboration on embedded AI and smart sensor solutions."
 
   - name: "Seletec Engineering srl"
+    department: ""
     institution: "Industry Partner"
     location: "Brugherio (Milan), Italy"
     address: "Via Dorderio 30, 20861 Brugherio MB, Italy"

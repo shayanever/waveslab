@@ -4,7 +4,7 @@ permalink: /collaborations/
 title: Collaborations
 description: Building interdisciplinary bridges across academic institutions, research hospitals, and industry leaders.
 nav: true
-nav_order: 9
+nav_order: 8
 ---
 
 <style>
@@ -27,6 +27,12 @@ nav_order: 9
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 0.25rem;
+  }
+
+  .collab-department {
+    color: #334155;
+    font-weight: 500;
+    font-size: 0.9rem;
   }
 
   .collab-institution {
@@ -81,6 +87,100 @@ nav_order: 9
     height: 100%;
     object-fit: cover;
   }
+
+  /* Outline Toggle Button */
+  .btn-collab-pub {
+    background-color: transparent !important;
+    color: #0f3460 !important;
+    border: 1px solid #0f3460 !important;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-collab-pub:hover,
+  .btn-collab-pub.active {
+    background-color: #0f3460 !important;
+    color: #ffffff !important;
+  }
+
+  /* Expandable Joint Publication Drawer */
+  .collab-pub-box {
+    display: none;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f3460;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #1e293b;
+  }
+
+  .collab-pub-box.open {
+    display: block;
+  }
+
+  .collab-pub-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+  }
+
+  .collab-pub-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .collab-pub-bullet {
+    font-weight: 700;
+    color: #0f3460;
+    min-width: 0.85rem;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  /* Keep al-folio bib.liquid compact inside the drawer */
+  .collab-pub-box .row {
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .collab-pub-box .abbr,
+  .collab-pub-box .preview,
+  .collab-pub-box .badges {
+    display: none !important;
+  }
+
+  .collab-pub-box .col-sm-8,
+  .collab-pub-box .col-sm-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .collab-pub-box .title {
+    font-weight: 700 !important;
+    color: #0f3460 !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .collab-pub-box .links a.btn {
+    padding: 0.15rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    margin-top: 0.35rem !important;
+    border: 1px solid #0f3460 !important;
+    color: #0f3460 !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
 </style>
 
 <div class="header-bar mb-4">
@@ -91,7 +191,7 @@ nav_order: 9
 <!-- 1. ACADEMIA SECTION -->
 {% if site.data.collaborations.academia %}
   <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <i class="fa-solid fa-graduation-cap me-2" style="color: #0f3460;"></i> Academia & Universities
+    <i class="fa-solid fa-graduation-cap me-2" style="color: #0f3460;"></i> Academia &amp; Universities
   </h2>
 
   <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -109,6 +209,9 @@ nav_order: 9
                 {% endif %}
                 <div>
                   <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  {% if partner.department and partner.department != "" %}
+                    <div class="collab-department">{{ partner.department }}</div>
+                  {% endif %}
                   <div class="collab-institution">{{ partner.institution }}</div>
                   {% if partner.location and partner.location != "" %}
                     <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
@@ -161,6 +264,31 @@ nav_order: 9
               <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
             {% endif %}
           </div>
+
+          <!-- Joint Publications Toggle & Drawer -->
+          {% if partner.related_publications and partner.related_publications.size > 0 %}
+            <div class="pt-3 mt-3 border-top">
+              <button type="button" class="btn-collab-pub" onclick="toggleCollabPub('acad-pub-{{ forloop.index }}', this)">
+                <i class="fa-solid fa-book-bookmark me-1"></i>
+                Joint Publication{% if partner.related_publications.size > 1 %}s ({{ partner.related_publications.size }}){% endif %}
+                <i class="fa-solid fa-chevron-down fa-xs ms-2"></i>
+              </button>
+
+              <div id="acad-pub-{{ forloop.index }}" class="collab-pub-box">
+                <ul class="collab-pub-list">
+                  {% for key in partner.related_publications %}
+                    {% assign clean_key = key | strip %}
+                    <li class="collab-pub-item {% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
+                      <span class="collab-pub-bullet">&bull;</span>
+                      <div class="flex-grow-1">
+                        {% reference clean_key %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
@@ -170,7 +298,7 @@ nav_order: 9
 <!-- 2. CLINICAL & HOSPITALS SECTION -->
 {% if site.data.collaborations.hospitals %}
   <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <i class="fa-solid fa-hospital me-2" style="color: #0f3460;"></i> Clinical & Research Hospitals
+    <i class="fa-solid fa-hospital me-2" style="color: #0f3460;"></i> Clinical &amp; Research Hospitals
   </h2>
 
   <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -188,6 +316,9 @@ nav_order: 9
                 {% endif %}
                 <div>
                   <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  {% if partner.department and partner.department != "" %}
+                    <div class="collab-department">{{ partner.department }}</div>
+                  {% endif %}
                   <div class="collab-institution">{{ partner.institution }}</div>
                   {% if partner.location and partner.location != "" %}
                     <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
@@ -240,6 +371,31 @@ nav_order: 9
               <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
             {% endif %}
           </div>
+
+          <!-- Joint Publications Toggle & Drawer -->
+          {% if partner.related_publications and partner.related_publications.size > 0 %}
+            <div class="pt-3 mt-3 border-top">
+              <button type="button" class="btn-collab-pub" onclick="toggleCollabPub('hosp-pub-{{ forloop.index }}', this)">
+                <i class="fa-solid fa-book-bookmark me-1"></i>
+                Joint Publication{% if partner.related_publications.size > 1 %}s ({{ partner.related_publications.size }}){% endif %}
+                <i class="fa-solid fa-chevron-down fa-xs ms-2"></i>
+              </button>
+
+              <div id="hosp-pub-{{ forloop.index }}" class="collab-pub-box">
+                <ul class="collab-pub-list">
+                  {% for key in partner.related_publications %}
+                    {% assign clean_key = key | strip %}
+                    <li class="collab-pub-item {% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
+                      <span class="collab-pub-bullet">&bull;</span>
+                      <div class="flex-grow-1">
+                        {% reference clean_key %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
@@ -249,7 +405,7 @@ nav_order: 9
 <!-- 3. INDUSTRY PARTNERS SECTION -->
 {% if site.data.collaborations.companies %}
   <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <i class="fa-solid fa-building me-2" style="color: #0f3460;"></i> Industry & Corporate Partners
+    <i class="fa-solid fa-building me-2" style="color: #0f3460;"></i> Industry &amp; Corporate Partners
   </h2>
 
   <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -267,6 +423,9 @@ nav_order: 9
                 {% endif %}
                 <div>
                   <h3 class="collab-title mb-0">{{ partner.name }}</h3>
+                  {% if partner.department and partner.department != "" %}
+                    <div class="collab-department">{{ partner.department }}</div>
+                  {% endif %}
                   <div class="collab-institution">{{ partner.institution }}</div>
                   {% if partner.location and partner.location != "" %}
                     <div class="collab-location"><i class="fa-solid fa-location-dot me-1"></i>{{ partner.location }}</div>
@@ -319,10 +478,49 @@ nav_order: 9
               <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ partner.description }}</p>
             {% endif %}
           </div>
+
+          <!-- Joint Publications Toggle & Drawer -->
+          {% if partner.related_publications and partner.related_publications.size > 0 %}
+            <div class="pt-3 mt-3 border-top">
+              <button type="button" class="btn-collab-pub" onclick="toggleCollabPub('comp-pub-{{ forloop.index }}', this)">
+                <i class="fa-solid fa-book-bookmark me-1"></i>
+                Joint Publication{% if partner.related_publications.size > 1 %}s ({{ partner.related_publications.size }}){% endif %}
+                <i class="fa-solid fa-chevron-down fa-xs ms-2"></i>
+              </button>
+
+              <div id="comp-pub-{{ forloop.index }}" class="collab-pub-box">
+                <ul class="collab-pub-list">
+                  {% for key in partner.related_publications %}
+                    {% assign clean_key = key | strip %}
+                    <li class="collab-pub-item {% unless forloop.last %}mb-2 pb-2 border-bottom{% endunless %}">
+                      <span class="collab-pub-bullet">&bull;</span>
+                      <div class="flex-grow-1">
+                        {% reference clean_key %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
   </div>
 {% endif %}
+
+<script>
+  function toggleCollabPub(boxId, btn) {
+    const box = document.getElementById(boxId);
+    if (!box) return;
+    box.classList.toggle('open');
+    btn.classList.toggle('active');
+    const icon = btn.querySelector('.fa-chevron-down, .fa-chevron-up');
+    if (icon) {
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    }
+  }
+</script>
 
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
