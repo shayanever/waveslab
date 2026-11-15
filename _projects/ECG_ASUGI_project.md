@@ -1,7 +1,7 @@
 ---
 title: Explainable AI for ECG-based Screening of Cardiomyopathies
 description: This study aims to develop explainable machine-learning and deep-learning models to identify ECG-derived signatures associated with contrast-enhanced cardiac magnetic resonance imaging features.
-img: assets/img/asugi.png
+img: assets/img/schema_arch_per_waveslab_website.png
 preview: assets/img/schema_arch_per_waveslab_website.png
 aim_figure: assets/img/schema_arch_per_waveslab_website.png
 aim_caption: Architecture for explainable AI-driven ECG screening of cardiomyopathies.
