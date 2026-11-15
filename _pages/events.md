@@ -8,32 +8,64 @@ nav_order: 8
 calendar: true
 ---
 <style>
-  .project-card {
+  .event-card {
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #e2e8f0 !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
+    height: 100%;
   }
 
-  .project-card:hover {
+  .event-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(15, 52, 96, 0.08) !important;
   }
 
-  .project-card .card-title {
-    color: var(--global-theme-color, #0f3460) !important;
+  .event-card-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid #e2e8f0;
   }
 
-  /* Overlay link to make the entire card box clickable */
-  .project-card-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .event-badge-incoming {
+    background-color: #0f3460;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .event-badge-past {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .event-title {
+    color: #0f3460 !important;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .event-meta {
+    color: #475569;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
   }
 
   /* Primary Theme Button (Solid Dark Blue) */
@@ -44,6 +76,10 @@ calendar: true
     font-weight: 600;
     border-radius: 6px;
     padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
   }
 
   .btn-theme-primary:hover {
@@ -59,6 +95,10 @@ calendar: true
     font-weight: 600;
     border-radius: 6px;
     padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
   }
 
   .btn-theme-outline:hover {
@@ -72,8 +112,113 @@ calendar: true
   <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p>
 </div>
 
+<!-- 1. INCOMING / UPCOMING EVENTS -->
+{% if site.data.events.upcoming and site.data.events.upcoming.size > 0 %}
+  <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events
+  </h2>
 
-{% include calendar.liquid calendar_id='en.italian%23holiday%40group.v.calendar.google.com' timezone='Europe/Rome' %}
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    {% for event in site.data.events.upcoming %}
+      <div class="col">
+        <div class="event-card d-flex flex-column justify-content-between">
+          <div>
+            {% if event.image and event.image != "" %}
+              {% assign img_path = event.image | prepend: 'assets/img/' %}
+              <img src="{{ img_path | relative_url }}" class="event-card-img" alt="{{ event.title }}">
+            {% endif %}
+
+            <div class="p-4">
+              <span class="event-badge-incoming">Incoming</span>
+              <h3 class="event-title">{{ event.title }}</h3>
+
+              {% if event.speaker and event.speaker != "" %}
+                <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+              {% endif %}
+
+              {% if event.date_time and event.date_time != "" %}
+                <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
+              {% endif %}
+
+              {% if event.location and event.location != "" %}
+                <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
+              {% endif %}
+
+              {% if event.description and event.description != "" %}
+                <p class="text-secondary small mt-3 mb-0">{{ event.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if event.registration_link and event.registration_link != "" %}
+            <div class="px-4 pb-4 pt-2">
+              <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
+                Registration Form <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<!-- 2. PAST EVENTS -->
+{% if site.data.events.past and site.data.events.past.size > 0 %}
+  <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-clock-rotate-left me-2" style="color: #0f3460;"></i> Past Events
+  </h2>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    {% for event in site.data.events.past %}
+      <div class="col">
+        <div class="event-card d-flex flex-column justify-content-between">
+          <div>
+            {% if event.image and event.image != "" %}
+              {% assign img_path = event.image | prepend: 'assets/img/' %}
+              <img src="{{ img_path | relative_url }}" class="event-card-img" alt="{{ event.title }}">
+            {% endif %}
+
+            <div class="p-4">
+              <span class="event-badge-past">Past Event</span>
+              <h3 class="event-title">{{ event.title }}</h3>
+
+              {% if event.speaker and event.speaker != "" %}
+                <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
+              {% endif %}
+
+              {% if event.date_time and event.date_time != "" %}
+                <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
+              {% endif %}
+
+              {% if event.location and event.location != "" %}
+                <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
+              {% endif %}
+
+              {% if event.description and event.description != "" %}
+                <p class="text-secondary small mt-3 mb-0">{{ event.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if event.registration_link and event.registration_link != "" %}
+            <div class="px-4 pb-4 pt-2">
+              <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-outline">
+                Event Details / Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<!-- 3. CALENDAR & COURSES -->
+<h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+  <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Lab Calendar &amp; Courses
+</h2>
+
 <div class="calendar-container my-4">
   <iframe 
     src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&ctz=Europe%2FRome" 
@@ -82,5 +227,7 @@ calendar: true
     scrolling="no">
   </iframe>
 </div>
+
 {% include courses.liquid %}
+
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">

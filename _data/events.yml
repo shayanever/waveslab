@@ -1,0 +1,25 @@
+upcoming:
+  - title: "Seminar & Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems"
+    speaker: "Prof. Selina Wriessnegger (TU Graz)"
+    date_time: "November 26, 2026 · 2:00 PM – 4:30 PM"
+    location: "Palazzo Berlam, Trieste"
+    image: "selina_in_her_lab.jpg" # Optional: file inside assets/img/
+    description: "Visiting Professor seminar on passive BCIs in EEG-based neuroadaptive systems, followed by an open round table discussion."
+    registration_link: "google.com" # Add your registration form URL here once ready
+
+past:
+  - title: "Trieste Next 2026"
+    speaker: "WAVESLAB Team"
+    date_time: "September 25–27, 2026"
+    location: "Piazza Unità d'Italia, Trieste"
+    image: "" # e.g., trieste_next_2026.jpg in assets/img/
+    description: "Interactive public science demonstrations and hands-on brain-computer interface showcases at Trieste Next."
+    registration_link: "https://www.triestenext.it/"
+
+  - title: "Brief Talk on AutoResearch"
+    speaker: "Dr. Alberto Zancanaro"
+    date_time: "July 16, 2026 · 10:00 AM"
+    location: "Online / University of Trieste"
+    image: "alberto_zancanaro.jpg"
+    description: "Former lab member Dr. Alberto Zancanaro presented recent advances and workflows in AutoResearch."
+    registration_link: ""
