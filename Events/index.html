@@ -3,32 +3,64 @@
     --max-content-width: 1180px;
   }
 </style> <link rel="stylesheet" href="/waveslab/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/waveslab/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/waveslab/assets/img/waveslab_logo.png?v=f5df269822ea1a14426cbe91d1d4d46b"> <link rel="stylesheet" href="/waveslab/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://shayansharifi.net/waveslab/Events/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/waveslab/"> WavesLab </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/waveslab/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/News/index.html">News </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/team/">Team </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/repositories/">GitHub </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/collaborations/">Collaborations </a> </li> <li class="nav-item active"> <a class="nav-link" href="/waveslab/Events/">Events <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/Join%20us/">Join us </a> </li> <li class="nav-item "> <a class="nav-link" href="/waveslab/contact/">Contact </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
-  .project-card {
+  .event-card {
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #e2e8f0 !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
+    height: 100%;
   }
 
-  .project-card:hover {
+  .event-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(15, 52, 96, 0.08) !important;
   }
 
-  .project-card .card-title {
-    color: var(--global-theme-color, #0f3460) !important;
+  .event-card-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid #e2e8f0;
   }
 
-  /* Overlay link to make the entire card box clickable */
-  .project-card-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .event-badge-incoming {
+    background-color: #0f3460;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .event-badge-past {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .event-title {
+    color: #0f3460 !important;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .event-meta {
+    color: #475569;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
   }
 
   /* Primary Theme Button (Solid Dark Blue) */
@@ -39,6 +71,10 @@
     font-weight: 600;
     border-radius: 6px;
     padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
   }
 
   .btn-theme-primary:hover {
@@ -54,13 +90,17 @@
     font-weight: 600;
     border-radius: 6px;
     padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
   }
 
   .btn-theme-outline:hover {
     background-color: #0f3460 !important;
     color: #ffffff !important;
   }
-</style> <div class="header-bar mb-4"> <h1 class="header-title">Events</h1> <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p> </div> <div class="post mt-4"> <h2 class="mb-3"> <i class="fas fa-calendar-alt"></i> Upcoming Events</h2> <button class="btn btn-sm btn-outline-primary mb-3 calendar-toggle-btn" type="button" onclick="toggleCalendar()" id="calendar-toggle-btn" aria-pressed="false"> Show Calendar </button> <div class="calendar-wrapper" id="calendar-container" style="display: none;"> <iframe id="calendar-iframe" data-calendar-id="en.italian%23holiday%40group.v.calendar.google.com" data-timezone="Europe/Rome" style="border:0; width:100%; height:600px;" frameborder="0" scrolling="no"> </iframe> </div> </div> <div class="calendar-container my-4"> <iframe src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&amp;ctz=Europe%2FRome" style="border: 0; width: 100%; height: 600px; border-radius: 8px;" frameborder="0" scrolling="no"> </iframe> </div> <div class="courses"> <h2 class="year">2026</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/data-science-fundamentals/">Computational Neuroscience</a> </h3> <div class="course-meta"> <span class="course-term">Autumn</span> <span class="course-instructor">Prof. Giulia Cisotto, Prof. Alberto d'Onofrio</span> </div> <div class="course-description"> <p>This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.</p> </div> </div> </div> <h2 class="year">2023</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/introduction-to-machine-learning/">Introduction to Machine Learning</a> </h3> <div class="course-meta"> <span class="course-term">Fall</span> <span class="course-instructor">Prof. Example</span> </div> <div class="course-description"> <p>This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.</p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
+</style> <div class="header-bar mb-4"> <h1 class="header-title">Events</h1> <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="event-card d-flex flex-column justify-content-between"> <div> <img src="/waveslab/assets/img/selina_in_her_lab.jpg" class="event-card-img" alt="Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems"> <div class="p-4"> <span class="event-badge-incoming">Incoming</span> <h3 class="event-title">Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems</h3> <div class="event-meta"> <i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>Prof. Selina Wriessnegger (TU Graz)</strong> </div> <div class="event-meta"> <i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> November 26, 2026 · 2:00 PM – 4:30 PM</div> <div class="event-meta"> <i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> Palazzo Berlam, Trieste</div> <p class="text-secondary small mt-3 mb-0">Visiting Professor seminar on passive BCIs in EEG-based neuroadaptive systems, followed by an open round table discussion.</p> </div> </div> <div class="px-4 pb-4 pt-2"> <a href="google.com" target="_blank" rel="noopener noreferrer" class="btn-theme-primary"> Registration Form <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i> </a> </div> </div> </div> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-solid fa-clock-rotate-left me-2" style="color: #0f3460;"></i> Past Events </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="event-card d-flex flex-column justify-content-between"> <div> <div class="p-4"> <span class="event-badge-past">Past Event</span> <h3 class="event-title">Trieste Next 2026</h3> <div class="event-meta"> <i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>WAVESLAB Team</strong> </div> <div class="event-meta"> <i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> September 25–27, 2026</div> <div class="event-meta"> <i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> Piazza Unità d'Italia, Trieste</div> <p class="text-secondary small mt-3 mb-0">Interactive public science demonstrations and hands-on brain-computer interface showcases at Trieste Next.</p> </div> </div> <div class="px-4 pb-4 pt-2"> <a href="https://www.triestenext.it/" target="_blank" rel="noopener noreferrer" class="btn-theme-outline"> Event Details / Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i> </a> </div> </div> </div> <div class="col"> <div class="event-card d-flex flex-column justify-content-between"> <div> <img src="/waveslab/assets/img/alberto_zancanaro.jpg" class="event-card-img" alt="Brief Talk on AutoResearch"> <div class="p-4"> <span class="event-badge-past">Past Event</span> <h3 class="event-title">Brief Talk on AutoResearch</h3> <div class="event-meta"> <i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>Dr. Alberto Zancanaro</strong> </div> <div class="event-meta"> <i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> July 16, 2026 · 10:00 AM</div> <div class="event-meta"> <i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> Online / University of Trieste</div> <p class="text-secondary small mt-3 mb-0">Former lab member Dr. Alberto Zancanaro presented recent advances and workflows in AutoResearch.</p> </div> </div> </div> </div> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Lab Calendar &amp; Courses </h2> <div class="calendar-container my-4"> <iframe src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&amp;ctz=Europe%2FRome" style="border: 0; width: 100%; height: 600px; border-radius: 8px;" frameborder="0" scrolling="no"> </iframe> </div> <div class="courses"> <h2 class="year">2026</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/trieste_next/">Computational Neuroscience</a> </h3> <div class="course-meta"> <span class="course-term">Autumn</span> <span class="course-instructor">Prof. Giulia Cisotto, Prof. Alberto d'Onofrio</span> </div> <div class="course-description"> <p>This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.</p> </div> </div> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/data-science-fundamentals/">Computational Neuroscience</a> </h3> <div class="course-meta"> <span class="course-term">Autumn</span> <span class="course-instructor">Prof. Giulia Cisotto, Prof. Alberto d'Onofrio</span> </div> <div class="course-description"> <p>This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.</p> </div> </div> </div> <h2 class="year">2023</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/introduction-to-machine-learning/">Introduction to Machine Learning</a> </h3> <div class="course-meta"> <span class="course-term">Fall</span> <span class="course-instructor">Prof. Example</span> </div> <div class="course-description"> <p>This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.</p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -221,6 +261,11 @@ ninja.data = [{
           description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
           section: "Teachings",handler: () => {
               window.location.href = "/waveslab/teachings/introduction-to-machine-learning/";
+            },},{id: "teachings-computational-neuroscience",
+          title: 'Computational Neuroscience',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/waveslab/teachings/trieste_next/";
             },},{
         id: 'social-cv',
         title: 'CV',
