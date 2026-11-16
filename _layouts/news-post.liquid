@@ -1,0 +1,19 @@
+---
+layout: post
+---
+
+{% assign post_img = page.image | default: page.thumbnail | default: page.preview %}
+
+<div class="waveslab-news-post">
+  {% if post_img and post_img != "" %}
+    <div class="float-end ms-4 mb-3" style="max-width: 280px;">
+      {% include figure.liquid loading="eager" path=post_img class="img-fluid rounded z-depth-1" alt=page.title %}
+      {% if page.image_caption %}
+        <div class="caption">{{ page.image_caption }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {{ content }}
+  <div style="clear: both;"></div>
+</div>

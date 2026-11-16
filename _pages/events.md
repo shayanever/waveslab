@@ -369,7 +369,7 @@ calendar: true
 </div>
 
 <!-- 1. INCOMING / UPCOMING EVENTS -->
-{% if site.data.events.upcoming and site.data.events.upcoming.size > 0 %}
+<!-- {% if site.data.events.upcoming and site.data.events.upcoming.size > 0 %}
   <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
     <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events
   </h2>
@@ -420,7 +420,7 @@ calendar: true
 {% endif %}
 
 <!-- 2. PAST EVENTS -->
-{% if site.data.events.past and site.data.events.past.size > 0 %}
+<!-- {% if site.data.events.past and site.data.events.past.size > 0 %}
   <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
     <i class="fa-solid fa-clock-rotate-left me-2" style="color: #0f3460;"></i> Past Events
   </h2>
@@ -468,10 +468,10 @@ calendar: true
       </div>
     {% endfor %}
   </div>
-{% endif %}
+{% endif %} -->
 
 <!-- 3. CALENDAR & COURSES -->
-<h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+<!-- <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
   <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Lab Calendar &amp; Courses
 </h2>
 
@@ -486,4 +486,4 @@ calendar: true
 
 {% include courses.liquid %}
 
-<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}"> -->
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}"> --> --> -->
