@@ -54,6 +54,7 @@ nav_order: 9
     border-left: 4px solid #0f3460;
     border-radius: 8px;
     padding: 1.5rem;
+    margin-top: 3rem;
   }
 
   .btn-apply {
