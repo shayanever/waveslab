@@ -27,5 +27,5 @@ open_roles:
 
 # How to apply instructions box
 application_info:
-  email: giulia.cisotto@units.it
+  email: "giulia.cisotto@units.it"
   requirements:
