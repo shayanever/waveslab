@@ -186,7 +186,10 @@ nav_order: 9
         <p class="text-secondary small mb-2">We welcome students and researchers who are supported by financial support from Eramsus, Marie-Curie, and other Programs.</p>
         
         <div class="small text-muted">
-          <strong>To apply, please email:</strong>
+          To apply, please email:
+          <a href="mailto:{{ site.data.positions.application_info.email }}?subject=WAVESLAB%20Application">
+            {{ site.data.positions.application_info.email }}
+          </a>
           {% if site.data.positions.application_info.requirements %}
             <ul>
               {% for req in site.data.positions.application_info.requirements %}
