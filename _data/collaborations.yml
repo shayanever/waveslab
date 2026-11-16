@@ -101,7 +101,7 @@ academia:
     scholar: ""
     email: ""
     phone: ""
-    description: "Brain-Computer Interfaces (BCI) and non-invasive neuroimaging research."
+    description: "Passive Brain-Computer Interfaces (BCI), stress detection, cognitive processes."
 
   - name: "Prof. Gabriel Pires"
     department: "Institute of Systems and Robotics"
@@ -115,7 +115,7 @@ academia:
     scholar: ""
     email: ""
     phone: ""
-    description: "Deep learning for EEG and brain-computer interface."
+    description: "Deep learning for EEG, brain-computer interface."
 
 hospitals:
   - name: "Prof. MD. Marco Merlo"
