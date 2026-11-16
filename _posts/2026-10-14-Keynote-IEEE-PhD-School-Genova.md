@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: news-post
 title: Keynote Speech at the IEEE ComSoc PhD School on E-Health
 date: 2026-10-14 8:00:00
 description: Giulia Cisotto gave an invited keynote speech at the University of Genova

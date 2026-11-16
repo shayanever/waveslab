@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: news-post
 title: Official Announcement of the WavesLab Launch at AgorAI Sandpit Event
 date: 2026-09-11 8:00:00
 description: Giulia Cisotto announced the launch of the WavesLab at Palazzo Berlam in Trieste
+thumbnail: 
+preview: 
 ---
 
 
