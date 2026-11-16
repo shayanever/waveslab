@@ -170,12 +170,10 @@ nav_order: 9
       </div>
     {% endfor %}
   </div>
-  {% endfor %}
-  </div>
 {% else %}
   <div class="pos-card">
     <p class="mb-0" style="font-weight: 400;">
-      <em>No open positions currently available</em>
+      <em>No open positions currently available.</em>
     </p>
   </div>
 {% endif %}
