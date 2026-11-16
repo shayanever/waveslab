@@ -74,7 +74,7 @@ nav_order: 9
 </style>
 
 <div class="header-bar mb-4">
-  <h1 class="header-title">Open Positions & Thesis Topics</h1>
+  <h1 class="header-title">Thesis opportunities & Open positions</h1>
   <p class="header-subtitle">Explore research opportunities, Ph.D./Postdoc openings, and Bachelor/Master thesis projects at WAVESLAB.</p>
 </div>
 
@@ -84,7 +84,7 @@ nav_order: 9
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
       <div>
         <h4 class="mb-1" style="color: #0f3460; font-weight: 700;">Interested in Joining WAVESLAB?</h4>
-        <p class="text-secondary small mb-2">We welcome passionate students and researchers with backgrounds in Biomedical Engineering, Data Science, Electrical Engineering, or Computer Science.</p>
+        <p class="text-secondary small mb-2">We welcome students and researchers who are supported by financial support from Eramsus, Marie-Curie, and other Programs.</p>
         
         <div class="small text-muted">
           <strong>To apply, please email:</strong>
@@ -107,7 +107,52 @@ nav_order: 9
   </div>
 {% endif %}
 
-<!-- 1. OPEN RESEARCH ROLES (Ph.D., Postdoc, Fellowships) -->
+
+
+<!-- 1. AVAILABLE THESIS TOPICS -->
+{% if site.data.positions.thesis_topics %}
+  <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+    <i class="fa-solid fa-book-open-reader me-2" style="color: #0f3460;"></i> Available Thesis Opportunities
+  </h2>
+
+  <div class="row row-cols-1 g-4 mb-5">
+    {% for thesis in site.data.positions.thesis_topics %}
+      <div class="col">
+        <div class="pos-card d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+              <span class="badge-tag">{{ thesis.level }}</span>
+            </div>
+
+            <h3 class="pos-title">{{ thesis.title }}</h3>
+
+            {% if thesis.advisor %}
+              <div class="small text-muted mb-2">
+                <i class="fa-solid fa-user-graduate me-1"></i> <strong>Advisor:</strong> {{ thesis.advisor }}
+              </div>
+            {% endif %}
+
+            <p class="text-secondary small mb-3">{{ thesis.description }}</p>
+          </div>
+
+          {% if thesis.prerequisites %}
+            <div class="pt-2 border-top mt-2">
+              <span class="small text-muted"><strong>Prerequisites:</strong> {{ thesis.prerequisites }}</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+
+
+
+
+
+<!-- 2. OPEN RESEARCH ROLES (Ph.D., Postdoc, Fellowships) -->
 {% if site.data.positions.open_roles %}
   <h2 class="mt-4 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
     <i class="fa-solid fa-briefcase me-2" style="color: #0f3460;"></i> Open Research Positions
@@ -152,41 +197,6 @@ nav_order: 9
   </div>
 {% endif %}
 
-<!-- 2. AVAILABLE THESIS TOPICS -->
-{% if site.data.positions.thesis_topics %}
-  <h2 class="mt-5 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <i class="fa-solid fa-book-open-reader me-2" style="color: #0f3460;"></i> Available Thesis Opportunities
-  </h2>
 
-  <div class="row row-cols-1 g-4 mb-5">
-    {% for thesis in site.data.positions.thesis_topics %}
-      <div class="col">
-        <div class="pos-card d-flex flex-column justify-content-between">
-          <div>
-            <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
-              <span class="badge-tag">{{ thesis.level }}</span>
-            </div>
-
-            <h3 class="pos-title">{{ thesis.title }}</h3>
-
-            {% if thesis.advisor %}
-              <div class="small text-muted mb-2">
-                <i class="fa-solid fa-user-graduate me-1"></i> <strong>Advisor:</strong> {{ thesis.advisor }}
-              </div>
-            {% endif %}
-
-            <p class="text-secondary small mb-3">{{ thesis.description }}</p>
-          </div>
-
-          {% if thesis.prerequisites %}
-            <div class="pt-2 border-top mt-2">
-              <span class="small text-muted"><strong>Prerequisites:</strong> {{ thesis.prerequisites }}</span>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
 
 <link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
