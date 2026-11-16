@@ -2,7 +2,7 @@
 layout: default
 permalink: /Join us/
 title: Join us
-description: Join WAVESLAB as a Ph.D. researcher, Postdoc, or Master/Bachelor thesis student.
+description: Join the WavesLab as a Ph.D. researcher, Postdoc, or Master/Bachelor thesis student.
 nav: true
 nav_order: 9
 ---
@@ -75,7 +75,7 @@ nav_order: 9
 
 <div class="header-bar mb-4">
   <h1 class="header-title">Thesis opportunities & Open positions</h1>
-  <p class="header-subtitle">Explore research opportunities, Ph.D./Postdoc openings, and Bachelor/Master thesis projects at WAVESLAB.</p>
+  <p class="header-subtitle">Explore research opportunities, Ph.D./Postdoc openings, and Bachelor/Master thesis projects at the WavesLab.</p>
 </div>
 
 
@@ -172,13 +172,16 @@ nav_order: 9
 
 
 
+<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
+
+
 
 <!-- Application Guidelines Banner -->
 {% if site.data.positions.application_info %}
   <div class="apply-box mb-5 shadow-sm">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
       <div>
-        <h4 class="mb-1" style="color: #0f3460; font-weight: 700;">Interested in Joining WAVESLAB?</h4>
+        <h4 class="mb-1" style="color: #0f3460; font-weight: 700;">Interested in joining the WavesLab?</h4>
         <p class="text-secondary small mb-2">We welcome students and researchers who are supported by financial support from Eramsus, Marie-Curie, and other Programs.</p>
         
         <div class="small text-muted">
@@ -210,4 +213,3 @@ nav_order: 9
 
 
 
-<link rel="stylesheet" href="{{ '/assets/css/theme-override.css' | relative_url }}">
