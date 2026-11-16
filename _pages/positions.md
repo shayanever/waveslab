@@ -78,34 +78,7 @@ nav_order: 9
   <p class="header-subtitle">Explore research opportunities, Ph.D./Postdoc openings, and Bachelor/Master thesis projects at WAVESLAB.</p>
 </div>
 
-<!-- Application Guidelines Banner -->
-{% if site.data.positions.application_info %}
-  <div class="apply-box mb-5 shadow-sm">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
-      <div>
-        <h4 class="mb-1" style="color: #0f3460; font-weight: 700;">Interested in Joining WAVESLAB?</h4>
-        <p class="text-secondary small mb-2">We welcome students and researchers who are supported by financial support from Eramsus, Marie-Curie, and other Programs.</p>
-        
-        <div class="small text-muted">
-          <strong>To apply, please email:</strong>
-          {% if site.data.positions.application_info.requirements %}
-            <ul>
-              {% for req in site.data.positions.application_info.requirements %}
-                <li>{{ req }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
-      </div>
 
-      <div>
-        <a href="mailto:{{ site.data.positions.application_info.email }}?subject=WAVESLAB%20Application" class="btn-apply text-nowrap">
-          Submit Application <i class="fa-solid fa-paper-plane ms-1"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-{% endif %}
 
 
 
@@ -196,6 +169,44 @@ nav_order: 9
     {% endfor %}
   </div>
 {% endif %}
+
+
+
+
+<!-- Application Guidelines Banner -->
+{% if site.data.positions.application_info %}
+  <div class="apply-box mb-5 shadow-sm">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+      <div>
+        <h4 class="mb-1" style="color: #0f3460; font-weight: 700;">Interested in Joining WAVESLAB?</h4>
+        <p class="text-secondary small mb-2">We welcome students and researchers who are supported by financial support from Eramsus, Marie-Curie, and other Programs.</p>
+        
+        <div class="small text-muted">
+          <strong>To apply, please email:</strong>
+          {% if site.data.positions.application_info.requirements %}
+            <ul>
+              {% for req in site.data.positions.application_info.requirements %}
+                <li>{{ req }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+
+      <div>
+        <a href="mailto:{{ site.data.positions.application_info.email }}?subject=WAVESLAB%20Application" class="btn-apply text-nowrap">
+          Submit Application <i class="fa-solid fa-paper-plane ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+
+
+
+
 
 
 
