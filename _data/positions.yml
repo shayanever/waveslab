@@ -1,10 +1,7 @@
 # How to apply instructions box
 application_info:
-  email: "giulia.cisotto@units.it"
+  email: 
   requirements:
-    - "Curriculum Vitae (CV)"
-    - "Academic Transcripts / Grade Record"
-    - "Short Statement of Interest / Motivation (1 paragraph)"
 
 # Open Ph.D., Postdoc, or Research Fellow Positions
 open_roles:
