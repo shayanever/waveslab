@@ -2,7 +2,7 @@
 layout: default
 permalink: /contact/
 title: Contact
-description: Get in touch with WAVESLAB or visit our facilities at the University of Trieste.
+description: Get in touch with the WavesLab or visit our facilities at the University of Trieste.
 nav: true
 nav_order: 10
 ---

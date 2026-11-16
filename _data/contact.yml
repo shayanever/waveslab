@@ -1,9 +1,9 @@
 # Main Lab Location Details
 location:
   lab_name: "The WavesLab"
-  department: "Department of Mathematics, Informatics, and Geosciences (DMG)"
+  department: "Department of Mathematics, Informatics, and Geosciences (MIGe)"
   institution: "University of Trieste"
-  building: "" #ADSAI PhD school
+  building:
   street: "Via Giovanni e Demetrio Economo 12/3"
   city_zip: "34123 Trieste (TS), Italy"
   google_maps_url: "https://maps.app.goo.gl/ngJkVMjmiX1yowBS6"
@@ -27,9 +27,9 @@ social_media:
   - name: "Google Scholar"
     url: "https://scholar.google.com/citations?user=CuSEKIsAAAAJ"
     icon: "fa-solid fa-graduation-cap"
-  - name: "Twitter / X"
-    url: "https://x.com/" # Leave blank if you don't have one yet
-    icon: "fa-brands fa-x-twitter"
+  - name:
+    url:
+    icon:
   - name: "YouTube"
     url: "https://www.youtube.com/"
     icon: "fa-brands fa-youtube"
