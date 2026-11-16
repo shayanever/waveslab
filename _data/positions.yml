@@ -1,21 +1,3 @@
-# How to apply instructions box
-application_info:
-  email: 
-  requirements:
-
-# Open Ph.D., Postdoc, or Research Fellow Positions
-open_roles:
-  - title: "Ph.D. Position in AI for Biomedical Signal Processing"
-    type: "Ph.D. Position"
-    deadline: "Open until filled"
-    location: "University of Trieste, Italy"
-    status: "Open" # Open or Closed
-    description: "We are seeking a motivated Ph.D. candidate to work on deep learning architectures, time-series modeling, and explainable AI applied to EEG/ECG signals."
-    requirements:
-      - "M.Sc. in Biomedical Engineering, Computer Science, Data Science, or related field"
-      - "Strong programming skills in Python (PyTorch or TensorFlow)"
-      - "Background in signal processing or machine learning"
-
 # Available Thesis Topics (B.Sc. / M.Sc.)
 thesis_topics:
   - title: "Generative Models (VAEs/Diffusion) for Synthetic EEG Data Generation"
@@ -35,3 +17,22 @@ thesis_topics:
     advisor: "Prof. Giulia Cisotto"
     prerequisites: "Signal Processing, Machine Learning, MATLAB/Python"
     description: "Developing synchronized signal processing pipelines to analyze brain and muscle connectivity during motor execution and rehabilitation tasks."
+
+
+
+
+# Open Ph.D., Postdoc, or Research Fellow Positions
+open_roles:
+  - title:
+    type:
+    deadline:
+    location:
+    status:
+    description:
+    requirements:
+
+
+# How to apply instructions box
+application_info:
+  email: 
+  requirements:
