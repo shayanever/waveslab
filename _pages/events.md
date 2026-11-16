@@ -2,7 +2,7 @@
 layout: default
 permalink: /Events/
 title: Events
-description: Course materials, schedules, and resources for classes taught.
+description: Find here seminars and talks held by members of the WavesLab or organized by the lab.
 nav: true
 nav_order: 8
 calendar: true
@@ -122,7 +122,7 @@ calendar: true
 
 <div class="header-bar mb-4">
   <h1 class="header-title">Events</h1>
-  <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p>
+  <p class="header-subtitle">Find here seminars and talks held by members of the WavesLab or organized by the lab</p>
 </div>
 
 <!-- 1. INCOMING / UPCOMING EVENTS -->
@@ -235,9 +235,11 @@ calendar: true
   </div>
 {% endif %}
 
+
+
 <!-- 3. CALENDAR & COURSES -->
 <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-  <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Lab Calendar &amp; Courses
+  <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Calendar of lab events
 </h2>
 
 <div class="calendar-container my-4">
@@ -469,6 +471,7 @@ calendar: true
     {% endfor %}
   </div>
 {% endif %} -->
+
 
 <!-- 3. CALENDAR & COURSES -->
 <!-- <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
