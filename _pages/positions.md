@@ -127,10 +127,13 @@ nav_order: 9
 
 
 <!-- 2. OPEN RESEARCH ROLES (Ph.D., Postdoc, Fellowships) -->
-{% if site.data.positions.open_roles %}
   <h2 class="mt-4 mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
     <i class="fa-solid fa-briefcase me-2" style="color: #0f3460;"></i> Open Research Positions
   </h2>
+
+{% assign open_roles = site.data.positions.open_roles %}
+{% if open_roles and open_roles.size > 0 %}
+
 
   <div class="row row-cols-1 g-4 mb-5">
     {% for role in site.data.positions.open_roles %}
@@ -168,6 +171,14 @@ nav_order: 9
         </div>
       </div>
     {% endfor %}
+  </div>
+  {% endfor %}
+  </div>
+{% else %}
+  <div class="pos-card">
+    <p class="mb-0" style="font-weight: 400;">
+      <em>No open positions currently available</em>
+    </p>
   </div>
 {% endif %}
 

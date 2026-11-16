@@ -15,14 +15,7 @@ thesis_topics:
 
 
 # Open Ph.D., Postdoc, or Research Fellow Positions
-open_roles:
-  - title:
-    type:
-    deadline:
-    location:
-    status:
-    description:
-    requirements:
+open_roles: []
 
 
 # How to apply instructions box
