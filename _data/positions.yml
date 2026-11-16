@@ -15,8 +15,8 @@ thesis_topics:
 
 
 # Open Ph.D., Postdoc, or Research Fellow Positions
-open_roles:
-  - title: No open positions currently.
+open_roles: []
+  - title:
     type:
     deadline:
     location:
