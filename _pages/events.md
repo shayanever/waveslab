@@ -125,29 +125,29 @@ calendar: true
   <p class="header-subtitle">Find here seminars and talks held by members of the WavesLab or organized by the lab</p>
 </div>
 
-<!-- 1. INCOMING / UPCOMING EVENTS -->
+<!-- 1. INCOMING / UPCOMING EVENTS (FULL WIDTH) -->
 {% if site.data.events.upcoming and site.data.events.upcoming.size > 0 %}
   <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
     <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events
   </h2>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+  <div class="row row-cols-1 g-4 mb-5">
     {% for event in site.data.events.upcoming %}
       <div class="col">
-        <div class="event-card d-flex flex-column justify-content-between">
-          <div>
-            <div class="d-flex align-items-start gap-3">
-              {% if event.image and event.image != "" %}
-                {% assign img_path = event.image | prepend: 'assets/img/' %}
-                <div class="event-thumb-wrapper">
-                  <img src="{{ img_path | relative_url }}" class="event-thumb-img" alt="{{ event.title }}">
-                </div>
-              {% endif %}
+        <div class="event-card d-flex flex-column flex-md-row align-items-start justify-content-between gap-4" style="border-left: 5px solid #0f3460 !important;">
+          <div class="d-flex flex-column flex-sm-row align-items-start gap-4 flex-grow-1">
+            {% if event.image and event.image != "" %}
+              {% assign img_path = event.image | prepend: 'assets/img/' %}
+              <div class="event-thumb-wrapper" style="width: 150px; height: 175px; min-width: 150px;">
+                <img src="{{ img_path | relative_url }}" class="event-thumb-img" alt="{{ event.title }}">
+              </div>
+            {% endif %}
 
-              <div class="flex-grow-1">
-                <span class="event-badge-incoming">Incoming</span>
-                <h3 class="event-title">{{ event.title }}</h3>
+            <div class="flex-grow-1">
+              <span class="event-badge-incoming">Incoming</span>
+              <h3 class="event-title" style="font-size: 1.3rem;">{{ event.title }}</h3>
 
+              <div class="d-flex flex-wrap gap-3 my-2">
                 {% if event.speaker and event.speaker != "" %}
                   <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
                 {% endif %}
@@ -160,15 +160,15 @@ calendar: true
                   <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
                 {% endif %}
               </div>
-            </div>
 
-            {% if event.description and event.description != "" %}
-              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ event.description }}</p>
-            {% endif %}
+              {% if event.description and event.description != "" %}
+                <p class="text-secondary small mt-2 mb-0" style="font-size: 0.92rem;">{{ event.description }}</p>
+              {% endif %}
+            </div>
           </div>
 
           {% if event.registration_link and event.registration_link != "" %}
-            <div class="pt-3 mt-3 border-top">
+            <div class="align-self-md-center flex-shrink-0">
               <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-primary">
                 Registration Form <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
               </a>
@@ -179,62 +179,6 @@ calendar: true
     {% endfor %}
   </div>
 {% endif %}
-
-<!-- 2. PAST EVENTS -->
-{% if site.data.events.past and site.data.events.past.size > 0 %}
-  <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <i class="fa-solid fa-clock-rotate-left me-2" style="color: #0f3460;"></i> Past Events
-  </h2>
-
-  <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
-    {% for event in site.data.events.past %}
-      <div class="col">
-        <div class="event-card d-flex flex-column justify-content-between">
-          <div>
-            <div class="d-flex align-items-start gap-3">
-              {% if event.image and event.image != "" %}
-                {% assign img_path = event.image | prepend: 'assets/img/' %}
-                <div class="event-thumb-wrapper">
-                  <img src="{{ img_path | relative_url }}" class="event-thumb-img" alt="{{ event.title }}">
-                </div>
-              {% endif %}
-
-              <div class="flex-grow-1">
-                <span class="event-badge-past">Past Event</span>
-                <h3 class="event-title">{{ event.title }}</h3>
-
-                {% if event.speaker and event.speaker != "" %}
-                  <div class="event-meta"><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></div>
-                {% endif %}
-
-                {% if event.date_time and event.date_time != "" %}
-                  <div class="event-meta"><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</div>
-                {% endif %}
-
-                {% if event.location and event.location != "" %}
-                  <div class="event-meta"><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</div>
-                {% endif %}
-              </div>
-            </div>
-
-            {% if event.description and event.description != "" %}
-              <p class="text-secondary small mt-3 pt-2 border-top mb-0">{{ event.description }}</p>
-            {% endif %}
-          </div>
-
-          {% if event.registration_link and event.registration_link != "" %}
-            <div class="pt-3 mt-3 border-top">
-              <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-theme-outline">
-                Event Details / Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
-              </a>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
-
 
 
 <!-- 3. CALENDAR & COURSES -->
