@@ -159,3 +159,26 @@ ol.bibliography li::marker {
   display: none !important;
 }
 
+
+/* Make project/page headers match the custom .header-bar styling */
+.post-header {
+  background-color: #0f3460 !important;
+  color: #ffffff !important;
+  padding: 2rem 2.25rem !important;
+  border-radius: 14px !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-header .post-title,
+.post-header h1 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.post-header .post-description,
+.post-header p {
+  color: #e2e8f0 !important;
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+}
