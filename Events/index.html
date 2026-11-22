@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Events | WavesLab </title> <meta name="author" content="WavesLab "> <meta name="description" content="Find here seminars and talks held by members of the WavesLab or organized by the lab."> <meta name="keywords" content="Waveslab, Giulia Cisotto, academic-website, University of Trieste, Shayan Sharifi"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Events | WavesLab </title> <meta name="author" content="WavesLab "> <meta name="description" content="Course materials, schedules, and resources for classes taught."> <meta name="keywords" content="Waveslab, Giulia Cisotto, academic-website, University of Trieste, Shayan Sharifi"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 1180px;
   }
@@ -17,32 +17,47 @@
     box-shadow: 0 10px 24px rgba(15, 52, 96, 0.08) !important;
   }
 
-  /* Framed portrait / thumbnail on the left so vertical photos never crop faces */
-  .event-thumb-wrapper {
-    width: 115px;
-    height: 135px;
-    min-width: 115px;
+  .event-card-incoming {
+    border-left: 5px solid #0f3460 !important;
+  }
+
+  /* Clean Right-Aligned Photo Frame */
+  .event-photo-box {
+    width: 165px;
+    height: 195px;
+    min-width: 165px;
     border-radius: 10px;
     overflow: hidden;
-    border: 2px solid #f1f5f9;
-    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.08);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.08);
     background-color: #f8fafc;
   }
 
-  .event-thumb-img {
-    width: 150%;
+  .event-photo-box-past {
+    width: 120px;
+    height: 145px;
+    min-width: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(15, 52, 96, 0.06);
+    background-color: #f8fafc;
+  }
+
+  .event-photo-img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 15%;
   }
 
   .event-badge-incoming {
     background-color: #0f3460;
     color: #ffffff;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.22rem 0.6rem;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.7rem;
     border-radius: 999px;
     text-transform: uppercase;
     display: inline-block;
@@ -54,8 +69,8 @@
     border: 1px solid #cbd5e1;
     font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.22rem 0.6rem;
+    letter-spacing: 0.05em;
+    padding: 0.22rem 0.65rem;
     border-radius: 999px;
     text-transform: uppercase;
     display: inline-block;
@@ -64,16 +79,38 @@
   .event-title {
     color: #0f3460 !important;
     font-weight: 700;
-    font-size: 1.12rem;
-    margin-top: 0.45rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.65rem;
     line-height: 1.35;
   }
 
-  .event-meta {
-    color: #475569;
-    font-size: 0.85rem;
-    margin-bottom: 0.25rem;
+  /* Clear, Stacked Metadata Rows */
+  .event-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .event-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    color: #1e293b;
+    line-height: 1.35;
+  }
+
+  .event-meta-row i {
+    color: #0f3460;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
   }
 
   /* Primary Theme Button (Solid Dark Blue) */
@@ -83,7 +120,7 @@
     border: 1px solid #0f3460 !important;
     font-weight: 600;
     border-radius: 6px;
-    padding: 0.35rem 0.85rem;
+    padding: 0.4rem 0.95rem;
     font-size: 0.85rem;
     text-decoration: none !important;
     display: inline-flex;
@@ -113,7 +150,7 @@
     background-color: #0f3460 !important;
     color: #ffffff !important;
   }
-</style> <div class="header-bar mb-4"> <h1 class="header-title">Events</h1> <p class="header-subtitle">Find here seminars and talks held by members of the WavesLab or organized by the lab</p> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events </h2> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="event-card d-flex flex-column flex-md-row align-items-start justify-content-between gap-4" style="border-left: 5px solid #0f3460 !important;"> <div class="d-flex flex-column flex-sm-row align-items-start gap-4 flex-grow-1"> <div class="event-thumb-wrapper" style="width: 150px; height: 175px; min-width: 150px;"> <img src="/waveslab/assets/img/selina_in_her_lab.jpg" class="event-thumb-img" alt="Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems"> </div> <div class="flex-grow-1"> <span class="event-badge-incoming">Incoming</span> <h3 class="event-title" style="font-size: 1.3rem;">Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems</h3> <div class="d-flex flex-wrap gap-3 my-2"> <div class="event-meta"> <i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>Prof. Selina Wriessnegger (TU Graz) &amp; Dr. Luisa Cacciante (IRCCS San Camillo, Venice) &amp; Prof. Pietro Aricò (Sapienza University)</strong> </div> <div class="event-meta"> <i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> November 26, 2026 · 2:00 PM – 4:30 PM</div> <div class="event-meta"> <i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> TBD, Trieste</div> </div> <p class="text-secondary small mt-2 mb-0" style="font-size: 0.92rem;">Professor Selina Wriessnegger will give a seminar on passive BCIs in EEG-based neuroadaptive systems, followed by a round table discussion with other two expert guests.</p> </div> </div> </div> </div> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Calendar of lab events </h2> <div class="calendar-container my-4"> <iframe src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&amp;ctz=Europe%2FRome" style="border: 0; width: 100%; height: 600px; border-radius: 8px;" frameborder="0" scrolling="no"> </iframe> </div> <div class="courses"> <h2 class="year">2026</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/data-science-fundamentals/">Computational Neuroscience</a> </h3> <div class="course-meta"> <span class="course-term">Autumn</span> <span class="course-instructor">Prof. Giulia Cisotto, Prof. Alberto d'Onofrio</span> </div> <div class="course-description"> <p>This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.</p> </div> </div> </div> <h2 class="year">2023</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/introduction-to-machine-learning/">Introduction to Machine Learning</a> </h3> <div class="course-meta"> <span class="course-term">Fall</span> <span class="course-instructor">Prof. Example</span> </div> <div class="course-description"> <p>This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.</p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> <p>–&gt; –&gt;</p> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
+</style> <div class="header-bar mb-4"> <h1 class="header-title">Events</h1> <p class="header-subtitle">Collection of courses with detailed schedules, talks and scientific events of the lab</p> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-solid fa-calendar-check me-2" style="color: #0f3460;"></i> Incoming Events </h2> <div class="row row-cols-1 g-4 mb-5"> <div class="col"> <div class="event-card event-card-incoming"> <div class="d-flex flex-column flex-md-row align-items-start justify-content-between gap-4"> <div class="flex-grow-1"> <span class="event-badge-incoming">Incoming</span> <h3 class="event-title" style="font-size: 1.32rem;">Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems</h3> <div class="event-meta-list"> <div class="event-meta-row"> <i class="fa-solid fa-user-tie"></i> <span><strong>Speaker:</strong> Prof. Selina Wriessnegger (TU Graz) &amp; Dr. Luisa Cacciante (IRCCS San Camillo, Venice) &amp; Prof. Pietro Aricò (Sapienza University)</span> </div> <div class="event-meta-row"> <i class="fa-regular fa-clock"></i> <span><strong>Date &amp; Time:</strong> November 26, 2026 · 2:00 PM – 4:30 PM</span> </div> <div class="event-meta-row"> <i class="fa-solid fa-location-dot"></i> <span><strong>Location:</strong> TBD, Trieste</span> </div> </div> <p class="text-secondary mb-3" style="font-size: 0.93rem; line-height: 1.6;">Professor Selina Wriessnegger will give a seminar on passive BCIs in EEG-based neuroadaptive systems, followed by a round table discussion with other two expert guests.</p> </div> <div class="event-photo-box align-self-center align-self-md-start"> <img src="/waveslab/assets/img/selina_in_her_lab.jpg" class="event-photo-img" alt="Seminar &amp; Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems"> </div> </div> </div> </div> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-solid fa-clock-rotate-left me-2" style="color: #0f3460;"></i> Past Events </h2> <div class="row row-cols-1 row-cols-md-2 g-4 mb-5"> <div class="col"> <div class="event-card d-flex flex-column justify-content-between"> <div> <div class="d-flex align-items-start justify-content-between gap-3 mb-2"> <div class="flex-grow-1"> <span class="event-badge-past">Past Event</span> <h3 class="event-title">Trieste Next 2026</h3> </div> <div class="event-photo-box-past"> <img src="/waveslab/assets/img/trieste_next_2026.jpg" class="event-photo-img" alt="Trieste Next 2026"> </div> </div> <div class="event-meta-list"> <div class="event-meta-row"> <i class="fa-solid fa-user-tie"></i> <span><strong>Speaker:</strong> WAVESLAB Team</span> </div> <div class="event-meta-row"> <i class="fa-regular fa-clock"></i> <span><strong>Date &amp; Time:</strong> September 25–27, 2026</span> </div> <div class="event-meta-row"> <i class="fa-solid fa-location-dot"></i> <span><strong>Location:</strong> Piazza Unità d'Italia, Trieste</span> </div> </div> <p class="text-secondary small mb-0" style="line-height: 1.55;">Interactive public science demonstrations and hands-on brain-computer interface showcases at Trieste Next.</p> </div> <div class="pt-3 mt-3 border-top"> <a href="https://www.triestenext.it/" target="_blank" rel="noopener noreferrer" class="btn-theme-outline"> Event Details / Link <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i> </a> </div> </div> </div> <div class="col"> <div class="event-card d-flex flex-column justify-content-between"> <div> <div class="d-flex align-items-start justify-content-between gap-3 mb-2"> <div class="flex-grow-1"> <span class="event-badge-past">Past Event</span> <h3 class="event-title">Brief Talk on AutoResearch</h3> </div> <div class="event-photo-box-past"> <img src="/waveslab/assets/img/alberto_zancanaro.jpg" class="event-photo-img" alt="Brief Talk on AutoResearch"> </div> </div> <div class="event-meta-list"> <div class="event-meta-row"> <i class="fa-solid fa-user-tie"></i> <span><strong>Speaker:</strong> Dr. Alberto Zancanaro</span> </div> <div class="event-meta-row"> <i class="fa-regular fa-clock"></i> <span><strong>Date &amp; Time:</strong> July 16, 2026 · 10:00 AM</span> </div> <div class="event-meta-row"> <i class="fa-solid fa-location-dot"></i> <span><strong>Location:</strong> Online / University of Trieste</span> </div> </div> <p class="text-secondary small mb-0" style="line-height: 1.55;">Former lab member Dr. Alberto Zancanaro presented recent advances and workflows in AutoResearch.</p> </div> </div> </div> </div> <h2 class="mt-4 mb-3" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;"> <i class="fa-regular fa-calendar me-2" style="color: #0f3460;"></i> Lab Calendar &amp; Courses </h2> <div class="calendar-container my-4"> <iframe src="https://calendar.google.com/calendar/embed?src=en.italian%23holiday%40group.v.calendar.google.com&amp;ctz=Europe%2FRome" style="border: 0; width: 100%; height: 600px; border-radius: 8px;" frameborder="0" scrolling="no"> </iframe> </div> <div class="courses"> <h2 class="year">2026</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/data-science-fundamentals/">Computational Neuroscience</a> </h3> <div class="course-meta"> <span class="course-term">Autumn</span> <span class="course-instructor">Prof. Giulia Cisotto, Prof. Alberto d'Onofrio</span> </div> <div class="course-description"> <p>This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.</p> </div> </div> </div> <h2 class="year">2023</h2> <div class="course-list"> <div class="course-item"> <h3 class="course-title"> <a href="/waveslab/teachings/introduction-to-machine-learning/">Introduction to Machine Learning</a> </h3> <div class="course-meta"> <span class="course-term">Fall</span> <span class="course-instructor">Prof. Example</span> </div> <div class="course-description"> <p>This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.</p> </div> </div> </div> </div> <link rel="stylesheet" href="/waveslab/assets/css/theme-override.css"> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 WavesLab . Designed by <a href="https://shayansharifi.net/" target="_blank">Shayan Sharifi</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -175,7 +212,7 @@ ninja.data = [{
           },
         },{id: "nav-events",
           title: "Events",
-          description: "Find here seminars and talks held by members of the WavesLab or organized by the lab.",
+          description: "Course materials, schedules, and resources for classes taught.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/waveslab/Events/";
