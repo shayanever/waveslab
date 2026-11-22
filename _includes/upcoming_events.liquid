@@ -1,61 +1,72 @@
 {% if site.data.events.upcoming and site.data.events.upcoming.size > 0 %}
-<div class="upcoming-events-home my-4">
-  <div class="d-flex align-items-center justify-content-between mb-3" style="border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
-    <h2 class="mb-0" style="color: #0f3460; font-weight: 700; font-size: 1.5rem;">
-      <i class="fa-solid fa-calendar-check me-2"></i> Incoming Events
-    </h2>
-    <a href="{{ '/Events/' | relative_url }}" style="color: #0f3460; font-size: 0.88rem; font-weight: 600; text-decoration: none;">
-      View all events <i class="fa-solid fa-arrow-right fa-xs ms-1"></i>
-    </a>
+<div class="section-block reveal-on-scroll">
+  <div class="section-title">
+    <span>Incoming Events</span>
+    <a href="{{ '/Events/' | relative_url }}" class="btn-more">View All Events &rarr;</a>
   </div>
 
-  <div class="d-flex flex-column gap-3">
+  <div class="news-container">
     {% for event in site.data.events.upcoming %}
-      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0f3460; border-radius: 12px; padding: 1.25rem; box-shadow: 0 4px 12px rgba(15, 52, 96, 0.05);">
-        <div class="d-flex flex-column flex-md-row align-items-start justify-content-between gap-3">
-          <div class="d-flex align-items-start gap-3">
-            {% if event.image and event.image != "" %}
-              {% assign img_path = event.image | prepend: 'assets/img/' %}
-              <div style="width: 85px; height: 100px; min-width: 85px; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0;">
-                <img src="{{ img_path | relative_url }}" alt="{{ event.title }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
-              </div>
-            {% endif %}
-
-            <div>
-              <span style="background-color: #0f3460; color: #ffffff; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em;">
-                Incoming
-              </span>
-              <h3 style="color: #0f3460; font-weight: 700; font-size: 1.1rem; margin: 0.35rem 0;">
-                {{ event.title }}
-              </h3>
-
-              <div class="d-flex flex-wrap gap-3 small text-secondary">
-                {% if event.speaker and event.speaker != "" %}
-                  <span><i class="fa-solid fa-user-tie me-1" style="color: #0f3460;"></i> <strong>{{ event.speaker }}</strong></span>
-                {% endif %}
-                {% if event.date_time and event.date_time != "" %}
-                  <span><i class="fa-regular fa-clock me-1" style="color: #0f3460;"></i> {{ event.date_time }}</span>
-                {% endif %}
-                {% if event.location and event.location != "" %}
-                  <span><i class="fa-solid fa-location-dot me-1" style="color: #0f3460;"></i> {{ event.location }}</span>
-                {% endif %}
-              </div>
-
-              {% if event.description and event.description != "" %}
-                <p class="text-secondary small mt-2 mb-0">{{ event.description }}</p>
-              {% endif %}
-            </div>
-          </div>
-
-          {% if event.registration_link and event.registration_link != "" %}
-            <div class="align-self-md-center flex-shrink-0">
-              <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer"
-                 style="background-color: #0f3460; color: #ffffff; border-radius: 6px; padding: 0.4rem 0.9rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center;">
-                Register <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
-              </a>
+      <div class="news-card" style="justify-content: space-between; align-items: flex-start; flex-wrap: wrap; border-left: 5px solid #0f3460;">
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex: 1 1 420px;">
+          {% if event.image and event.image != "" %}
+            {% assign img_path = event.image | prepend: 'assets/img/' %}
+            <img src="{{ img_path | relative_url }}" class="news-thumbnail" style="width: 110px; height: 130px; object-position: center 15%; flex-shrink: 0;" alt="{{ event.title }}">
+          {% else %}
+            <div class="news-date-badge">
+              <i class="fa-solid fa-calendar-check" style="font-size: 1.35rem; color: #0f3460; margin-bottom: 0.25rem;"></i>
+              <span class="month">Event</span>
             </div>
           {% endif %}
+
+          <div class="news-content">
+            <span class="text-xs font-bold uppercase tracking-wider inline-block px-2 py-0.5 rounded-full mb-1" style="background-color: #e0f2fe; color: #00779b;">
+              Incoming Event
+            </span>
+
+            <h4 class="text-lg font-bold text-slate-800 mb-2">
+              {{ event.title }}
+            </h4>
+
+            <!-- Separate, High-Contrast Lines for Speaker, Date & Time, and Location -->
+            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.55rem 0.8rem; margin-bottom: 0.65rem; display: flex; flex-direction: column; gap: 0.3rem;">
+              {% if event.speaker and event.speaker != "" %}
+                <div class="text-xs text-slate-700" style="display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-user-tie" style="color: #0f3460; width: 14px; text-align: center;"></i>
+                  <span><strong>Speaker:</strong> {{ event.speaker }}</span>
+                </div>
+              {% endif %}
+
+              {% if event.date_time and event.date_time != "" %}
+                <div class="text-xs text-slate-700" style="display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-regular fa-clock" style="color: #0f3460; width: 14px; text-align: center;"></i>
+                  <span><strong>Date &amp; Time:</strong> {{ event.date_time }}</span>
+                </div>
+              {% endif %}
+
+              {% if event.location and event.location != "" %}
+                <div class="text-xs text-slate-700" style="display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-location-dot" style="color: #0f3460; width: 14px; text-align: center;"></i>
+                  <span><strong>Location:</strong> {{ event.location }}</span>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if event.description and event.description != "" %}
+              <p class="text-slate-500 text-sm leading-relaxed m-0">
+                {{ event.description }}
+              </p>
+            {% endif %}
+          </div>
         </div>
+
+        {% if event.registration_link and event.registration_link != "" %}
+          <div style="flex-shrink: 0; align-self: center;">
+            <a href="{{ event.registration_link }}" target="_blank" rel="noopener noreferrer" class="btn-more" style="background-color: #0f3460; color: #ffffff !important; border-color: #0f3460;">
+              Registration Form &rarr;
+            </a>
+          </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
