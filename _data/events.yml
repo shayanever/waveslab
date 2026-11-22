@@ -1,11 +1,11 @@
 upcoming:
   - title: "Seminar & Round Table: Passive Brain-Computer Interfaces in EEG-based Neuroadaptive Systems"
     speaker: "Prof. Selina Wriessnegger (TU Graz) & Dr. Luisa Cacciante (IRCCS San Camillo, Venice) & Prof. Pietro Aricò (Sapienza University)"
-    date_time: "November 26, 2026 · 2:00 PM – 4:30 PM"
-    location: "TBD, Trieste"
+    date_time: "November 26, 2026 · 1:30 PM – 4:00 PM"
+    location: "Room 1A (Sala Conferenze), Building D, Piazzale Europa (main University of Trieste campus)"
     image: "selina_in_her_lab.jpg" # Optional: file inside assets/img/
     description: "Professor Selina Wriessnegger will give a seminar on passive BCIs in EEG-based neuroadaptive systems, followed by a round table discussion with other two expert guests."
-    registration_link:
+    registration_link: "https://forms.gle/aax6kQ7uC8UQdf6MA"
 
 past:
   - title: "Trieste Next 2026"
