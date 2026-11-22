@@ -306,6 +306,10 @@ html, body {
     </div>
   </div>
 
+  <!-- 3. Dynamic Latest events Stream -->
+
+{% include upcoming_events.liquid %}
+
   <!-- 3. Dynamic Latest News Stream -->
   <div class="section-block reveal-on-scroll">
     <div class="section-title">
